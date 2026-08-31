@@ -1,9 +1,10 @@
 <?php
 
-// 1. Buat folder penyimpanan di /tmp (satu-satunya tempat writable di Vercel Serverless)
+// 1. Buat folder penyimpanan yang writable di /tmp (satu-satunya writable directory di Vercel Serverless)
 $directories = [
     '/tmp/storage/framework/views',
     '/tmp/storage/framework/cache/data',
+    '/tmp/storage/framework/sessions',
     '/tmp/storage/logs',
     '/tmp/bootstrap/cache',
 ];
@@ -14,9 +15,22 @@ foreach ($directories as $dir) {
     }
 }
 
-// 2. Set environment path laravel
+// 2. Set environment paths agar semua cache & storage mengarah ke /tmp
 $_ENV['APP_STORAGE'] = '/tmp/storage';
 $_ENV['VIEW_COMPILED_PATH'] = '/tmp/storage/framework/views';
+$_ENV['APP_SERVICES_CACHE'] = '/tmp/bootstrap/cache/services.php';
+$_ENV['APP_PACKAGES_CACHE'] = '/tmp/bootstrap/cache/packages.php';
+$_ENV['APP_CONFIG_CACHE'] = '/tmp/bootstrap/cache/config.php';
+$_ENV['APP_ROUTES_CACHE'] = '/tmp/bootstrap/cache/routes-v7.php';
+$_ENV['APP_EVENTS_CACHE'] = '/tmp/bootstrap/cache/events.php';
+
+// Salin cached files jika ada di repository
+if (is_file(__DIR__ . '/../bootstrap/cache/packages.php') && !is_file('/tmp/bootstrap/cache/packages.php')) {
+    @copy(__DIR__ . '/../bootstrap/cache/packages.php', '/tmp/bootstrap/cache/packages.php');
+}
+if (is_file(__DIR__ . '/../bootstrap/cache/services.php') && !is_file('/tmp/bootstrap/cache/services.php')) {
+    @copy(__DIR__ . '/../bootstrap/cache/services.php', '/tmp/bootstrap/cache/services.php');
+}
 
 // 3. Panggil Bootstrap Laravel
 require __DIR__ . '/../vendor/autoload.php';
@@ -31,4 +45,4 @@ $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
 );
 $response->send();
-$kernel->terminate($request, $response);
+$kernel->terminate($request, $response);
