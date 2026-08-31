@@ -23,6 +23,12 @@ $_ENV['APP_PACKAGES_CACHE'] = '/tmp/bootstrap/cache/packages.php';
 $_ENV['APP_CONFIG_CACHE'] = '/tmp/bootstrap/cache/config.php';
 $_ENV['APP_ROUTES_CACHE'] = '/tmp/bootstrap/cache/routes-v7.php';
 $_ENV['APP_EVENTS_CACHE'] = '/tmp/bootstrap/cache/events.php';
+if (empty($_ENV['SESSION_LIFETIME'])) {
+    $_ENV['SESSION_LIFETIME'] = 120;
+}
+if (empty($_ENV['SESSION_DRIVER'])) {
+    $_ENV['SESSION_DRIVER'] = 'cookie';
+}
 
 // Salin cached files jika ada di repository
 if (is_file(__DIR__ . '/../bootstrap/cache/packages.php') && !is_file('/tmp/bootstrap/cache/packages.php')) {
