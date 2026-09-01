@@ -17,7 +17,7 @@
 
             <!-- Badge / Subtitle -->
             <span id="hero-badge"
-                class="inline-flex items-center bg-blue-srp justify-center px-4 py-1.5 border border-border-subtle rounded-lg bg-primary-container font-label-sm text-white mb-8 shadow-sm opacity-0 transform">
+                class="inline-flex items-center bg-blue-srp justify-center px-4 py-2 border border-border-subtle rounded-lg bg-primary-container font-label-sm text-white mb-6 shadow-sm opacity-0 transform">
                 Portofolio Kami
             </span>
 
