@@ -2,7 +2,7 @@
     <div class="max-w-[1280px] h-20 mx-auto px-6 flex items-center justify-between">
         <!-- Logo Section -->
         <a href="{{ url('/') }}" class="inline-flex items-center gap-2">
-           <!-- LOGO DIPANGGIL DARI PUBLIC/IMAGES -->
+            <!-- LOGO DIPANGGIL DARI PUBLIC/IMAGES -->
             <img src="{{ asset('images/srp.png') }}" alt="Logo PT SRP" class="w-8 h-8 object-contain">
             
             <div class="inline-flex flex-col items-start">
@@ -17,24 +17,28 @@
 
         <!-- Desktop Navigation Menu -->
         <div class="hidden md:inline-flex items-center gap-8">
-            <a href="#solutions" class="font-sans font-normal text-[#666666] text-sm hover:text-[#1f6fa8] transition-colors whitespace-nowrap">
+            <!-- Portofolio (Dengan logika active state & route) -->
+            <a href="{{ route('portfolio') }}" 
+               class="font-sans text-sm transition-colors whitespace-nowrap {{ request()->routeIs('portfolio') ? 'font-semibold text-blue-srp border-b-2 border-blue-srp pb-1' : 'font-normal text-[#666666] hover:text-[#1f6fa8]' }}">
                 Portofolio
             </a>
-            <a href="#product-categories" class="font-sans font-normal text-[#666666] text-sm hover:text-[#1f6fa8] transition-colors whitespace-nowrap">
+
+            <!-- Link mengarah ke Home Section dengan prefix /# -->
+            <a href="{{ url('/#product-categories') }}" class="font-sans font-normal text-[#666666] text-sm hover:text-[#1f6fa8] transition-colors whitespace-nowrap">
                 Produk
             </a>
-            <a href="#about" class="font-sans font-normal text-[#666666] text-sm hover:text-[#1f6fa8] transition-colors whitespace-nowrap">
+            <a href="{{ url('/#about') }}" class="font-sans font-normal text-[#666666] text-sm hover:text-[#1f6fa8] transition-colors whitespace-nowrap">
                 Tentang Kami
             </a>
-            <a href="#insights" class="font-sans font-normal text-[#666666] text-sm hover:text-[#1f6fa8] transition-colors whitespace-nowrap">
+            <a href="{{ url('/#insights') }}" class="font-sans font-normal text-[#666666] text-sm hover:text-[#1f6fa8] transition-colors whitespace-nowrap">
                 Blog
             </a>
-            <a href="#contact" class="font-sans font-normal text-[#666666] text-sm hover:text-[#1f6fa8] transition-colors whitespace-nowrap">
+            <a href="{{ url('/#contact') }}" class="font-sans font-normal text-[#666666] text-sm hover:text-[#1f6fa8] transition-colors whitespace-nowrap">
                 Kontak
             </a>
 
             <!-- CTA Button -->
-            <a href="#contact" class="px-5 py-2.5 bg-yellow-srp  rounded-sm font-sans font-semibold text-[#333333] text-sm transition-colors whitespace-nowrap shadow-sm">
+            <a href="{{ url('/#contact') }}" class="px-5 py-2.5 bg-yellow-srp rounded-sm font-sans font-semibold text-[#333333] text-sm hover:opacity-90 transition-colors whitespace-nowrap shadow-sm">
                 Get in touch
             </a>
         </div>

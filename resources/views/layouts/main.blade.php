@@ -56,6 +56,16 @@
         }
         .animate-hero-delay-1 { animation-delay: 0.2s; }
         .animate-hero-delay-2 { animation-delay: 0.4s; }
+
+        .hero-pattern {
+            background-image: repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 4px,
+            rgba(226, 232, 240, 0.4) 4px,
+            rgba(226, 232, 240, 0.4) 5px
+        );
+        }
     </style>
 </head>
 <body class="antialiased bg-surface">
