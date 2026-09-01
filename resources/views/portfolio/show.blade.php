@@ -137,6 +137,12 @@
                         class="relative max-h-full max-w-full object-contain z-10">
                 </div>
 
+                <!-- Slide 7 -->
+                <div class="w-full h-full flex-shrink-0">
+                    <img src="{{ asset('images/projek/projek-1/P20180712154424-9.jpg') }}" alt="Overview 7"
+                        class="w-full h-full object-cover">
+                </div>
+
             </div>
 
             <!-- Navigation Arrow: Previous -->
@@ -165,6 +171,8 @@
                     data-index="4"></button>
                 <button class="slider-dot w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300 cursor-pointer"
                     data-index="5"></button>
+                <button class="slider-dot w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300 cursor-pointer"
+                    data-index="6"></button>
             </div>
 
         </div>
