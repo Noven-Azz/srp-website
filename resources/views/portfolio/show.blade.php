@@ -75,7 +75,7 @@
     <!-- END: Project Hero Section -->
 
     <!-- BEGIN: Feature Image Slider -->
-    <section id="project-slider-section" class="max-w-[1280px] mx-auto mb-20 px-6 md:px-16 opacity-0 transform">
+    <section id="project-slider-section" class="max-w-[1280px] mx-auto mb-0 px-6 md:px-16 opacity-0 transform">
         <div id="project-slider"
             class="w-full relative group rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-surface-muted"
             style="aspect-ratio: 16 / 9;">
@@ -126,11 +126,12 @@
     <!-- END: Feature Image Slider -->
 
     <!-- BEGIN: Detailed Content Section -->
-    <section id="project-details-section" class="bg-surface-muted border-y border-border-subtle py-20">
-        <div class="max-w-3xl mx-auto px-gutter">
+    <section id="project-details-section" class="bg-surface-muted border-y border-border-subtle py-12 md:py-20">
+        <div class="max-w-3xl mx-auto px-6 md:px-8">
             <div id="details-content-wrapper"
-                class="space-y-12 text-on-surface-variant text-base md:text-lg leading-relaxed opacity-0 transform">
+                class="space-y-8 md:space-y-12 text-on-surface-variant text-base md:text-lg leading-relaxed opacity-0 transform">
 
+                <!-- Paragraph Overview -->
                 <p class="detail-block">
                     Sistem saklar pintar berbasis jaringan ini dikembangkan untuk menjawab kebutuhan efisiensi energi pada
                     industri perhotelan. Setiap panel saklar terhubung ke pusat kontrol daya yang memungkinkan penghematan
@@ -139,46 +140,49 @@
 
                 <!-- Key Features -->
                 <div class="detail-block">
-                    <h3 class="text-2xl font-bold text-on-surface mb-6">Fitur Utama System:</h3>
-                    <ol class="list-decimal list-outside pl-5 space-y-4">
-                        <li><strong class="text-on-surface font-semibold">Smart Keycard Slot:</strong> Mengaktifkan sistem
-                            kelistrikan utama secara otomatis saat kartu akses dimasukkan.</li>
-                        <li><strong class="text-on-surface font-semibold">Touch Panel Capacitive:</strong> Panel saklar
-                            sentuh modern dengan lampu indikator LED malam hari.</li>
-                        <li><strong class="text-on-surface font-semibold">Master Off Control:</strong> Mematikan seluruh
-                            pencahayaan kamar dengan satu sentuhan di samping tempat tidur.</li>
-                        <li><strong class="text-on-surface font-semibold">Integrasi Room Management (RMS):</strong>
-                            Menghubungkan status kamar (Do Not Disturb / Make Up Room) langsung ke resepsionis.</li>
-                        <li><strong class="text-on-surface font-semibold">Desain Modular & Tahan Lama:</strong> Menggunakan
-                            material standar industri yang tahan gores dan api.</li>
+                    <h3 class="text-xl md:text-2xl font-bold text-on-surface mb-4 md:mb-6">Fitur Utama System:</h3>
+                    <ol class="list-decimal list-inside sm:list-outside sm:pl-5 space-y-3 md:space-y-4">
+                        <li class="pl-1"><strong class="text-on-surface font-semibold">Smart Keycard Slot:</strong>
+                            Mengaktifkan sistem kelistrikan utama secara otomatis saat kartu akses dimasukkan.</li>
+                        <li class="pl-1"><strong class="text-on-surface font-semibold">Touch Panel Capacitive:</strong>
+                            Panel saklar sentuh modern dengan lampu indikator LED malam hari.</li>
+                        <li class="pl-1"><strong class="text-on-surface font-semibold">Master Off Control:</strong>
+                            Mematikan seluruh pencahayaan kamar dengan satu sentuhan di samping tempat tidur.</li>
+                        <li class="pl-1"><strong class="text-on-surface font-semibold">Integrasi Room Management
+                                (RMS):</strong> Menghubungkan status kamar (Do Not Disturb / Make Up Room) langsung ke
+                            resepsionis.</li>
+                        <li class="pl-1"><strong class="text-on-surface font-semibold">Desain Modular & Tahan
+                                Lama:</strong> Menggunakan material standar industri yang tahan gores dan api.</li>
                     </ol>
                 </div>
 
                 <!-- Technologies Used -->
                 <div class="detail-block">
-                    <h3 class="text-2xl font-bold text-on-surface mb-6">Teknologi & Komponen:</h3>
-                    <ul class="list-disc list-outside pl-5 space-y-2">
-                        <li>Hardware Controller - RS485 Modbus Protocol</li>
-                        <li>Microcontroller Unit (MCU) - Custom Industrial Grade Circuit</li>
-                        <li>Front-End Interface - Custom Toughened Glass Touch Switch</li>
-                        <li>Software Monitoring - Web-based Centralized Dashboard</li>
+                    <h3 class="text-xl md:text-2xl font-bold text-on-surface mb-4 md:mb-6">Teknologi & Komponen:</h3>
+                    <ul class="list-disc list-inside sm:list-outside sm:pl-5 space-y-2">
+                        <li class="pl-1">Hardware Controller - RS485 Modbus Protocol</li>
+                        <li class="pl-1">Microcontroller Unit (MCU) - Custom Industrial Grade Circuit</li>
+                        <li class="pl-1">Front-End Interface - Custom Toughened Glass Touch Switch</li>
+                        <li class="pl-1">Software Monitoring - Web-based Centralized Dashboard</li>
                     </ul>
                 </div>
 
                 <!-- Deliverables & Impact -->
                 <div class="detail-block">
-                    <h3 class="text-2xl font-bold text-on-surface mb-6">Hasil & Dampak Proyek:</h3>
-                    <ul class="list-disc list-outside pl-5 space-y-2">
-                        <li>Efisiensi penggunaan energi listrik hingga 25% pada area kamar.</li>
-                        <li>Peningkatan pengalaman kenyamanan tamu melalui kontrol pencahayaan yang intuitif.</li>
-                        <li>Kemudahan perawatan berkala bagi tim teknisi hotel berkat sistem indikator terpusat.</li>
+                    <h3 class="text-xl md:text-2xl font-bold text-on-surface mb-4 md:mb-6">Hasil & Dampak Proyek:</h3>
+                    <ul class="list-disc list-inside sm:list-outside sm:pl-5 space-y-2">
+                        <li class="pl-1">Efisiensi penggunaan energi listrik hingga 25% pada area kamar.</li>
+                        <li class="pl-1">Peningkatan pengalaman kenyamanan tamu melalui kontrol pencahayaan yang intuitif.
+                        </li>
+                        <li class="pl-1">Kemudahan perawatan berkala bagi tim teknisi hotel berkat sistem indikator
+                            terpusat.</li>
                     </ul>
                 </div>
 
                 <!-- Notes Footer -->
-                <div class="detail-block pt-8 border-t border-border-subtle text-sm text-outline">
+                <div class="detail-block pt-6 md:pt-8 border-t border-border-subtle text-xs md:text-sm text-outline">
                     <h4 class="font-bold text-on-surface mb-2">Catatan Proyek:</h4>
-                    <p class="mb-2">
+                    <p class="mb-2 leading-normal md:leading-relaxed">
                         Pengembangan fokus pada keandalan operasional jangka panjang dan kemudahan integrasi dengan
                         arsitektur jaringan kelistrikan eksisting hotel tanpa perlu merombak instalasi utama secara masif.
                     </p>
