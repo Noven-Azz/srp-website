@@ -99,15 +99,15 @@
                 </div>
             </div>
 
-            <!-- Navigation Arrow: Previous -->
+            <!-- Navigation Arrow: Previous (Selalu Tampak) -->
             <button id="slider-prev"
-                class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-black cursor-pointer">
+                class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-gray-500 text-white flex items-center justify-center backdrop-blur-sm opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer z-10">
                 <span class="material-symbols-outlined text-xl">chevron_left</span>
             </button>
 
-            <!-- Navigation Arrow: Next -->
+            <!-- Navigation Arrow: Next (Selalu Tampak) -->
             <button id="slider-next"
-                class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-black cursor-pointer">
+                class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-gray-500 text-white flex items-center justify-center backdrop-blur-sm opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer z-10">
                 <span class="material-symbols-outlined text-xl">chevron_right</span>
             </button>
 
@@ -149,10 +149,11 @@
                         <li class="pl-1"><strong class="text-on-surface font-semibold">Master Off Control:</strong>
                             Mematikan seluruh pencahayaan kamar dengan satu sentuhan di samping tempat tidur.</li>
                         <li class="pl-1"><strong class="text-on-surface font-semibold">Integrasi Room Management
-                                (RMS):</strong> Menghubungkan status kamar (Do Not Disturb / Make Up Room) langsung ke
-                            resepsionis.</li>
+                                (RMS):</strong>
+                            Menghubungkan status kamar (Do Not Disturb / Make Up Room) langsung ke resepsionis.</li>
                         <li class="pl-1"><strong class="text-on-surface font-semibold">Desain Modular & Tahan
-                                Lama:</strong> Menggunakan material standar industri yang tahan gores dan api.</li>
+                                Lama:</strong>
+                            Menggunakan material standar industri yang tahan gores dan api.</li>
                     </ol>
                 </div>
 
@@ -279,7 +280,8 @@
     <!-- SCRIPT: SLIDER LOGIC & MOTION ONE ANIMATIONS -->
     <script>
         function initProjectDetailMotion() {
-            // 1. Interactive Slider Logic
+            // 1. Interactive Slider Logic & Auto-Slide
+            const sliderContainer = document.getElementById('project-slider');
             const track = document.getElementById('slider-track');
             const prevBtn = document.getElementById('slider-prev');
             const nextBtn = document.getElementById('slider-next');
@@ -288,6 +290,7 @@
             if (track && dots.length > 0) {
                 const totalSlides = dots.length;
                 let currentIndex = 0;
+                let slideInterval = null;
 
                 function updateSlider(index) {
                     currentIndex = index;
@@ -304,26 +307,67 @@
                     });
                 }
 
+                function nextSlide() {
+                    const nextIndex = (currentIndex + 1) % totalSlides;
+                    updateSlider(nextIndex);
+                }
+
+                function prevSlide() {
+                    const prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                    updateSlider(prevIndex);
+                }
+
+                function startAutoSlide() {
+                    if (!slideInterval) {
+                        slideInterval = setInterval(nextSlide, 2000);
+                    }
+                }
+
+                function stopAutoSlide() {
+                    if (slideInterval) {
+                        clearInterval(slideInterval);
+                        slideInterval = null;
+                    }
+                }
+
+                // Inisialisasi posisi & tampilan dots secara langsung saat halaman pertama dimuat
+                updateSlider(0);
+
+                // Event Listener Tombol Navigasi
                 if (nextBtn) {
                     nextBtn.addEventListener('click', () => {
-                        const nextIndex = (currentIndex + 1) % totalSlides;
-                        updateSlider(nextIndex);
+                        nextSlide();
+                        stopAutoSlide();
+                        startAutoSlide();
                     });
                 }
 
                 if (prevBtn) {
                     prevBtn.addEventListener('click', () => {
-                        const prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                        updateSlider(prevIndex);
+                        prevSlide();
+                        stopAutoSlide();
+                        startAutoSlide();
                     });
                 }
 
+                // Event Listener Dots
                 dots.forEach(dot => {
                     dot.addEventListener('click', () => {
                         const index = parseInt(dot.getAttribute('data-index'));
                         updateSlider(index);
+                        stopAutoSlide();
+                        startAutoSlide();
                     });
                 });
+
+                // Pause Auto-Slide saat mouse hover di atas gambar
+                if (sliderContainer) {
+                    sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+                    sliderContainer.addEventListener('mouseleave', startAutoSlide);
+                }
+
+                // Jalankan Timer
+                startAutoSlide();
             }
 
             // 2. Motion One Animations

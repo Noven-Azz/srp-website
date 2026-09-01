@@ -1,10 +1,13 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-    purge: [
+    // 1. Ganti 'purge' menjadi 'content'
+    content: [
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
     ],
-    darkMode: false,
+    // 2. Hapus 'mode: "jit"' karena JIT sudah aktif secara default di v3
+    // 3. Hapus 'darkMode: false' (atau ganti 'media' / 'class' jika memakai dark mode)
     theme: {
         extend: {
             fontFamily: {
@@ -17,6 +20,7 @@ module.exports = {
                 "text-dark": "#333333",
                 "accent-cta": "#f5e62b",
                 border: "#e0e3e8",
+                "bg-[#f5f6f8]": "#f5f6f8",
                 "bg-light": "#f5f6f8",
                 "yellow-srp": "#f5e62b",
                 "blue-srp": "#1f6fa8",
@@ -29,12 +33,6 @@ module.exports = {
             },
         },
     },
-    // PERHATIKAN BAGIAN VARIANTS INI (Mengaktifkan group-hover untuk scale & transform)
-    variants: {
-        extend: {
-            scale: ["group-hover"],
-            transform: ["group-hover"],
-        },
-    },
+    // 4. Hapus blok 'variants' karena semua varian (group-hover, hover, focus, dll) sudah aktif otomatis di v3
     plugins: [require("@tailwindcss/aspect-ratio")],
 };

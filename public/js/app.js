@@ -1,113 +1,33 @@
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
-/******/ })
-/************************************************************************/
-/******/ ({
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/@motionone/animation/dist/Animation.es.js":
 /*!****************************************************************!*\
   !*** ./node_modules/@motionone/animation/dist/Animation.es.js ***!
   \****************************************************************/
-/*! exports provided: Animation */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Animation", function() { return Animation; });
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-/* harmony import */ var _utils_easing_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/easing.es.js */ "./node_modules/@motionone/animation/dist/utils/easing.es.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Animation: () => (/* binding */ Animation)
+/* harmony export */ });
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/defaults.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/noop.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/is-easing-generator.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/is-easing-list.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/interpolate.es.js");
+/* harmony import */ var _utils_easing_es_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/easing.es.js */ "./node_modules/@motionone/animation/dist/utils/easing.es.js");
 
 
 
 class Animation {
-    constructor(output, keyframes = [0, 1], { easing, duration: initialDuration = _motionone_utils__WEBPACK_IMPORTED_MODULE_0__["defaults"].duration, delay = _motionone_utils__WEBPACK_IMPORTED_MODULE_0__["defaults"].delay, endDelay = _motionone_utils__WEBPACK_IMPORTED_MODULE_0__["defaults"].endDelay, repeat = _motionone_utils__WEBPACK_IMPORTED_MODULE_0__["defaults"].repeat, offset, direction = "normal", autoplay = true, } = {}) {
+    constructor(output, keyframes = [0, 1], { easing, duration: initialDuration = _motionone_utils__WEBPACK_IMPORTED_MODULE_0__.defaults.duration, delay = _motionone_utils__WEBPACK_IMPORTED_MODULE_0__.defaults.delay, endDelay = _motionone_utils__WEBPACK_IMPORTED_MODULE_0__.defaults.endDelay, repeat = _motionone_utils__WEBPACK_IMPORTED_MODULE_0__.defaults.repeat, offset, direction = "normal", autoplay = true, } = {}) {
         this.startTime = null;
         this.rate = 1;
         this.t = 0;
         this.cancelTimestamp = null;
-        this.easing = _motionone_utils__WEBPACK_IMPORTED_MODULE_0__["noopReturn"];
+        this.easing = _motionone_utils__WEBPACK_IMPORTED_MODULE_1__.noopReturn;
         this.duration = 0;
         this.totalDuration = 0;
         this.repeat = 0;
@@ -116,17 +36,17 @@ class Animation {
             this.resolve = resolve;
             this.reject = reject;
         });
-        easing = easing || _motionone_utils__WEBPACK_IMPORTED_MODULE_0__["defaults"].easing;
-        if (Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["isEasingGenerator"])(easing)) {
+        easing = easing || _motionone_utils__WEBPACK_IMPORTED_MODULE_0__.defaults.easing;
+        if ((0,_motionone_utils__WEBPACK_IMPORTED_MODULE_2__.isEasingGenerator)(easing)) {
             const custom = easing.createAnimation(keyframes);
             easing = custom.easing;
             keyframes = custom.keyframes || keyframes;
             initialDuration = custom.duration || initialDuration;
         }
         this.repeat = repeat;
-        this.easing = Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["isEasingList"])(easing) ? _motionone_utils__WEBPACK_IMPORTED_MODULE_0__["noopReturn"] : Object(_utils_easing_es_js__WEBPACK_IMPORTED_MODULE_1__["getEasingFunction"])(easing);
+        this.easing = (0,_motionone_utils__WEBPACK_IMPORTED_MODULE_3__.isEasingList)(easing) ? _motionone_utils__WEBPACK_IMPORTED_MODULE_1__.noopReturn : (0,_utils_easing_es_js__WEBPACK_IMPORTED_MODULE_4__.getEasingFunction)(easing);
         this.updateDuration(initialDuration);
-        const interpolate$1 = Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["interpolate"])(keyframes, offset, Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["isEasingList"])(easing) ? easing.map(_utils_easing_es_js__WEBPACK_IMPORTED_MODULE_1__["getEasingFunction"]) : _motionone_utils__WEBPACK_IMPORTED_MODULE_0__["noopReturn"]);
+        const interpolate$1 = (0,_motionone_utils__WEBPACK_IMPORTED_MODULE_5__.interpolate)(keyframes, offset, (0,_motionone_utils__WEBPACK_IMPORTED_MODULE_3__.isEasingList)(easing) ? easing.map(_utils_easing_es_js__WEBPACK_IMPORTED_MODULE_4__.getEasingFunction) : _motionone_utils__WEBPACK_IMPORTED_MODULE_1__.noopReturn);
         this.tick = (timestamp) => {
             var _a;
             // TODO: Temporary fix for OptionsResolver typing
@@ -265,56 +185,39 @@ class Animation {
 
 /***/ }),
 
-/***/ "./node_modules/@motionone/animation/dist/index.es.js":
-/*!************************************************************!*\
-  !*** ./node_modules/@motionone/animation/dist/index.es.js ***!
-  \************************************************************/
-/*! exports provided: Animation, getEasingFunction */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Animation_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Animation.es.js */ "./node_modules/@motionone/animation/dist/Animation.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Animation", function() { return _Animation_es_js__WEBPACK_IMPORTED_MODULE_0__["Animation"]; });
-
-/* harmony import */ var _utils_easing_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/easing.es.js */ "./node_modules/@motionone/animation/dist/utils/easing.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getEasingFunction", function() { return _utils_easing_es_js__WEBPACK_IMPORTED_MODULE_1__["getEasingFunction"]; });
-
-
-
-
-
-/***/ }),
-
 /***/ "./node_modules/@motionone/animation/dist/utils/easing.es.js":
 /*!*******************************************************************!*\
   !*** ./node_modules/@motionone/animation/dist/utils/easing.es.js ***!
   \*******************************************************************/
-/*! exports provided: getEasingFunction */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getEasingFunction", function() { return getEasingFunction; });
-/* harmony import */ var _motionone_easing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/easing */ "./node_modules/@motionone/easing/dist/index.es.js");
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getEasingFunction: () => (/* binding */ getEasingFunction)
+/* harmony export */ });
+/* harmony import */ var _motionone_easing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/easing */ "./node_modules/@motionone/easing/dist/cubic-bezier.es.js");
+/* harmony import */ var _motionone_easing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @motionone/easing */ "./node_modules/@motionone/easing/dist/steps.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/is-function.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/is-cubic-bezier.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/noop.es.js");
 
 
 
 const namedEasings = {
-    ease: Object(_motionone_easing__WEBPACK_IMPORTED_MODULE_0__["cubicBezier"])(0.25, 0.1, 0.25, 1.0),
-    "ease-in": Object(_motionone_easing__WEBPACK_IMPORTED_MODULE_0__["cubicBezier"])(0.42, 0.0, 1.0, 1.0),
-    "ease-in-out": Object(_motionone_easing__WEBPACK_IMPORTED_MODULE_0__["cubicBezier"])(0.42, 0.0, 0.58, 1.0),
-    "ease-out": Object(_motionone_easing__WEBPACK_IMPORTED_MODULE_0__["cubicBezier"])(0.0, 0.0, 0.58, 1.0),
+    ease: (0,_motionone_easing__WEBPACK_IMPORTED_MODULE_0__.cubicBezier)(0.25, 0.1, 0.25, 1.0),
+    "ease-in": (0,_motionone_easing__WEBPACK_IMPORTED_MODULE_0__.cubicBezier)(0.42, 0.0, 1.0, 1.0),
+    "ease-in-out": (0,_motionone_easing__WEBPACK_IMPORTED_MODULE_0__.cubicBezier)(0.42, 0.0, 0.58, 1.0),
+    "ease-out": (0,_motionone_easing__WEBPACK_IMPORTED_MODULE_0__.cubicBezier)(0.0, 0.0, 0.58, 1.0),
 };
 const functionArgsRegex = /\((.*?)\)/;
 function getEasingFunction(definition) {
     // If already an easing function, return
-    if (Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_1__["isFunction"])(definition))
+    if ((0,_motionone_utils__WEBPACK_IMPORTED_MODULE_1__.isFunction)(definition))
         return definition;
     // If an easing curve definition, return bezier function
-    if (Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_1__["isCubicBezier"])(definition))
-        return Object(_motionone_easing__WEBPACK_IMPORTED_MODULE_0__["cubicBezier"])(...definition);
+    if ((0,_motionone_utils__WEBPACK_IMPORTED_MODULE_2__.isCubicBezier)(definition))
+        return (0,_motionone_easing__WEBPACK_IMPORTED_MODULE_0__.cubicBezier)(...definition);
     // If we have a predefined easing function, return
     const namedEasing = namedEasings[definition];
     if (namedEasing)
@@ -324,10 +227,10 @@ function getEasingFunction(definition) {
         const args = functionArgsRegex.exec(definition);
         if (args) {
             const argsArray = args[1].split(",");
-            return Object(_motionone_easing__WEBPACK_IMPORTED_MODULE_0__["steps"])(parseFloat(argsArray[0]), argsArray[1].trim());
+            return (0,_motionone_easing__WEBPACK_IMPORTED_MODULE_3__.steps)(parseFloat(argsArray[0]), argsArray[1].trim());
         }
     }
-    return _motionone_utils__WEBPACK_IMPORTED_MODULE_1__["noopReturn"];
+    return _motionone_utils__WEBPACK_IMPORTED_MODULE_4__.noopReturn;
 }
 
 
@@ -339,23 +242,30 @@ function getEasingFunction(definition) {
 /*!**********************************************************************!*\
   !*** ./node_modules/@motionone/dom/dist/animate/animate-style.es.js ***!
   \**********************************************************************/
-/*! exports provided: animateStyle */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "animateStyle", function() { return animateStyle; });
-/* harmony import */ var _data_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data.es.js */ "./node_modules/@motionone/dom/dist/animate/data.es.js");
-/* harmony import */ var _utils_css_var_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/css-var.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/css-var.es.js");
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-/* harmony import */ var _utils_transforms_es_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/transforms.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/transforms.es.js");
-/* harmony import */ var _utils_easing_es_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/easing.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/easing.es.js");
-/* harmony import */ var _utils_feature_detection_es_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/feature-detection.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/feature-detection.es.js");
-/* harmony import */ var _utils_keyframes_es_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./utils/keyframes.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/keyframes.es.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   animateStyle: () => (/* binding */ animateStyle)
+/* harmony export */ });
+/* harmony import */ var _data_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data.es.js */ "./node_modules/@motionone/dom/dist/animate/data.es.js");
+/* harmony import */ var _utils_css_var_es_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./utils/css-var.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/css-var.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/defaults.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/is-easing-generator.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/is-function.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/is-easing-list.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/is-number.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/time.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/noop.es.js");
+/* harmony import */ var _utils_transforms_es_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/transforms.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/transforms.es.js");
+/* harmony import */ var _utils_easing_es_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./utils/easing.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/easing.es.js");
+/* harmony import */ var _utils_feature_detection_es_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/feature-detection.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/feature-detection.es.js");
+/* harmony import */ var _utils_keyframes_es_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./utils/keyframes.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/keyframes.es.js");
 /* harmony import */ var _style_es_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./style.es.js */ "./node_modules/@motionone/dom/dist/animate/style.es.js");
-/* harmony import */ var _utils_get_style_name_es_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./utils/get-style-name.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/get-style-name.es.js");
-/* harmony import */ var _utils_stop_animation_es_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./utils/stop-animation.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/stop-animation.es.js");
-/* harmony import */ var _utils_get_unit_es_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./utils/get-unit.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/get-unit.es.js");
+/* harmony import */ var _utils_get_style_name_es_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/get-style-name.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/get-style-name.es.js");
+/* harmony import */ var _utils_stop_animation_es_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/stop-animation.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/stop-animation.es.js");
+/* harmony import */ var _utils_get_unit_es_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./utils/get-unit.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/get-unit.es.js");
 
 
 
@@ -375,45 +285,45 @@ function animateStyle(element, key, keyframesDefinition, options = {}, Animation
     const record = getDevToolsRecord();
     const isRecording = options.record !== false && record;
     let animation;
-    let { duration = _motionone_utils__WEBPACK_IMPORTED_MODULE_2__["defaults"].duration, delay = _motionone_utils__WEBPACK_IMPORTED_MODULE_2__["defaults"].delay, endDelay = _motionone_utils__WEBPACK_IMPORTED_MODULE_2__["defaults"].endDelay, repeat = _motionone_utils__WEBPACK_IMPORTED_MODULE_2__["defaults"].repeat, easing = _motionone_utils__WEBPACK_IMPORTED_MODULE_2__["defaults"].easing, persist = false, direction, offset, allowWebkitAcceleration = false, autoplay = true, } = options;
-    const data = Object(_data_es_js__WEBPACK_IMPORTED_MODULE_0__["getAnimationData"])(element);
-    const valueIsTransform = Object(_utils_transforms_es_js__WEBPACK_IMPORTED_MODULE_3__["isTransform"])(key);
-    let canAnimateNatively = _utils_feature_detection_es_js__WEBPACK_IMPORTED_MODULE_5__["supports"].waapi();
+    let { duration = _motionone_utils__WEBPACK_IMPORTED_MODULE_0__.defaults.duration, delay = _motionone_utils__WEBPACK_IMPORTED_MODULE_0__.defaults.delay, endDelay = _motionone_utils__WEBPACK_IMPORTED_MODULE_0__.defaults.endDelay, repeat = _motionone_utils__WEBPACK_IMPORTED_MODULE_0__.defaults.repeat, easing = _motionone_utils__WEBPACK_IMPORTED_MODULE_0__.defaults.easing, persist = false, direction, offset, allowWebkitAcceleration = false, autoplay = true, } = options;
+    const data = (0,_data_es_js__WEBPACK_IMPORTED_MODULE_1__.getAnimationData)(element);
+    const valueIsTransform = (0,_utils_transforms_es_js__WEBPACK_IMPORTED_MODULE_2__.isTransform)(key);
+    let canAnimateNatively = _utils_feature_detection_es_js__WEBPACK_IMPORTED_MODULE_3__.supports.waapi();
     /**
      * If this is an individual transform, we need to map its
      * key to a CSS variable and update the element's transform style
      */
-    valueIsTransform && Object(_utils_transforms_es_js__WEBPACK_IMPORTED_MODULE_3__["addTransformToElement"])(element, key);
-    const name = Object(_utils_get_style_name_es_js__WEBPACK_IMPORTED_MODULE_8__["getStyleName"])(key);
-    const motionValue = Object(_data_es_js__WEBPACK_IMPORTED_MODULE_0__["getMotionValue"])(data.values, name);
+    valueIsTransform && (0,_utils_transforms_es_js__WEBPACK_IMPORTED_MODULE_2__.addTransformToElement)(element, key);
+    const name = (0,_utils_get_style_name_es_js__WEBPACK_IMPORTED_MODULE_4__.getStyleName)(key);
+    const motionValue = (0,_data_es_js__WEBPACK_IMPORTED_MODULE_1__.getMotionValue)(data.values, name);
     /**
      * Get definition of value, this will be used to convert numerical
      * keyframes into the default value type.
      */
-    const definition = _utils_transforms_es_js__WEBPACK_IMPORTED_MODULE_3__["transformDefinitions"].get(name);
+    const definition = _utils_transforms_es_js__WEBPACK_IMPORTED_MODULE_2__.transformDefinitions.get(name);
     /**
      * Stop the current animation, if any. Because this will trigger
      * commitStyles (DOM writes) and we might later trigger DOM reads,
      * this is fired now and we return a factory function to create
      * the actual animation that can get called in batch,
      */
-    Object(_utils_stop_animation_es_js__WEBPACK_IMPORTED_MODULE_9__["stopAnimation"])(motionValue.animation, !(Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_2__["isEasingGenerator"])(easing) && motionValue.generator) &&
+    (0,_utils_stop_animation_es_js__WEBPACK_IMPORTED_MODULE_5__.stopAnimation)(motionValue.animation, !((0,_motionone_utils__WEBPACK_IMPORTED_MODULE_6__.isEasingGenerator)(easing) && motionValue.generator) &&
         options.record !== false);
     /**
      * Batchable factory function containing all DOM reads.
      */
     return () => {
-        const readInitialValue = () => { var _a, _b; return (_b = (_a = _style_es_js__WEBPACK_IMPORTED_MODULE_7__["style"].get(element, name)) !== null && _a !== void 0 ? _a : definition === null || definition === void 0 ? void 0 : definition.initialValue) !== null && _b !== void 0 ? _b : 0; };
+        const readInitialValue = () => { var _a, _b; return (_b = (_a = _style_es_js__WEBPACK_IMPORTED_MODULE_7__.style.get(element, name)) !== null && _a !== void 0 ? _a : definition === null || definition === void 0 ? void 0 : definition.initialValue) !== null && _b !== void 0 ? _b : 0; };
         /**
          * Replace null values with the previous keyframe value, or read
          * it from the DOM if it's the first keyframe.
          */
-        let keyframes = Object(_utils_keyframes_es_js__WEBPACK_IMPORTED_MODULE_6__["hydrateKeyframes"])(Object(_utils_keyframes_es_js__WEBPACK_IMPORTED_MODULE_6__["keyframesList"])(keyframesDefinition), readInitialValue);
+        let keyframes = (0,_utils_keyframes_es_js__WEBPACK_IMPORTED_MODULE_8__.hydrateKeyframes)((0,_utils_keyframes_es_js__WEBPACK_IMPORTED_MODULE_8__.keyframesList)(keyframesDefinition), readInitialValue);
         /**
          * Detect unit type of keyframes.
          */
-        const toUnit = Object(_utils_get_unit_es_js__WEBPACK_IMPORTED_MODULE_10__["getUnitConverter"])(keyframes, definition);
-        if (Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_2__["isEasingGenerator"])(easing)) {
+        const toUnit = (0,_utils_get_unit_es_js__WEBPACK_IMPORTED_MODULE_9__.getUnitConverter)(keyframes, definition);
+        if ((0,_motionone_utils__WEBPACK_IMPORTED_MODULE_6__.isEasingGenerator)(easing)) {
             const custom = easing.createAnimation(keyframes, key !== "opacity", readInitialValue, name, motionValue);
             easing = custom.easing;
             keyframes = custom.keyframes || keyframes;
@@ -424,9 +334,9 @@ function animateStyle(element, key, keyframesDefinition, options = {}, Animation
          * before it can be animated natively. We also set it with setProperty
          * rather than directly onto the element.style object.
          */
-        if (Object(_utils_css_var_es_js__WEBPACK_IMPORTED_MODULE_1__["isCssVar"])(name)) {
-            if (_utils_feature_detection_es_js__WEBPACK_IMPORTED_MODULE_5__["supports"].cssRegisterProperty()) {
-                Object(_utils_css_var_es_js__WEBPACK_IMPORTED_MODULE_1__["registerCssVariable"])(name);
+        if ((0,_utils_css_var_es_js__WEBPACK_IMPORTED_MODULE_10__.isCssVar)(name)) {
+            if (_utils_feature_detection_es_js__WEBPACK_IMPORTED_MODULE_3__.supports.cssRegisterProperty()) {
+                (0,_utils_css_var_es_js__WEBPACK_IMPORTED_MODULE_10__.registerCssVariable)(name);
             }
             else {
                 canAnimateNatively = false;
@@ -439,8 +349,8 @@ function animateStyle(element, key, keyframesDefinition, options = {}, Animation
          * by falling back to the animation polyfill.
          */
         if (valueIsTransform &&
-            !_utils_feature_detection_es_js__WEBPACK_IMPORTED_MODULE_5__["supports"].linearEasing() &&
-            (Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_2__["isFunction"])(easing) || (Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_2__["isEasingList"])(easing) && easing.some(_motionone_utils__WEBPACK_IMPORTED_MODULE_2__["isFunction"])))) {
+            !_utils_feature_detection_es_js__WEBPACK_IMPORTED_MODULE_3__.supports.linearEasing() &&
+            ((0,_motionone_utils__WEBPACK_IMPORTED_MODULE_11__.isFunction)(easing) || ((0,_motionone_utils__WEBPACK_IMPORTED_MODULE_12__.isEasingList)(easing) && easing.some(_motionone_utils__WEBPACK_IMPORTED_MODULE_11__.isFunction)))) {
             canAnimateNatively = false;
         }
         /**
@@ -452,22 +362,22 @@ function animateStyle(element, key, keyframesDefinition, options = {}, Animation
              * transforms but it could also support other value types.
              */
             if (definition) {
-                keyframes = keyframes.map((value) => Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_2__["isNumber"])(value) ? definition.toDefaultUnit(value) : value);
+                keyframes = keyframes.map((value) => (0,_motionone_utils__WEBPACK_IMPORTED_MODULE_13__.isNumber)(value) ? definition.toDefaultUnit(value) : value);
             }
             /**
              * If this browser doesn't support partial/implicit keyframes we need to
              * explicitly provide one.
              */
             if (keyframes.length === 1 &&
-                (!_utils_feature_detection_es_js__WEBPACK_IMPORTED_MODULE_5__["supports"].partialKeyframes() || isRecording)) {
+                (!_utils_feature_detection_es_js__WEBPACK_IMPORTED_MODULE_3__.supports.partialKeyframes() || isRecording)) {
                 keyframes.unshift(readInitialValue());
             }
             const animationOptions = {
-                delay: _motionone_utils__WEBPACK_IMPORTED_MODULE_2__["time"].ms(delay),
-                duration: _motionone_utils__WEBPACK_IMPORTED_MODULE_2__["time"].ms(duration),
-                endDelay: _motionone_utils__WEBPACK_IMPORTED_MODULE_2__["time"].ms(endDelay),
-                easing: !Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_2__["isEasingList"])(easing)
-                    ? Object(_utils_easing_es_js__WEBPACK_IMPORTED_MODULE_4__["convertEasing"])(easing, duration)
+                delay: _motionone_utils__WEBPACK_IMPORTED_MODULE_14__.time.ms(delay),
+                duration: _motionone_utils__WEBPACK_IMPORTED_MODULE_14__.time.ms(duration),
+                endDelay: _motionone_utils__WEBPACK_IMPORTED_MODULE_14__.time.ms(endDelay),
+                easing: !(0,_motionone_utils__WEBPACK_IMPORTED_MODULE_12__.isEasingList)(easing)
+                    ? (0,_utils_easing_es_js__WEBPACK_IMPORTED_MODULE_15__.convertEasing)(easing, duration)
                     : undefined,
                 direction,
                 iterations: repeat + 1,
@@ -476,8 +386,8 @@ function animateStyle(element, key, keyframesDefinition, options = {}, Animation
             animation = element.animate({
                 [name]: keyframes,
                 offset,
-                easing: Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_2__["isEasingList"])(easing)
-                    ? easing.map((thisEasing) => Object(_utils_easing_es_js__WEBPACK_IMPORTED_MODULE_4__["convertEasing"])(thisEasing, duration))
+                easing: (0,_motionone_utils__WEBPACK_IMPORTED_MODULE_12__.isEasingList)(easing)
+                    ? easing.map((thisEasing) => (0,_utils_easing_es_js__WEBPACK_IMPORTED_MODULE_15__.convertEasing)(thisEasing, duration))
                     : undefined,
             }, animationOptions);
             /**
@@ -495,11 +405,11 @@ function animateStyle(element, key, keyframesDefinition, options = {}, Animation
                 if (persist)
                     return;
                 // Apply styles to target
-                _style_es_js__WEBPACK_IMPORTED_MODULE_7__["style"].set(element, name, target);
+                _style_es_js__WEBPACK_IMPORTED_MODULE_7__.style.set(element, name, target);
                 // Ensure fill modes don't persist
                 animation.cancel();
             })
-                .catch(_motionone_utils__WEBPACK_IMPORTED_MODULE_2__["noop"]);
+                .catch(_motionone_utils__WEBPACK_IMPORTED_MODULE_16__.noop);
             /**
              * This forces Webkit to run animations on the main thread by exploiting
              * this condition:
@@ -530,13 +440,13 @@ function animateStyle(element, key, keyframesDefinition, options = {}, Animation
                 keyframes.unshift(parseFloat(readInitialValue()));
             }
             animation = new AnimationPolyfill((latest) => {
-                _style_es_js__WEBPACK_IMPORTED_MODULE_7__["style"].set(element, name, toUnit ? toUnit(latest) : latest);
+                _style_es_js__WEBPACK_IMPORTED_MODULE_7__.style.set(element, name, toUnit ? toUnit(latest) : latest);
             }, keyframes, Object.assign(Object.assign({}, options), { duration,
                 easing }));
         }
         else {
             const target = keyframes[keyframes.length - 1];
-            _style_es_js__WEBPACK_IMPORTED_MODULE_7__["style"].set(element, name, definition && Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_2__["isNumber"])(target)
+            _style_es_js__WEBPACK_IMPORTED_MODULE_7__.style.set(element, name, definition && (0,_motionone_utils__WEBPACK_IMPORTED_MODULE_13__.isNumber)(target)
                 ? definition.toDefaultUnit(target)
                 : target);
         }
@@ -565,18 +475,19 @@ function animateStyle(element, key, keyframesDefinition, options = {}, Animation
 /*!***********************************************************************!*\
   !*** ./node_modules/@motionone/dom/dist/animate/create-animate.es.js ***!
   \***********************************************************************/
-/*! exports provided: createAnimate */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createAnimate", function() { return createAnimate; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   createAnimate: () => (/* binding */ createAnimate)
+/* harmony export */ });
 /* harmony import */ var hey_listen__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! hey-listen */ "./node_modules/hey-listen/dist/hey-listen.es.js");
-/* harmony import */ var _animate_style_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./animate-style.es.js */ "./node_modules/@motionone/dom/dist/animate/animate-style.es.js");
+/* harmony import */ var _animate_style_es_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./animate-style.es.js */ "./node_modules/@motionone/dom/dist/animate/animate-style.es.js");
 /* harmony import */ var _utils_options_es_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/options.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/options.es.js");
-/* harmony import */ var _utils_resolve_elements_es_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/resolve-elements.es.js */ "./node_modules/@motionone/dom/dist/utils/resolve-elements.es.js");
-/* harmony import */ var _utils_controls_es_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/controls.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/controls.es.js");
-/* harmony import */ var _utils_stagger_es_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/stagger.es.js */ "./node_modules/@motionone/dom/dist/utils/stagger.es.js");
+/* harmony import */ var _utils_resolve_elements_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/resolve-elements.es.js */ "./node_modules/@motionone/dom/dist/utils/resolve-elements.es.js");
+/* harmony import */ var _utils_controls_es_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/controls.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/controls.es.js");
+/* harmony import */ var _utils_stagger_es_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/stagger.es.js */ "./node_modules/@motionone/dom/dist/utils/stagger.es.js");
 
 
 
@@ -586,10 +497,10 @@ __webpack_require__.r(__webpack_exports__);
 
 function createAnimate(AnimatePolyfill) {
     return function animate(elements, keyframes, options = {}) {
-        elements = Object(_utils_resolve_elements_es_js__WEBPACK_IMPORTED_MODULE_3__["resolveElements"])(elements);
+        elements = (0,_utils_resolve_elements_es_js__WEBPACK_IMPORTED_MODULE_1__.resolveElements)(elements);
         const numElements = elements.length;
-        Object(hey_listen__WEBPACK_IMPORTED_MODULE_0__["invariant"])(Boolean(numElements), "No valid element provided.");
-        Object(hey_listen__WEBPACK_IMPORTED_MODULE_0__["invariant"])(Boolean(keyframes), "No keyframes defined.");
+        (0,hey_listen__WEBPACK_IMPORTED_MODULE_0__.invariant)(Boolean(numElements), "No valid element provided.");
+        (0,hey_listen__WEBPACK_IMPORTED_MODULE_0__.invariant)(Boolean(keyframes), "No keyframes defined.");
         /**
          * Create and start new animations
          */
@@ -597,13 +508,13 @@ function createAnimate(AnimatePolyfill) {
         for (let i = 0; i < numElements; i++) {
             const element = elements[i];
             for (const key in keyframes) {
-                const valueOptions = Object(_utils_options_es_js__WEBPACK_IMPORTED_MODULE_2__["getOptions"])(options, key);
-                valueOptions.delay = Object(_utils_stagger_es_js__WEBPACK_IMPORTED_MODULE_5__["resolveOption"])(valueOptions.delay, i, numElements);
-                const animation = Object(_animate_style_es_js__WEBPACK_IMPORTED_MODULE_1__["animateStyle"])(element, key, keyframes[key], valueOptions, AnimatePolyfill);
+                const valueOptions = (0,_utils_options_es_js__WEBPACK_IMPORTED_MODULE_2__.getOptions)(options, key);
+                valueOptions.delay = (0,_utils_stagger_es_js__WEBPACK_IMPORTED_MODULE_3__.resolveOption)(valueOptions.delay, i, numElements);
+                const animation = (0,_animate_style_es_js__WEBPACK_IMPORTED_MODULE_4__.animateStyle)(element, key, keyframes[key], valueOptions, AnimatePolyfill);
                 animationFactories.push(animation);
             }
         }
-        return Object(_utils_controls_es_js__WEBPACK_IMPORTED_MODULE_4__["withControls"])(animationFactories, options, 
+        return (0,_utils_controls_es_js__WEBPACK_IMPORTED_MODULE_5__.withControls)(animationFactories, options, 
         /**
          * TODO:
          * If easing is set to spring or glide, duration will be dynamically
@@ -626,14 +537,15 @@ function createAnimate(AnimatePolyfill) {
 /*!*************************************************************!*\
   !*** ./node_modules/@motionone/dom/dist/animate/data.es.js ***!
   \*************************************************************/
-/*! exports provided: getAnimationData, getMotionValue */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAnimationData", function() { return getAnimationData; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMotionValue", function() { return getMotionValue; });
-/* harmony import */ var _motionone_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/types */ "./node_modules/@motionone/types/dist/index.es.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getAnimationData: () => (/* binding */ getAnimationData),
+/* harmony export */   getMotionValue: () => (/* binding */ getMotionValue)
+/* harmony export */ });
+/* harmony import */ var _motionone_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/types */ "./node_modules/@motionone/types/dist/MotionValue.es.js");
 
 
 const data = new WeakMap();
@@ -648,7 +560,7 @@ function getAnimationData(element) {
 }
 function getMotionValue(motionValues, name) {
     if (!motionValues.has(name)) {
-        motionValues.set(name, new _motionone_types__WEBPACK_IMPORTED_MODULE_0__["MotionValue"]());
+        motionValues.set(name, new _motionone_types__WEBPACK_IMPORTED_MODULE_0__.MotionValue());
     }
     return motionValues.get(name);
 }
@@ -662,18 +574,19 @@ function getMotionValue(motionValues, name) {
 /*!**************************************************************!*\
   !*** ./node_modules/@motionone/dom/dist/animate/index.es.js ***!
   \**************************************************************/
-/*! exports provided: animate */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "animate", function() { return animate; });
-/* harmony import */ var _motionone_animation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/animation */ "./node_modules/@motionone/animation/dist/index.es.js");
-/* harmony import */ var _create_animate_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./create-animate.es.js */ "./node_modules/@motionone/dom/dist/animate/create-animate.es.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   animate: () => (/* binding */ animate)
+/* harmony export */ });
+/* harmony import */ var _motionone_animation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @motionone/animation */ "./node_modules/@motionone/animation/dist/Animation.es.js");
+/* harmony import */ var _create_animate_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./create-animate.es.js */ "./node_modules/@motionone/dom/dist/animate/create-animate.es.js");
 
 
 
-const animate = Object(_create_animate_es_js__WEBPACK_IMPORTED_MODULE_1__["createAnimate"])(_motionone_animation__WEBPACK_IMPORTED_MODULE_0__["Animation"]);
+const animate = (0,_create_animate_es_js__WEBPACK_IMPORTED_MODULE_0__.createAnimate)(_motionone_animation__WEBPACK_IMPORTED_MODULE_1__.Animation);
 
 
 
@@ -684,14 +597,15 @@ const animate = Object(_create_animate_es_js__WEBPACK_IMPORTED_MODULE_1__["creat
 /*!**************************************************************!*\
   !*** ./node_modules/@motionone/dom/dist/animate/style.es.js ***!
   \**************************************************************/
-/*! exports provided: style */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "style", function() { return style; });
-/* harmony import */ var _utils_css_var_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/css-var.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/css-var.es.js");
-/* harmony import */ var _utils_get_style_name_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/get-style-name.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/get-style-name.es.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   style: () => (/* binding */ style)
+/* harmony export */ });
+/* harmony import */ var _utils_css_var_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/css-var.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/css-var.es.js");
+/* harmony import */ var _utils_get_style_name_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/get-style-name.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/get-style-name.es.js");
 /* harmony import */ var _utils_transforms_es_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/transforms.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/transforms.es.js");
 
 
@@ -699,21 +613,21 @@ __webpack_require__.r(__webpack_exports__);
 
 const style = {
     get: (element, name) => {
-        name = Object(_utils_get_style_name_es_js__WEBPACK_IMPORTED_MODULE_1__["getStyleName"])(name);
-        let value = Object(_utils_css_var_es_js__WEBPACK_IMPORTED_MODULE_0__["isCssVar"])(name)
+        name = (0,_utils_get_style_name_es_js__WEBPACK_IMPORTED_MODULE_0__.getStyleName)(name);
+        let value = (0,_utils_css_var_es_js__WEBPACK_IMPORTED_MODULE_1__.isCssVar)(name)
             ? element.style.getPropertyValue(name)
             : getComputedStyle(element)[name];
         // TODO Decide if value can be 0
         if (!value && value !== 0) {
-            const definition = _utils_transforms_es_js__WEBPACK_IMPORTED_MODULE_2__["transformDefinitions"].get(name);
+            const definition = _utils_transforms_es_js__WEBPACK_IMPORTED_MODULE_2__.transformDefinitions.get(name);
             if (definition)
                 value = definition.initialValue;
         }
         return value;
     },
     set: (element, name, value) => {
-        name = Object(_utils_get_style_name_es_js__WEBPACK_IMPORTED_MODULE_1__["getStyleName"])(name);
-        if (Object(_utils_css_var_es_js__WEBPACK_IMPORTED_MODULE_0__["isCssVar"])(name)) {
+        name = (0,_utils_get_style_name_es_js__WEBPACK_IMPORTED_MODULE_0__.getStyleName)(name);
+        if ((0,_utils_css_var_es_js__WEBPACK_IMPORTED_MODULE_1__.isCssVar)(name)) {
             element.style.setProperty(name, value);
         }
         else {
@@ -731,20 +645,23 @@ const style = {
 /*!***********************************************************************!*\
   !*** ./node_modules/@motionone/dom/dist/animate/utils/controls.es.js ***!
   \***********************************************************************/
-/*! exports provided: controls, withControls */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "controls", function() { return controls; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "withControls", function() { return withControls; });
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-/* harmony import */ var _stop_animation_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./stop-animation.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/stop-animation.es.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   controls: () => (/* binding */ controls),
+/* harmony export */   withControls: () => (/* binding */ withControls)
+/* harmony export */ });
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/defaults.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/time.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/noop.es.js");
+/* harmony import */ var _stop_animation_es_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./stop-animation.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/stop-animation.es.js");
 
 
 
 const createAnimation = (factory) => factory();
-const withControls = (animationFactory, options, duration = _motionone_utils__WEBPACK_IMPORTED_MODULE_0__["defaults"].duration) => {
+const withControls = (animationFactory, options, duration = _motionone_utils__WEBPACK_IMPORTED_MODULE_0__.defaults.duration) => {
     return new Proxy({
         animations: animationFactory.map(createAnimation).filter(Boolean),
         duration,
@@ -764,18 +681,18 @@ const controls = {
             case "duration":
                 return target.duration;
             case "currentTime":
-                return _motionone_utils__WEBPACK_IMPORTED_MODULE_0__["time"].s((activeAnimation === null || activeAnimation === void 0 ? void 0 : activeAnimation[key]) || 0);
+                return _motionone_utils__WEBPACK_IMPORTED_MODULE_1__.time.s((activeAnimation === null || activeAnimation === void 0 ? void 0 : activeAnimation[key]) || 0);
             case "playbackRate":
             case "playState":
                 return activeAnimation === null || activeAnimation === void 0 ? void 0 : activeAnimation[key];
             case "finished":
                 if (!target.finished) {
-                    target.finished = Promise.all(target.animations.map(selectFinished)).catch(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["noop"]);
+                    target.finished = Promise.all(target.animations.map(selectFinished)).catch(_motionone_utils__WEBPACK_IMPORTED_MODULE_2__.noop);
                 }
                 return target.finished;
             case "stop":
                 return () => {
-                    target.animations.forEach((animation) => Object(_stop_animation_es_js__WEBPACK_IMPORTED_MODULE_1__["stopAnimation"])(animation));
+                    target.animations.forEach((animation) => (0,_stop_animation_es_js__WEBPACK_IMPORTED_MODULE_3__.stopAnimation)(animation));
                 };
             case "forEachNative":
                 /**
@@ -795,7 +712,7 @@ const controls = {
     set: (target, key, value) => {
         switch (key) {
             case "currentTime":
-                value = _motionone_utils__WEBPACK_IMPORTED_MODULE_0__["time"].ms(value);
+                value = _motionone_utils__WEBPACK_IMPORTED_MODULE_1__.time.ms(value);
             // Fall-through
             case "playbackRate":
                 for (let i = 0; i < target.animations.length; i++) {
@@ -817,14 +734,15 @@ const selectFinished = (animation) => animation.finished;
 /*!**********************************************************************!*\
   !*** ./node_modules/@motionone/dom/dist/animate/utils/css-var.es.js ***!
   \**********************************************************************/
-/*! exports provided: isCssVar, registerCssVariable, registeredProperties */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isCssVar", function() { return isCssVar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registerCssVariable", function() { return registerCssVariable; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registeredProperties", function() { return registeredProperties; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   isCssVar: () => (/* binding */ isCssVar),
+/* harmony export */   registerCssVariable: () => (/* binding */ registerCssVariable),
+/* harmony export */   registeredProperties: () => (/* binding */ registeredProperties)
+/* harmony export */ });
 /* harmony import */ var _transforms_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./transforms.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/transforms.es.js");
 
 
@@ -835,8 +753,8 @@ function registerCssVariable(name) {
         return;
     registeredProperties.add(name);
     try {
-        const { syntax, initialValue } = _transforms_es_js__WEBPACK_IMPORTED_MODULE_0__["transformDefinitions"].has(name)
-            ? _transforms_es_js__WEBPACK_IMPORTED_MODULE_0__["transformDefinitions"].get(name)
+        const { syntax, initialValue } = _transforms_es_js__WEBPACK_IMPORTED_MODULE_0__.transformDefinitions.has(name)
+            ? _transforms_es_js__WEBPACK_IMPORTED_MODULE_0__.transformDefinitions.get(name)
             : {};
         CSS.registerProperty({
             name,
@@ -857,16 +775,20 @@ function registerCssVariable(name) {
 /*!*********************************************************************!*\
   !*** ./node_modules/@motionone/dom/dist/animate/utils/easing.es.js ***!
   \*********************************************************************/
-/*! exports provided: convertEasing, cubicBezierAsString, generateLinearEasingPoints */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertEasing", function() { return convertEasing; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cubicBezierAsString", function() { return cubicBezierAsString; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateLinearEasingPoints", function() { return generateLinearEasingPoints; });
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-/* harmony import */ var _feature_detection_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./feature-detection.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/feature-detection.es.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   convertEasing: () => (/* binding */ convertEasing),
+/* harmony export */   cubicBezierAsString: () => (/* binding */ cubicBezierAsString),
+/* harmony export */   generateLinearEasingPoints: () => (/* binding */ generateLinearEasingPoints)
+/* harmony export */ });
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/progress.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/is-function.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/defaults.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/is-cubic-bezier.es.js");
+/* harmony import */ var _feature_detection_es_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./feature-detection.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/feature-detection.es.js");
 
 
 
@@ -876,18 +798,18 @@ const generateLinearEasingPoints = (easing, duration) => {
     let points = "";
     const numPoints = Math.round(duration / resolution);
     for (let i = 0; i < numPoints; i++) {
-        points += easing(Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["progress"])(0, numPoints - 1, i)) + ", ";
+        points += easing((0,_motionone_utils__WEBPACK_IMPORTED_MODULE_0__.progress)(0, numPoints - 1, i)) + ", ";
     }
     return points.substring(0, points.length - 2);
 };
 const convertEasing = (easing, duration) => {
-    if (Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["isFunction"])(easing)) {
-        return _feature_detection_es_js__WEBPACK_IMPORTED_MODULE_1__["supports"].linearEasing()
+    if ((0,_motionone_utils__WEBPACK_IMPORTED_MODULE_1__.isFunction)(easing)) {
+        return _feature_detection_es_js__WEBPACK_IMPORTED_MODULE_2__.supports.linearEasing()
             ? `linear(${generateLinearEasingPoints(easing, duration)})`
-            : _motionone_utils__WEBPACK_IMPORTED_MODULE_0__["defaults"].easing;
+            : _motionone_utils__WEBPACK_IMPORTED_MODULE_3__.defaults.easing;
     }
     else {
-        return Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["isCubicBezier"])(easing) ? cubicBezierAsString(easing) : easing;
+        return (0,_motionone_utils__WEBPACK_IMPORTED_MODULE_4__.isCubicBezier)(easing) ? cubicBezierAsString(easing) : easing;
     }
 };
 const cubicBezierAsString = ([a, b, c, d]) => `cubic-bezier(${a}, ${b}, ${c}, ${d})`;
@@ -901,12 +823,13 @@ const cubicBezierAsString = ([a, b, c, d]) => `cubic-bezier(${a}, ${b}, ${c}, ${
 /*!********************************************************************************!*\
   !*** ./node_modules/@motionone/dom/dist/animate/utils/feature-detection.es.js ***!
   \********************************************************************************/
-/*! exports provided: supports */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "supports", function() { return supports; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   supports: () => (/* binding */ supports)
+/* harmony export */ });
 const testAnimation = (keyframes, options) => document.createElement("div").animate(keyframes, options);
 const featureTests = {
     cssRegisterProperty: () => typeof CSS !== "undefined" &&
@@ -952,19 +875,20 @@ for (const key in featureTests) {
 /*!*****************************************************************************!*\
   !*** ./node_modules/@motionone/dom/dist/animate/utils/get-style-name.es.js ***!
   \*****************************************************************************/
-/*! exports provided: getStyleName */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStyleName", function() { return getStyleName; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyleName: () => (/* binding */ getStyleName)
+/* harmony export */ });
 /* harmony import */ var _transforms_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./transforms.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/transforms.es.js");
 
 
 function getStyleName(key) {
-    if (_transforms_es_js__WEBPACK_IMPORTED_MODULE_0__["transformAlias"][key])
-        key = _transforms_es_js__WEBPACK_IMPORTED_MODULE_0__["transformAlias"][key];
-    return Object(_transforms_es_js__WEBPACK_IMPORTED_MODULE_0__["isTransform"])(key) ? Object(_transforms_es_js__WEBPACK_IMPORTED_MODULE_0__["asTransformCssVar"])(key) : key;
+    if (_transforms_es_js__WEBPACK_IMPORTED_MODULE_0__.transformAlias[key])
+        key = _transforms_es_js__WEBPACK_IMPORTED_MODULE_0__.transformAlias[key];
+    return (0,_transforms_es_js__WEBPACK_IMPORTED_MODULE_0__.isTransform)(key) ? (0,_transforms_es_js__WEBPACK_IMPORTED_MODULE_0__.asTransformCssVar)(key) : key;
 }
 
 
@@ -976,20 +900,22 @@ function getStyleName(key) {
 /*!***********************************************************************!*\
   !*** ./node_modules/@motionone/dom/dist/animate/utils/get-unit.es.js ***!
   \***********************************************************************/
-/*! exports provided: getUnitConverter */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUnitConverter", function() { return getUnitConverter; });
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getUnitConverter: () => (/* binding */ getUnitConverter)
+/* harmony export */ });
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/noop.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/is-string.es.js");
 
 
 function getUnitConverter(keyframes, definition) {
     var _a;
-    let toUnit = (definition === null || definition === void 0 ? void 0 : definition.toDefaultUnit) || _motionone_utils__WEBPACK_IMPORTED_MODULE_0__["noopReturn"];
+    let toUnit = (definition === null || definition === void 0 ? void 0 : definition.toDefaultUnit) || _motionone_utils__WEBPACK_IMPORTED_MODULE_0__.noopReturn;
     const finalKeyframe = keyframes[keyframes.length - 1];
-    if (Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["isString"])(finalKeyframe)) {
+    if ((0,_motionone_utils__WEBPACK_IMPORTED_MODULE_1__.isString)(finalKeyframe)) {
         const unit = ((_a = finalKeyframe.match(/(-?[\d.]+)([a-z%]*)/)) === null || _a === void 0 ? void 0 : _a[2]) || "";
         if (unit)
             toUnit = (value) => value + unit;
@@ -1006,13 +932,14 @@ function getUnitConverter(keyframes, definition) {
 /*!************************************************************************!*\
   !*** ./node_modules/@motionone/dom/dist/animate/utils/keyframes.es.js ***!
   \************************************************************************/
-/*! exports provided: hydrateKeyframes, keyframesList */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hydrateKeyframes", function() { return hydrateKeyframes; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "keyframesList", function() { return keyframesList; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   hydrateKeyframes: () => (/* binding */ hydrateKeyframes),
+/* harmony export */   keyframesList: () => (/* binding */ keyframesList)
+/* harmony export */ });
 function hydrateKeyframes(keyframes, readInitialValue) {
     for (let i = 0; i < keyframes.length; i++) {
         if (keyframes[i] === null) {
@@ -1032,12 +959,13 @@ const keyframesList = (keyframes) => Array.isArray(keyframes) ? keyframes : [key
 /*!**********************************************************************!*\
   !*** ./node_modules/@motionone/dom/dist/animate/utils/options.es.js ***!
   \**********************************************************************/
-/*! exports provided: getOptions */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getOptions", function() { return getOptions; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getOptions: () => (/* binding */ getOptions)
+/* harmony export */ });
 const getOptions = (options, key) => 
 /**
  * TODO: Make test for this
@@ -1055,12 +983,13 @@ options[key] ? Object.assign(Object.assign({}, options), options[key]) : Object.
 /*!*****************************************************************************!*\
   !*** ./node_modules/@motionone/dom/dist/animate/utils/stop-animation.es.js ***!
   \*****************************************************************************/
-/*! exports provided: stopAnimation */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stopAnimation", function() { return stopAnimation; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   stopAnimation: () => (/* binding */ stopAnimation)
+/* harmony export */ });
 function stopAnimation(animation, needsCommit = true) {
     if (!animation || animation.playState === "finished")
         return;
@@ -1082,104 +1011,26 @@ function stopAnimation(animation, needsCommit = true) {
 
 /***/ }),
 
-/***/ "./node_modules/@motionone/dom/dist/animate/utils/style-object.es.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/animate/utils/style-object.es.js ***!
-  \***************************************************************************/
-/*! exports provided: createStyles */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createStyles", function() { return createStyles; });
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-/* harmony import */ var _transforms_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./transforms.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/transforms.es.js");
-
-
-
-function createStyles(keyframes) {
-    const initialKeyframes = {};
-    const transformKeys = [];
-    for (let key in keyframes) {
-        const value = keyframes[key];
-        if (Object(_transforms_es_js__WEBPACK_IMPORTED_MODULE_1__["isTransform"])(key)) {
-            if (_transforms_es_js__WEBPACK_IMPORTED_MODULE_1__["transformAlias"][key])
-                key = _transforms_es_js__WEBPACK_IMPORTED_MODULE_1__["transformAlias"][key];
-            transformKeys.push(key);
-            key = Object(_transforms_es_js__WEBPACK_IMPORTED_MODULE_1__["asTransformCssVar"])(key);
-        }
-        let initialKeyframe = Array.isArray(value) ? value[0] : value;
-        /**
-         * If this is a number and we have a default value type, convert the number
-         * to this type.
-         */
-        const definition = _transforms_es_js__WEBPACK_IMPORTED_MODULE_1__["transformDefinitions"].get(key);
-        if (definition) {
-            initialKeyframe = Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["isNumber"])(value)
-                ? definition.toDefaultUnit(value)
-                : value;
-        }
-        initialKeyframes[key] = initialKeyframe;
-    }
-    if (transformKeys.length) {
-        initialKeyframes.transform = Object(_transforms_es_js__WEBPACK_IMPORTED_MODULE_1__["buildTransformTemplate"])(transformKeys);
-    }
-    return initialKeyframes;
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/animate/utils/style-string.es.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/animate/utils/style-string.es.js ***!
-  \***************************************************************************/
-/*! exports provided: createStyleString */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createStyleString", function() { return createStyleString; });
-/* harmony import */ var _style_object_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style-object.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/style-object.es.js");
-
-
-const camelLetterToPipeLetter = (letter) => `-${letter.toLowerCase()}`;
-const camelToPipeCase = (str) => str.replace(/[A-Z]/g, camelLetterToPipeLetter);
-function createStyleString(target = {}) {
-    const styles = Object(_style_object_es_js__WEBPACK_IMPORTED_MODULE_0__["createStyles"])(target);
-    let style = "";
-    for (const key in styles) {
-        style += key.startsWith("--") ? key : camelToPipeCase(key);
-        style += `: ${styles[key]}; `;
-    }
-    return style;
-}
-
-
-
-
-/***/ }),
-
 /***/ "./node_modules/@motionone/dom/dist/animate/utils/transforms.es.js":
 /*!*************************************************************************!*\
   !*** ./node_modules/@motionone/dom/dist/animate/utils/transforms.es.js ***!
   \*************************************************************************/
-/*! exports provided: addTransformToElement, asTransformCssVar, axes, buildTransformTemplate, compareTransformOrder, isTransform, transformAlias, transformDefinitions */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addTransformToElement", function() { return addTransformToElement; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "asTransformCssVar", function() { return asTransformCssVar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "axes", function() { return axes; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buildTransformTemplate", function() { return buildTransformTemplate; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "compareTransformOrder", function() { return compareTransformOrder; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isTransform", function() { return isTransform; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "transformAlias", function() { return transformAlias; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "transformDefinitions", function() { return transformDefinitions; });
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   addTransformToElement: () => (/* binding */ addTransformToElement),
+/* harmony export */   asTransformCssVar: () => (/* binding */ asTransformCssVar),
+/* harmony export */   axes: () => (/* binding */ axes),
+/* harmony export */   buildTransformTemplate: () => (/* binding */ buildTransformTemplate),
+/* harmony export */   compareTransformOrder: () => (/* binding */ compareTransformOrder),
+/* harmony export */   isTransform: () => (/* binding */ isTransform),
+/* harmony export */   transformAlias: () => (/* binding */ transformAlias),
+/* harmony export */   transformDefinitions: () => (/* binding */ transformDefinitions)
+/* harmony export */ });
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/noop.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/array.es.js");
 /* harmony import */ var _data_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data.es.js */ "./node_modules/@motionone/dom/dist/animate/data.es.js");
 
 
@@ -1214,7 +1065,7 @@ const baseTransformProperties = {
     scale: {
         syntax: "<number>",
         initialValue: 1,
-        toDefaultUnit: _motionone_utils__WEBPACK_IMPORTED_MODULE_0__["noopReturn"],
+        toDefaultUnit: _motionone_utils__WEBPACK_IMPORTED_MODULE_0__.noopReturn,
     },
     skew: rotation,
 };
@@ -1243,8 +1094,8 @@ const addTransformToElement = (element, name) => {
     // Map x to translateX etc
     if (transformAlias[name])
         name = transformAlias[name];
-    const { transforms } = Object(_data_es_js__WEBPACK_IMPORTED_MODULE_1__["getAnimationData"])(element);
-    Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["addUniqueItem"])(transforms, name);
+    const { transforms } = (0,_data_es_js__WEBPACK_IMPORTED_MODULE_1__.getAnimationData)(element);
+    (0,_motionone_utils__WEBPACK_IMPORTED_MODULE_2__.addUniqueItem)(transforms, name);
     /**
      * TODO: An optimisation here could be to cache the transform in element data
      * and only update if this has changed.
@@ -1262,193 +1113,19 @@ const transformListToString = (template, name) => `${template} ${name}(var(${asT
 
 /***/ }),
 
-/***/ "./node_modules/@motionone/dom/dist/easing/create-generator-easing.es.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/easing/create-generator-easing.es.js ***!
-  \*******************************************************************************/
-/*! exports provided: createGeneratorEasing */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createGeneratorEasing", function() { return createGeneratorEasing; });
-/* harmony import */ var _motionone_generators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/generators */ "./node_modules/@motionone/generators/dist/index.es.js");
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-/* harmony import */ var _animate_utils_get_unit_es_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../animate/utils/get-unit.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/get-unit.es.js");
-/* harmony import */ var _animate_utils_transforms_es_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../animate/utils/transforms.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/transforms.es.js");
-/* harmony import */ var _animate_utils_get_style_name_es_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../animate/utils/get-style-name.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/get-style-name.es.js");
-
-
-
-
-
-
-function canGenerate(value) {
-    return Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_1__["isNumber"])(value) && !isNaN(value);
-}
-function getAsNumber(value) {
-    return Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_1__["isString"])(value) ? parseFloat(value) : value;
-}
-function createGeneratorEasing(createGenerator) {
-    const keyframesCache = new WeakMap();
-    return (options = {}) => {
-        const generatorCache = new Map();
-        const getGenerator = (from = 0, to = 100, velocity = 0, isScale = false) => {
-            const key = `${from}-${to}-${velocity}-${isScale}`;
-            if (!generatorCache.has(key)) {
-                generatorCache.set(key, createGenerator(Object.assign({ from,
-                    to,
-                    velocity }, options)));
-            }
-            return generatorCache.get(key);
-        };
-        const getKeyframes = (generator, toUnit) => {
-            if (!keyframesCache.has(generator)) {
-                keyframesCache.set(generator, Object(_motionone_generators__WEBPACK_IMPORTED_MODULE_0__["pregenerateKeyframes"])(generator, toUnit));
-            }
-            return keyframesCache.get(generator);
-        };
-        return {
-            createAnimation: (keyframes, shouldGenerate = true, getOrigin, name, motionValue) => {
-                let settings;
-                let origin;
-                let target;
-                let velocity = 0;
-                let toUnit = _motionone_utils__WEBPACK_IMPORTED_MODULE_1__["noopReturn"];
-                const numKeyframes = keyframes.length;
-                /**
-                 * If we should generate an animation for this value, run some preperation
-                 * like resolving target/origin, finding a unit (if any) and determine if
-                 * it is actually possible to generate.
-                 */
-                if (shouldGenerate) {
-                    toUnit = Object(_animate_utils_get_unit_es_js__WEBPACK_IMPORTED_MODULE_2__["getUnitConverter"])(keyframes, name ? _animate_utils_transforms_es_js__WEBPACK_IMPORTED_MODULE_3__["transformDefinitions"].get(Object(_animate_utils_get_style_name_es_js__WEBPACK_IMPORTED_MODULE_4__["getStyleName"])(name)) : undefined);
-                    const targetDefinition = keyframes[numKeyframes - 1];
-                    target = getAsNumber(targetDefinition);
-                    if (numKeyframes > 1 && keyframes[0] !== null) {
-                        /**
-                         * If we have multiple keyframes, take the initial keyframe as the origin.
-                         */
-                        origin = getAsNumber(keyframes[0]);
-                    }
-                    else {
-                        const prevGenerator = motionValue === null || motionValue === void 0 ? void 0 : motionValue.generator;
-                        /**
-                         * If we have an existing generator for this value we can use it to resolve
-                         * the animation's current value and velocity.
-                         */
-                        if (prevGenerator) {
-                            /**
-                             * If we have a generator for this value we can use it to resolve
-                             * the animations's current value and velocity.
-                             */
-                            const { animation, generatorStartTime } = motionValue;
-                            const startTime = (animation === null || animation === void 0 ? void 0 : animation.startTime) || generatorStartTime || 0;
-                            const currentTime = (animation === null || animation === void 0 ? void 0 : animation.currentTime) || performance.now() - startTime;
-                            const prevGeneratorCurrent = prevGenerator(currentTime).current;
-                            origin = prevGeneratorCurrent;
-                            velocity = Object(_motionone_generators__WEBPACK_IMPORTED_MODULE_0__["calcGeneratorVelocity"])((t) => prevGenerator(t).current, currentTime, prevGeneratorCurrent);
-                        }
-                        else if (getOrigin) {
-                            /**
-                             * As a last resort, read the origin from the DOM.
-                             */
-                            origin = getAsNumber(getOrigin());
-                        }
-                    }
-                }
-                /**
-                 * If we've determined it is possible to generate an animation, do so.
-                 */
-                if (canGenerate(origin) && canGenerate(target)) {
-                    const generator = getGenerator(origin, target, velocity, name === null || name === void 0 ? void 0 : name.includes("scale"));
-                    settings = Object.assign(Object.assign({}, getKeyframes(generator, toUnit)), { easing: "linear" });
-                    // TODO Add test for this
-                    if (motionValue) {
-                        motionValue.generator = generator;
-                        motionValue.generatorStartTime = performance.now();
-                    }
-                }
-                /**
-                 * If by now we haven't generated a set of keyframes, create a generic generator
-                 * based on the provided props that animates from 0-100 to fetch a rough
-                 * "overshootDuration" - the moment when the generator first hits the animation target.
-                 * Then return animation settings that will run a normal animation for that duration.
-                 */
-                if (!settings) {
-                    const keyframesMetadata = getKeyframes(getGenerator(0, 100));
-                    settings = {
-                        easing: "ease",
-                        duration: keyframesMetadata.overshootDuration,
-                    };
-                }
-                return settings;
-            },
-        };
-    };
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/easing/glide/index.es.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/easing/glide/index.es.js ***!
-  \*******************************************************************/
-/*! exports provided: glide */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "glide", function() { return glide; });
-/* harmony import */ var _motionone_generators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/generators */ "./node_modules/@motionone/generators/dist/index.es.js");
-/* harmony import */ var _create_generator_easing_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../create-generator-easing.es.js */ "./node_modules/@motionone/dom/dist/easing/create-generator-easing.es.js");
-
-
-
-const glide = Object(_create_generator_easing_es_js__WEBPACK_IMPORTED_MODULE_1__["createGeneratorEasing"])(_motionone_generators__WEBPACK_IMPORTED_MODULE_0__["glide"]);
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/easing/spring/index.es.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/easing/spring/index.es.js ***!
-  \********************************************************************/
-/*! exports provided: spring */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "spring", function() { return spring; });
-/* harmony import */ var _motionone_generators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/generators */ "./node_modules/@motionone/generators/dist/index.es.js");
-/* harmony import */ var _create_generator_easing_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../create-generator-easing.es.js */ "./node_modules/@motionone/dom/dist/easing/create-generator-easing.es.js");
-
-
-
-const spring = Object(_create_generator_easing_es_js__WEBPACK_IMPORTED_MODULE_1__["createGeneratorEasing"])(_motionone_generators__WEBPACK_IMPORTED_MODULE_0__["spring"]);
-
-
-
-
-/***/ }),
-
 /***/ "./node_modules/@motionone/dom/dist/gestures/in-view.es.js":
 /*!*****************************************************************!*\
   !*** ./node_modules/@motionone/dom/dist/gestures/in-view.es.js ***!
   \*****************************************************************/
-/*! exports provided: inView */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "inView", function() { return inView; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   inView: () => (/* binding */ inView)
+/* harmony export */ });
 /* harmony import */ var _utils_resolve_elements_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/resolve-elements.es.js */ "./node_modules/@motionone/dom/dist/utils/resolve-elements.es.js");
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/is-function.es.js");
 
 
 
@@ -1466,7 +1143,7 @@ function inView(elementOrSelector, onStart, { root, margin: rootMargin, amount =
     if (typeof IntersectionObserver === "undefined") {
         return () => { };
     }
-    const elements = Object(_utils_resolve_elements_es_js__WEBPACK_IMPORTED_MODULE_0__["resolveElements"])(elementOrSelector);
+    const elements = (0,_utils_resolve_elements_es_js__WEBPACK_IMPORTED_MODULE_0__.resolveElements)(elementOrSelector);
     const activeIntersections = new WeakMap();
     const onIntersectionChange = (entries) => {
         entries.forEach((entry) => {
@@ -1479,7 +1156,7 @@ function inView(elementOrSelector, onStart, { root, margin: rootMargin, amount =
                 return;
             if (entry.isIntersecting) {
                 const newOnEnd = onStart(entry);
-                if (Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_1__["isFunction"])(newOnEnd)) {
+                if ((0,_motionone_utils__WEBPACK_IMPORTED_MODULE_1__.isFunction)(newOnEnd)) {
                     activeIntersections.set(entry.target, newOnEnd);
                 }
                 else {
@@ -1506,1557 +1183,17 @@ function inView(elementOrSelector, onStart, { root, margin: rootMargin, amount =
 
 /***/ }),
 
-/***/ "./node_modules/@motionone/dom/dist/gestures/resize/handle-element.es.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/gestures/resize/handle-element.es.js ***!
-  \*******************************************************************************/
-/*! exports provided: resizeElement */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resizeElement", function() { return resizeElement; });
-/* harmony import */ var _utils_resolve_elements_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../utils/resolve-elements.es.js */ "./node_modules/@motionone/dom/dist/utils/resolve-elements.es.js");
-
-
-const resizeHandlers = new WeakMap();
-let observer;
-function getElementSize(target, borderBoxSize) {
-    if (borderBoxSize) {
-        const { inlineSize, blockSize } = borderBoxSize[0];
-        return { width: inlineSize, height: blockSize };
-    }
-    else if (target instanceof SVGElement && "getBBox" in target) {
-        return target.getBBox();
-    }
-    else {
-        return {
-            width: target.offsetWidth,
-            height: target.offsetHeight,
-        };
-    }
-}
-function notifyTarget({ target, contentRect, borderBoxSize, }) {
-    var _a;
-    (_a = resizeHandlers.get(target)) === null || _a === void 0 ? void 0 : _a.forEach((handler) => {
-        handler({
-            target,
-            contentSize: contentRect,
-            get size() {
-                return getElementSize(target, borderBoxSize);
-            },
-        });
-    });
-}
-function notifyAll(entries) {
-    entries.forEach(notifyTarget);
-}
-function createResizeObserver() {
-    if (typeof ResizeObserver === "undefined")
-        return;
-    observer = new ResizeObserver(notifyAll);
-}
-function resizeElement(target, handler) {
-    if (!observer)
-        createResizeObserver();
-    const elements = Object(_utils_resolve_elements_es_js__WEBPACK_IMPORTED_MODULE_0__["resolveElements"])(target);
-    elements.forEach((element) => {
-        let elementHandlers = resizeHandlers.get(element);
-        if (!elementHandlers) {
-            elementHandlers = new Set();
-            resizeHandlers.set(element, elementHandlers);
-        }
-        elementHandlers.add(handler);
-        observer === null || observer === void 0 ? void 0 : observer.observe(element);
-    });
-    return () => {
-        elements.forEach((element) => {
-            const elementHandlers = resizeHandlers.get(element);
-            elementHandlers === null || elementHandlers === void 0 ? void 0 : elementHandlers.delete(handler);
-            if (!(elementHandlers === null || elementHandlers === void 0 ? void 0 : elementHandlers.size)) {
-                observer === null || observer === void 0 ? void 0 : observer.unobserve(element);
-            }
-        });
-    };
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/gestures/resize/handle-window.es.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/gestures/resize/handle-window.es.js ***!
-  \******************************************************************************/
-/*! exports provided: resizeWindow */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resizeWindow", function() { return resizeWindow; });
-const windowCallbacks = new Set();
-let windowResizeHandler;
-function createWindowResizeHandler() {
-    windowResizeHandler = () => {
-        const size = {
-            width: window.innerWidth,
-            height: window.innerHeight,
-        };
-        const info = {
-            target: window,
-            size,
-            contentSize: size,
-        };
-        windowCallbacks.forEach((callback) => callback(info));
-    };
-    window.addEventListener("resize", windowResizeHandler);
-}
-function resizeWindow(callback) {
-    windowCallbacks.add(callback);
-    if (!windowResizeHandler)
-        createWindowResizeHandler();
-    return () => {
-        windowCallbacks.delete(callback);
-        if (!windowCallbacks.size && windowResizeHandler) {
-            windowResizeHandler = undefined;
-        }
-    };
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/gestures/resize/index.es.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/gestures/resize/index.es.js ***!
-  \**********************************************************************/
-/*! exports provided: resize */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resize", function() { return resize; });
-/* harmony import */ var _handle_element_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./handle-element.es.js */ "./node_modules/@motionone/dom/dist/gestures/resize/handle-element.es.js");
-/* harmony import */ var _handle_window_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./handle-window.es.js */ "./node_modules/@motionone/dom/dist/gestures/resize/handle-window.es.js");
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-
-
-
-
-function resize(a, b) {
-    return Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_2__["isFunction"])(a) ? Object(_handle_window_es_js__WEBPACK_IMPORTED_MODULE_1__["resizeWindow"])(a) : Object(_handle_element_es_js__WEBPACK_IMPORTED_MODULE_0__["resizeElement"])(a, b);
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/gestures/scroll/index.es.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/gestures/scroll/index.es.js ***!
-  \**********************************************************************/
-/*! exports provided: scroll */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scroll", function() { return scroll; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _resize_index_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../resize/index.es.js */ "./node_modules/@motionone/dom/dist/gestures/resize/index.es.js");
-/* harmony import */ var _info_es_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./info.es.js */ "./node_modules/@motionone/dom/dist/gestures/scroll/info.es.js");
-/* harmony import */ var _on_scroll_handler_es_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./on-scroll-handler.es.js */ "./node_modules/@motionone/dom/dist/gestures/scroll/on-scroll-handler.es.js");
-
-
-
-
-
-const scrollListeners = new WeakMap();
-const resizeListeners = new WeakMap();
-const onScrollHandlers = new WeakMap();
-const getEventTarget = (element) => element === document.documentElement ? window : element;
-function scroll(onScroll, _a = {}) {
-    var { container = document.documentElement } = _a, options = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(_a, ["container"]);
-    let containerHandlers = onScrollHandlers.get(container);
-    /**
-     * Get the onScroll handlers for this container.
-     * If one isn't found, create a new one.
-     */
-    if (!containerHandlers) {
-        containerHandlers = new Set();
-        onScrollHandlers.set(container, containerHandlers);
-    }
-    /**
-     * Create a new onScroll handler for the provided callback.
-     */
-    const info = Object(_info_es_js__WEBPACK_IMPORTED_MODULE_2__["createScrollInfo"])();
-    const containerHandler = Object(_on_scroll_handler_es_js__WEBPACK_IMPORTED_MODULE_3__["createOnScrollHandler"])(container, onScroll, info, options);
-    containerHandlers.add(containerHandler);
-    /**
-     * Check if there's a scroll event listener for this container.
-     * If not, create one.
-     */
-    if (!scrollListeners.has(container)) {
-        const listener = () => {
-            const time = performance.now();
-            for (const handler of containerHandlers)
-                handler.measure();
-            for (const handler of containerHandlers)
-                handler.update(time);
-            for (const handler of containerHandlers)
-                handler.notify();
-        };
-        scrollListeners.set(container, listener);
-        const target = getEventTarget(container);
-        window.addEventListener("resize", listener, { passive: true });
-        if (container !== document.documentElement) {
-            resizeListeners.set(container, Object(_resize_index_es_js__WEBPACK_IMPORTED_MODULE_1__["resize"])(container, listener));
-        }
-        target.addEventListener("scroll", listener, { passive: true });
-    }
-    const listener = scrollListeners.get(container);
-    const onLoadProcesss = requestAnimationFrame(listener);
-    return () => {
-        var _a;
-        if (typeof onScroll !== "function")
-            onScroll.stop();
-        cancelAnimationFrame(onLoadProcesss);
-        /**
-         * Check if we even have any handlers for this container.
-         */
-        const containerHandlers = onScrollHandlers.get(container);
-        if (!containerHandlers)
-            return;
-        containerHandlers.delete(containerHandler);
-        if (containerHandlers.size)
-            return;
-        /**
-         * If no more handlers, remove the scroll listener too.
-         */
-        const listener = scrollListeners.get(container);
-        scrollListeners.delete(container);
-        if (listener) {
-            getEventTarget(container).removeEventListener("scroll", listener);
-            (_a = resizeListeners.get(container)) === null || _a === void 0 ? void 0 : _a();
-            window.removeEventListener("resize", listener);
-        }
-    };
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/gestures/scroll/info.es.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/gestures/scroll/info.es.js ***!
-  \*********************************************************************/
-/*! exports provided: createScrollInfo, updateScrollInfo */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createScrollInfo", function() { return createScrollInfo; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateScrollInfo", function() { return updateScrollInfo; });
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-
-
-/**
- * A time in milliseconds, beyond which we consider the scroll velocity to be 0.
- */
-const maxElapsed = 50;
-const createAxisInfo = () => ({
-    current: 0,
-    offset: [],
-    progress: 0,
-    scrollLength: 0,
-    targetOffset: 0,
-    targetLength: 0,
-    containerLength: 0,
-    velocity: 0,
-});
-const createScrollInfo = () => ({
-    time: 0,
-    x: createAxisInfo(),
-    y: createAxisInfo(),
-});
-const keys = {
-    x: {
-        length: "Width",
-        position: "Left",
-    },
-    y: {
-        length: "Height",
-        position: "Top",
-    },
-};
-function updateAxisInfo(element, axisName, info, time) {
-    const axis = info[axisName];
-    const { length, position } = keys[axisName];
-    const prev = axis.current;
-    const prevTime = info.time;
-    axis.current = element[`scroll${position}`];
-    axis.scrollLength = element[`scroll${length}`] - element[`client${length}`];
-    axis.offset.length = 0;
-    axis.offset[0] = 0;
-    axis.offset[1] = axis.scrollLength;
-    axis.progress = Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["progress"])(0, axis.scrollLength, axis.current);
-    const elapsed = time - prevTime;
-    axis.velocity =
-        elapsed > maxElapsed ? 0 : Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["velocityPerSecond"])(axis.current - prev, elapsed);
-}
-function updateScrollInfo(element, info, time) {
-    updateAxisInfo(element, "x", info, time);
-    updateAxisInfo(element, "y", info, time);
-    info.time = time;
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/gestures/scroll/offsets/edge.es.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/gestures/scroll/offsets/edge.es.js ***!
-  \*****************************************************************************/
-/*! exports provided: namedEdges, resolveEdge */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "namedEdges", function() { return namedEdges; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resolveEdge", function() { return resolveEdge; });
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-
-
-const namedEdges = {
-    start: 0,
-    center: 0.5,
-    end: 1,
-};
-function resolveEdge(edge, length, inset = 0) {
-    let delta = 0;
-    /**
-     * If we have this edge defined as a preset, replace the definition
-     * with the numerical value.
-     */
-    if (namedEdges[edge] !== undefined) {
-        edge = namedEdges[edge];
-    }
-    /**
-     * Handle unit values
-     */
-    if (Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["isString"])(edge)) {
-        const asNumber = parseFloat(edge);
-        if (edge.endsWith("px")) {
-            delta = asNumber;
-        }
-        else if (edge.endsWith("%")) {
-            edge = asNumber / 100;
-        }
-        else if (edge.endsWith("vw")) {
-            delta = (asNumber / 100) * document.documentElement.clientWidth;
-        }
-        else if (edge.endsWith("vh")) {
-            delta = (asNumber / 100) * document.documentElement.clientHeight;
-        }
-        else {
-            edge = asNumber;
-        }
-    }
-    /**
-     * If the edge is defined as a number, handle as a progress value.
-     */
-    if (Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["isNumber"])(edge)) {
-        delta = length * edge;
-    }
-    return inset + delta;
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/gestures/scroll/offsets/index.es.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/gestures/scroll/offsets/index.es.js ***!
-  \******************************************************************************/
-/*! exports provided: resolveOffsets */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resolveOffsets", function() { return resolveOffsets; });
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-/* harmony import */ var _inset_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./inset.es.js */ "./node_modules/@motionone/dom/dist/gestures/scroll/offsets/inset.es.js");
-/* harmony import */ var _presets_es_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./presets.es.js */ "./node_modules/@motionone/dom/dist/gestures/scroll/offsets/presets.es.js");
-/* harmony import */ var _offset_es_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./offset.es.js */ "./node_modules/@motionone/dom/dist/gestures/scroll/offsets/offset.es.js");
-
-
-
-
-
-const point = { x: 0, y: 0 };
-function resolveOffsets(container, info, options) {
-    let { offset: offsetDefinition = _presets_es_js__WEBPACK_IMPORTED_MODULE_2__["ScrollOffset"].All } = options;
-    const { target = container, axis = "y" } = options;
-    const lengthLabel = axis === "y" ? "height" : "width";
-    const inset = target !== container ? Object(_inset_es_js__WEBPACK_IMPORTED_MODULE_1__["calcInset"])(target, container) : point;
-    /**
-     * Measure the target and container. If they're the same thing then we
-     * use the container's scrollWidth/Height as the target, from there
-     * all other calculations can remain the same.
-     */
-    const targetSize = target === container
-        ? { width: container.scrollWidth, height: container.scrollHeight }
-        : { width: target.clientWidth, height: target.clientHeight };
-    const containerSize = {
-        width: container.clientWidth,
-        height: container.clientHeight,
-    };
-    /**
-     * Reset the length of the resolved offset array rather than creating a new one.
-     * TODO: More reusable data structures for targetSize/containerSize would also be good.
-     */
-    info[axis].offset.length = 0;
-    /**
-     * Populate the offset array by resolving the user's offset definition into
-     * a list of pixel scroll offets.
-     */
-    let hasChanged = !info[axis].interpolate;
-    const numOffsets = offsetDefinition.length;
-    for (let i = 0; i < numOffsets; i++) {
-        const offset = Object(_offset_es_js__WEBPACK_IMPORTED_MODULE_3__["resolveOffset"])(offsetDefinition[i], containerSize[lengthLabel], targetSize[lengthLabel], inset[axis]);
-        if (!hasChanged && offset !== info[axis].interpolatorOffsets[i]) {
-            hasChanged = true;
-        }
-        info[axis].offset[i] = offset;
-    }
-    /**
-     * If the pixel scroll offsets have changed, create a new interpolator function
-     * to map scroll value into a progress.
-     */
-    if (hasChanged) {
-        info[axis].interpolate = Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["interpolate"])(Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["defaultOffset"])(numOffsets), info[axis].offset);
-        info[axis].interpolatorOffsets = [...info[axis].offset];
-    }
-    info[axis].progress = info[axis].interpolate(info[axis].current);
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/gestures/scroll/offsets/inset.es.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/gestures/scroll/offsets/inset.es.js ***!
-  \******************************************************************************/
-/*! exports provided: calcInset */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "calcInset", function() { return calcInset; });
-function calcInset(element, container) {
-    let inset = { x: 0, y: 0 };
-    let current = element;
-    while (current && current !== container) {
-        if (current instanceof HTMLElement) {
-            inset.x += current.offsetLeft;
-            inset.y += current.offsetTop;
-            current = current.offsetParent;
-        }
-        else if (current instanceof SVGGraphicsElement && "getBBox" in current) {
-            const { top, left } = current.getBBox();
-            inset.x += left;
-            inset.y += top;
-            /**
-             * Assign the next parent element as the <svg /> tag.
-             */
-            while (current && current.tagName !== "svg") {
-                current = current.parentNode;
-            }
-        }
-    }
-    return inset;
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/gestures/scroll/offsets/offset.es.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/gestures/scroll/offsets/offset.es.js ***!
-  \*******************************************************************************/
-/*! exports provided: resolveOffset */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resolveOffset", function() { return resolveOffset; });
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-/* harmony import */ var _edge_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./edge.es.js */ "./node_modules/@motionone/dom/dist/gestures/scroll/offsets/edge.es.js");
-
-
-
-const defaultOffset = [0, 0];
-function resolveOffset(offset, containerLength, targetLength, targetInset) {
-    let offsetDefinition = Array.isArray(offset) ? offset : defaultOffset;
-    let targetPoint = 0;
-    let containerPoint = 0;
-    if (Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["isNumber"])(offset)) {
-        /**
-         * If we're provided offset: [0, 0.5, 1] then each number x should become
-         * [x, x], so we default to the behaviour of mapping 0 => 0 of both target
-         * and container etc.
-         */
-        offsetDefinition = [offset, offset];
-    }
-    else if (Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["isString"])(offset)) {
-        offset = offset.trim();
-        if (offset.includes(" ")) {
-            offsetDefinition = offset.split(" ");
-        }
-        else {
-            /**
-             * If we're provided a definition like "100px" then we want to apply
-             * that only to the top of the target point, leaving the container at 0.
-             * Whereas a named offset like "end" should be applied to both.
-             */
-            offsetDefinition = [
-                offset,
-                _edge_es_js__WEBPACK_IMPORTED_MODULE_1__["namedEdges"][offset] ? offset : `0`,
-            ];
-        }
-    }
-    targetPoint = Object(_edge_es_js__WEBPACK_IMPORTED_MODULE_1__["resolveEdge"])(offsetDefinition[0], targetLength, targetInset);
-    containerPoint = Object(_edge_es_js__WEBPACK_IMPORTED_MODULE_1__["resolveEdge"])(offsetDefinition[1], containerLength);
-    return targetPoint - containerPoint;
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/gestures/scroll/offsets/presets.es.js":
-/*!********************************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/gestures/scroll/offsets/presets.es.js ***!
-  \********************************************************************************/
-/*! exports provided: ScrollOffset */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScrollOffset", function() { return ScrollOffset; });
-const ScrollOffset = {
-    Enter: [
-        [0, 1],
-        [1, 1],
-    ],
-    Exit: [
-        [0, 0],
-        [1, 0],
-    ],
-    Any: [
-        [1, 0],
-        [0, 1],
-    ],
-    All: [
-        [0, 0],
-        [1, 1],
-    ],
-};
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/gestures/scroll/on-scroll-handler.es.js":
-/*!**********************************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/gestures/scroll/on-scroll-handler.es.js ***!
-  \**********************************************************************************/
-/*! exports provided: createOnScrollHandler */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createOnScrollHandler", function() { return createOnScrollHandler; });
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-/* harmony import */ var _info_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./info.es.js */ "./node_modules/@motionone/dom/dist/gestures/scroll/info.es.js");
-/* harmony import */ var _offsets_index_es_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./offsets/index.es.js */ "./node_modules/@motionone/dom/dist/gestures/scroll/offsets/index.es.js");
-
-
-
-
-function measure(container, target = container, info) {
-    /**
-     * Find inset of target within scrollable container
-     */
-    info.x.targetOffset = 0;
-    info.y.targetOffset = 0;
-    if (target !== container) {
-        let node = target;
-        while (node && node != container) {
-            info.x.targetOffset += node.offsetLeft;
-            info.y.targetOffset += node.offsetTop;
-            node = node.offsetParent;
-        }
-    }
-    info.x.targetLength =
-        target === container ? target.scrollWidth : target.clientWidth;
-    info.y.targetLength =
-        target === container ? target.scrollHeight : target.clientHeight;
-    info.x.containerLength = container.clientWidth;
-    info.y.containerLength = container.clientHeight;
-}
-function createOnScrollHandler(element, onScroll, info, options = {}) {
-    const axis = options.axis || "y";
-    return {
-        measure: () => measure(element, options.target, info),
-        update: (time) => {
-            Object(_info_es_js__WEBPACK_IMPORTED_MODULE_1__["updateScrollInfo"])(element, info, time);
-            if (options.offset || options.target) {
-                Object(_offsets_index_es_js__WEBPACK_IMPORTED_MODULE_2__["resolveOffsets"])(element, info, options);
-            }
-        },
-        notify: Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["isFunction"])(onScroll)
-            ? () => onScroll(info)
-            : scrubAnimation(onScroll, info[axis]),
-    };
-}
-function scrubAnimation(controls, axisInfo) {
-    controls.pause();
-    controls.forEachNative((animation, { easing }) => {
-        var _a, _b;
-        if (animation.updateDuration) {
-            if (!easing)
-                animation.easing = _motionone_utils__WEBPACK_IMPORTED_MODULE_0__["noopReturn"];
-            animation.updateDuration(1);
-        }
-        else {
-            const timingOptions = { duration: 1000 };
-            if (!easing)
-                timingOptions.easing = "linear";
-            (_b = (_a = animation.effect) === null || _a === void 0 ? void 0 : _a.updateTiming) === null || _b === void 0 ? void 0 : _b.call(_a, timingOptions);
-        }
-    });
-    return () => {
-        controls.currentTime = axisInfo.progress;
-    };
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/index.es.js":
-/*!******************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/index.es.js ***!
-  \******************************************************/
-/*! exports provided: animate, createAnimate, animateStyle, timeline, stagger, spring, glide, style, inView, resize, scroll, ScrollOffset, withControls, getAnimationData, getStyleName, createMotionState, mountedStates, createStyles, createStyleString */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _animate_index_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animate/index.es.js */ "./node_modules/@motionone/dom/dist/animate/index.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "animate", function() { return _animate_index_es_js__WEBPACK_IMPORTED_MODULE_0__["animate"]; });
-
-/* harmony import */ var _animate_create_animate_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./animate/create-animate.es.js */ "./node_modules/@motionone/dom/dist/animate/create-animate.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createAnimate", function() { return _animate_create_animate_es_js__WEBPACK_IMPORTED_MODULE_1__["createAnimate"]; });
-
-/* harmony import */ var _animate_animate_style_es_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./animate/animate-style.es.js */ "./node_modules/@motionone/dom/dist/animate/animate-style.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "animateStyle", function() { return _animate_animate_style_es_js__WEBPACK_IMPORTED_MODULE_2__["animateStyle"]; });
-
-/* harmony import */ var _timeline_index_es_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./timeline/index.es.js */ "./node_modules/@motionone/dom/dist/timeline/index.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "timeline", function() { return _timeline_index_es_js__WEBPACK_IMPORTED_MODULE_3__["timeline"]; });
-
-/* harmony import */ var _utils_stagger_es_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/stagger.es.js */ "./node_modules/@motionone/dom/dist/utils/stagger.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "stagger", function() { return _utils_stagger_es_js__WEBPACK_IMPORTED_MODULE_4__["stagger"]; });
-
-/* harmony import */ var _easing_spring_index_es_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./easing/spring/index.es.js */ "./node_modules/@motionone/dom/dist/easing/spring/index.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "spring", function() { return _easing_spring_index_es_js__WEBPACK_IMPORTED_MODULE_5__["spring"]; });
-
-/* harmony import */ var _easing_glide_index_es_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./easing/glide/index.es.js */ "./node_modules/@motionone/dom/dist/easing/glide/index.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "glide", function() { return _easing_glide_index_es_js__WEBPACK_IMPORTED_MODULE_6__["glide"]; });
-
-/* harmony import */ var _animate_style_es_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./animate/style.es.js */ "./node_modules/@motionone/dom/dist/animate/style.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "style", function() { return _animate_style_es_js__WEBPACK_IMPORTED_MODULE_7__["style"]; });
-
-/* harmony import */ var _gestures_in_view_es_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./gestures/in-view.es.js */ "./node_modules/@motionone/dom/dist/gestures/in-view.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "inView", function() { return _gestures_in_view_es_js__WEBPACK_IMPORTED_MODULE_8__["inView"]; });
-
-/* harmony import */ var _gestures_resize_index_es_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./gestures/resize/index.es.js */ "./node_modules/@motionone/dom/dist/gestures/resize/index.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "resize", function() { return _gestures_resize_index_es_js__WEBPACK_IMPORTED_MODULE_9__["resize"]; });
-
-/* harmony import */ var _gestures_scroll_index_es_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./gestures/scroll/index.es.js */ "./node_modules/@motionone/dom/dist/gestures/scroll/index.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "scroll", function() { return _gestures_scroll_index_es_js__WEBPACK_IMPORTED_MODULE_10__["scroll"]; });
-
-/* harmony import */ var _gestures_scroll_offsets_presets_es_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./gestures/scroll/offsets/presets.es.js */ "./node_modules/@motionone/dom/dist/gestures/scroll/offsets/presets.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ScrollOffset", function() { return _gestures_scroll_offsets_presets_es_js__WEBPACK_IMPORTED_MODULE_11__["ScrollOffset"]; });
-
-/* harmony import */ var _animate_utils_controls_es_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./animate/utils/controls.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/controls.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "withControls", function() { return _animate_utils_controls_es_js__WEBPACK_IMPORTED_MODULE_12__["withControls"]; });
-
-/* harmony import */ var _animate_data_es_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./animate/data.es.js */ "./node_modules/@motionone/dom/dist/animate/data.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getAnimationData", function() { return _animate_data_es_js__WEBPACK_IMPORTED_MODULE_13__["getAnimationData"]; });
-
-/* harmony import */ var _animate_utils_get_style_name_es_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./animate/utils/get-style-name.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/get-style-name.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getStyleName", function() { return _animate_utils_get_style_name_es_js__WEBPACK_IMPORTED_MODULE_14__["getStyleName"]; });
-
-/* harmony import */ var _state_index_es_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./state/index.es.js */ "./node_modules/@motionone/dom/dist/state/index.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createMotionState", function() { return _state_index_es_js__WEBPACK_IMPORTED_MODULE_15__["createMotionState"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "mountedStates", function() { return _state_index_es_js__WEBPACK_IMPORTED_MODULE_15__["mountedStates"]; });
-
-/* harmony import */ var _animate_utils_style_object_es_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./animate/utils/style-object.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/style-object.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createStyles", function() { return _animate_utils_style_object_es_js__WEBPACK_IMPORTED_MODULE_16__["createStyles"]; });
-
-/* harmony import */ var _animate_utils_style_string_es_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./animate/utils/style-string.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/style-string.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createStyleString", function() { return _animate_utils_style_string_es_js__WEBPACK_IMPORTED_MODULE_17__["createStyleString"]; });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/state/gestures/hover.es.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/state/gestures/hover.es.js ***!
-  \*********************************************************************/
-/*! exports provided: hover */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hover", function() { return hover; });
-/* harmony import */ var _utils_events_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/events.es.js */ "./node_modules/@motionone/dom/dist/state/utils/events.es.js");
-
-
-const mouseEvent = (element, name, action) => (event) => {
-    if (event.pointerType && event.pointerType !== "mouse")
-        return;
-    action();
-    Object(_utils_events_es_js__WEBPACK_IMPORTED_MODULE_0__["dispatchPointerEvent"])(element, name, event);
-};
-const hover = {
-    isActive: (options) => Boolean(options.hover),
-    subscribe: (element, { enable, disable }) => {
-        const onEnter = mouseEvent(element, "hoverstart", enable);
-        const onLeave = mouseEvent(element, "hoverend", disable);
-        element.addEventListener("pointerenter", onEnter);
-        element.addEventListener("pointerleave", onLeave);
-        return () => {
-            element.removeEventListener("pointerenter", onEnter);
-            element.removeEventListener("pointerleave", onLeave);
-        };
-    },
-};
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/state/gestures/in-view.es.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/state/gestures/in-view.es.js ***!
-  \***********************************************************************/
-/*! exports provided: inView */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "inView", function() { return inView; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _utils_events_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/events.es.js */ "./node_modules/@motionone/dom/dist/state/utils/events.es.js");
-/* harmony import */ var _gestures_in_view_es_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../gestures/in-view.es.js */ "./node_modules/@motionone/dom/dist/gestures/in-view.es.js");
-
-
-
-
-const inView = {
-    isActive: (options) => Boolean(options.inView),
-    subscribe: (element, { enable, disable }, { inViewOptions = {} }) => {
-        const { once } = inViewOptions, viewOptions = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(inViewOptions, ["once"]);
-        return Object(_gestures_in_view_es_js__WEBPACK_IMPORTED_MODULE_2__["inView"])(element, (enterEntry) => {
-            enable();
-            Object(_utils_events_es_js__WEBPACK_IMPORTED_MODULE_1__["dispatchViewEvent"])(element, "viewenter", enterEntry);
-            if (!once) {
-                return (leaveEntry) => {
-                    disable();
-                    Object(_utils_events_es_js__WEBPACK_IMPORTED_MODULE_1__["dispatchViewEvent"])(element, "viewleave", leaveEntry);
-                };
-            }
-        }, viewOptions);
-    },
-};
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/state/gestures/press.es.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/state/gestures/press.es.js ***!
-  \*********************************************************************/
-/*! exports provided: press */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "press", function() { return press; });
-/* harmony import */ var _utils_events_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/events.es.js */ "./node_modules/@motionone/dom/dist/state/utils/events.es.js");
-
-
-const press = {
-    isActive: (options) => Boolean(options.press),
-    subscribe: (element, { enable, disable }) => {
-        const onPointerUp = (event) => {
-            disable();
-            Object(_utils_events_es_js__WEBPACK_IMPORTED_MODULE_0__["dispatchPointerEvent"])(element, "pressend", event);
-            window.removeEventListener("pointerup", onPointerUp);
-        };
-        const onPointerDown = (event) => {
-            enable();
-            Object(_utils_events_es_js__WEBPACK_IMPORTED_MODULE_0__["dispatchPointerEvent"])(element, "pressstart", event);
-            window.addEventListener("pointerup", onPointerUp);
-        };
-        element.addEventListener("pointerdown", onPointerDown);
-        return () => {
-            element.removeEventListener("pointerdown", onPointerDown);
-            window.removeEventListener("pointerup", onPointerUp);
-        };
-    },
-};
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/state/index.es.js":
-/*!************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/state/index.es.js ***!
-  \************************************************************/
-/*! exports provided: createMotionState, mountedStates */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createMotionState", function() { return createMotionState; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mountedStates", function() { return mountedStates; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var hey_listen__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! hey-listen */ "./node_modules/hey-listen/dist/hey-listen.es.js");
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-/* harmony import */ var _animate_animate_style_es_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../animate/animate-style.es.js */ "./node_modules/@motionone/dom/dist/animate/animate-style.es.js");
-/* harmony import */ var _animate_style_es_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../animate/style.es.js */ "./node_modules/@motionone/dom/dist/animate/style.es.js");
-/* harmony import */ var _animate_utils_options_es_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../animate/utils/options.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/options.es.js");
-/* harmony import */ var _utils_has_changed_es_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./utils/has-changed.es.js */ "./node_modules/@motionone/dom/dist/state/utils/has-changed.es.js");
-/* harmony import */ var _utils_resolve_variant_es_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./utils/resolve-variant.es.js */ "./node_modules/@motionone/dom/dist/state/utils/resolve-variant.es.js");
-/* harmony import */ var _utils_schedule_es_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./utils/schedule.es.js */ "./node_modules/@motionone/dom/dist/state/utils/schedule.es.js");
-/* harmony import */ var _gestures_in_view_es_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./gestures/in-view.es.js */ "./node_modules/@motionone/dom/dist/state/gestures/in-view.es.js");
-/* harmony import */ var _gestures_hover_es_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./gestures/hover.es.js */ "./node_modules/@motionone/dom/dist/state/gestures/hover.es.js");
-/* harmony import */ var _gestures_press_es_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./gestures/press.es.js */ "./node_modules/@motionone/dom/dist/state/gestures/press.es.js");
-/* harmony import */ var _utils_events_es_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./utils/events.es.js */ "./node_modules/@motionone/dom/dist/state/utils/events.es.js");
-/* harmony import */ var _motionone_animation__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @motionone/animation */ "./node_modules/@motionone/animation/dist/index.es.js");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const gestures = { inView: _gestures_in_view_es_js__WEBPACK_IMPORTED_MODULE_9__["inView"], hover: _gestures_hover_es_js__WEBPACK_IMPORTED_MODULE_10__["hover"], press: _gestures_press_es_js__WEBPACK_IMPORTED_MODULE_11__["press"] };
-/**
- * A list of state types, in priority order. If a value is defined in
- * a righter-most type, it will override any definition in a lefter-most.
- */
-const stateTypes = ["initial", "animate", ...Object.keys(gestures), "exit"];
-/**
- * A global store of all generated motion states. This can be used to lookup
- * a motion state for a given Element.
- */
-const mountedStates = new WeakMap();
-function createMotionState(options = {}, parent) {
-    /**
-     * The element represented by the motion state. This is an empty reference
-     * when we create the state to support SSR and allow for later mounting
-     * in view libraries.
-     *
-     * @ts-ignore
-     */
-    let element;
-    /**
-     * Calculate a depth that we can use to order motion states by tree depth.
-     */
-    let depth = parent ? parent.getDepth() + 1 : 0;
-    /**
-     * Track which states are currently active.
-     */
-    const activeStates = { initial: true, animate: true };
-    /**
-     * A map of functions that, when called, will remove event listeners for
-     * a given gesture.
-     */
-    const gestureSubscriptions = {};
-    /**
-     * Initialise a context to share through motion states. This
-     * will be populated by variant names (if any).
-     */
-    const context = {};
-    for (const name of stateTypes) {
-        context[name] =
-            typeof options[name] === "string"
-                ? options[name]
-                : parent === null || parent === void 0 ? void 0 : parent.getContext()[name];
-    }
-    /**
-     * If initial is set to false we use the animate prop as the initial
-     * animation state.
-     */
-    const initialVariantSource = options.initial === false ? "animate" : "initial";
-    /**
-     * Destructure an initial target out from the resolved initial variant.
-     */
-    let _a = Object(_utils_resolve_variant_es_js__WEBPACK_IMPORTED_MODULE_7__["resolveVariant"])(options[initialVariantSource] || context[initialVariantSource], options.variants) || {}, target = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(_a, ["transition"]);
-    /**
-     * The base target is a cached map of values that we'll use to animate
-     * back to if a value is removed from all active state types. This
-     * is usually the initial value as read from the DOM, for instance if
-     * it hasn't been defined in initial.
-     */
-    const baseTarget = Object.assign({}, target);
-    /**
-     * A generator that will be processed by the global animation scheduler.
-     * This yields when it switches from reading the DOM to writing to it
-     * to prevent layout thrashing.
-     */
-    function* animateUpdates() {
-        var _a, _b;
-        const prevTarget = target;
-        target = {};
-        const animationOptions = {};
-        for (const name of stateTypes) {
-            if (!activeStates[name])
-                continue;
-            const variant = Object(_utils_resolve_variant_es_js__WEBPACK_IMPORTED_MODULE_7__["resolveVariant"])(options[name]);
-            if (!variant)
-                continue;
-            for (const key in variant) {
-                if (key === "transition")
-                    continue;
-                target[key] = variant[key];
-                animationOptions[key] = Object(_animate_utils_options_es_js__WEBPACK_IMPORTED_MODULE_5__["getOptions"])((_b = (_a = variant.transition) !== null && _a !== void 0 ? _a : options.transition) !== null && _b !== void 0 ? _b : {}, key);
-            }
-        }
-        const allTargetKeys = new Set([
-            ...Object.keys(target),
-            ...Object.keys(prevTarget),
-        ]);
-        const animationFactories = [];
-        allTargetKeys.forEach((key) => {
-            var _a;
-            if (target[key] === undefined) {
-                target[key] = baseTarget[key];
-            }
-            if (Object(_utils_has_changed_es_js__WEBPACK_IMPORTED_MODULE_6__["hasChanged"])(prevTarget[key], target[key])) {
-                (_a = baseTarget[key]) !== null && _a !== void 0 ? _a : (baseTarget[key] = _animate_style_es_js__WEBPACK_IMPORTED_MODULE_4__["style"].get(element, key));
-                animationFactories.push(Object(_animate_animate_style_es_js__WEBPACK_IMPORTED_MODULE_3__["animateStyle"])(element, key, target[key], animationOptions[key], _motionone_animation__WEBPACK_IMPORTED_MODULE_13__["Animation"]));
-            }
-        });
-        // Wait for all animation states to read from the DOM
-        yield;
-        const animations = animationFactories
-            .map((factory) => factory())
-            .filter(Boolean);
-        if (!animations.length)
-            return;
-        const animationTarget = target;
-        element.dispatchEvent(Object(_utils_events_es_js__WEBPACK_IMPORTED_MODULE_12__["motionEvent"])("motionstart", animationTarget));
-        Promise.all(animations.map((animation) => animation.finished))
-            .then(() => {
-            element.dispatchEvent(Object(_utils_events_es_js__WEBPACK_IMPORTED_MODULE_12__["motionEvent"])("motioncomplete", animationTarget));
-        })
-            .catch(_motionone_utils__WEBPACK_IMPORTED_MODULE_2__["noop"]);
-    }
-    const setGesture = (name, isActive) => () => {
-        activeStates[name] = isActive;
-        Object(_utils_schedule_es_js__WEBPACK_IMPORTED_MODULE_8__["scheduleAnimation"])(state);
-    };
-    const updateGestureSubscriptions = () => {
-        for (const name in gestures) {
-            const isGestureActive = gestures[name].isActive(options);
-            const remove = gestureSubscriptions[name];
-            if (isGestureActive && !remove) {
-                gestureSubscriptions[name] = gestures[name].subscribe(element, {
-                    enable: setGesture(name, true),
-                    disable: setGesture(name, false),
-                }, options);
-            }
-            else if (!isGestureActive && remove) {
-                remove();
-                delete gestureSubscriptions[name];
-            }
-        }
-    };
-    const state = {
-        update: (newOptions) => {
-            if (!element)
-                return;
-            options = newOptions;
-            updateGestureSubscriptions();
-            Object(_utils_schedule_es_js__WEBPACK_IMPORTED_MODULE_8__["scheduleAnimation"])(state);
-        },
-        setActive: (name, isActive) => {
-            if (!element)
-                return;
-            activeStates[name] = isActive;
-            Object(_utils_schedule_es_js__WEBPACK_IMPORTED_MODULE_8__["scheduleAnimation"])(state);
-        },
-        animateUpdates,
-        getDepth: () => depth,
-        getTarget: () => target,
-        getOptions: () => options,
-        getContext: () => context,
-        mount: (newElement) => {
-            Object(hey_listen__WEBPACK_IMPORTED_MODULE_1__["invariant"])(Boolean(newElement), "Animation state must be mounted with valid Element");
-            element = newElement;
-            mountedStates.set(element, state);
-            updateGestureSubscriptions();
-            return () => {
-                mountedStates.delete(element);
-                Object(_utils_schedule_es_js__WEBPACK_IMPORTED_MODULE_8__["unscheduleAnimation"])(state);
-                for (const key in gestureSubscriptions) {
-                    gestureSubscriptions[key]();
-                }
-            };
-        },
-        isMounted: () => Boolean(element),
-    };
-    return state;
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/state/utils/events.es.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/state/utils/events.es.js ***!
-  \*******************************************************************/
-/*! exports provided: dispatchPointerEvent, dispatchViewEvent, motionEvent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dispatchPointerEvent", function() { return dispatchPointerEvent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dispatchViewEvent", function() { return dispatchViewEvent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "motionEvent", function() { return motionEvent; });
-const motionEvent = (name, target) => new CustomEvent(name, { detail: { target } });
-function dispatchPointerEvent(element, name, event) {
-    element.dispatchEvent(new CustomEvent(name, { detail: { originalEvent: event } }));
-}
-function dispatchViewEvent(element, name, entry) {
-    element.dispatchEvent(new CustomEvent(name, { detail: { originalEntry: entry } }));
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/state/utils/has-changed.es.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/state/utils/has-changed.es.js ***!
-  \************************************************************************/
-/*! exports provided: hasChanged, shallowCompare */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hasChanged", function() { return hasChanged; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "shallowCompare", function() { return shallowCompare; });
-function hasChanged(a, b) {
-    if (typeof a !== typeof b)
-        return true;
-    if (Array.isArray(a) && Array.isArray(b))
-        return !shallowCompare(a, b);
-    return a !== b;
-}
-function shallowCompare(next, prev) {
-    const prevLength = prev.length;
-    if (prevLength !== next.length)
-        return false;
-    for (let i = 0; i < prevLength; i++) {
-        if (prev[i] !== next[i])
-            return false;
-    }
-    return true;
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/state/utils/is-variant.es.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/state/utils/is-variant.es.js ***!
-  \***********************************************************************/
-/*! exports provided: isVariant */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isVariant", function() { return isVariant; });
-function isVariant(definition) {
-    return typeof definition === "object";
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/state/utils/resolve-variant.es.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/state/utils/resolve-variant.es.js ***!
-  \****************************************************************************/
-/*! exports provided: resolveVariant */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resolveVariant", function() { return resolveVariant; });
-/* harmony import */ var _is_variant_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./is-variant.es.js */ "./node_modules/@motionone/dom/dist/state/utils/is-variant.es.js");
-
-
-function resolveVariant(definition, variants) {
-    if (Object(_is_variant_es_js__WEBPACK_IMPORTED_MODULE_0__["isVariant"])(definition)) {
-        return definition;
-    }
-    else if (definition && variants) {
-        return variants[definition];
-    }
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/state/utils/schedule.es.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/state/utils/schedule.es.js ***!
-  \*********************************************************************/
-/*! exports provided: scheduleAnimation, unscheduleAnimation */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scheduleAnimation", function() { return scheduleAnimation; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unscheduleAnimation", function() { return unscheduleAnimation; });
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-
-
-let scheduled = undefined;
-function processScheduledAnimations() {
-    if (!scheduled)
-        return;
-    const generators = scheduled.sort(compareByDepth).map(fireAnimateUpdates);
-    generators.forEach(fireNext);
-    generators.forEach(fireNext);
-    scheduled = undefined;
-}
-function scheduleAnimation(state) {
-    if (!scheduled) {
-        scheduled = [state];
-        requestAnimationFrame(processScheduledAnimations);
-    }
-    else {
-        Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["addUniqueItem"])(scheduled, state);
-    }
-}
-function unscheduleAnimation(state) {
-    scheduled && Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["removeItem"])(scheduled, state);
-}
-const compareByDepth = (a, b) => a.getDepth() - b.getDepth();
-const fireAnimateUpdates = (state) => state.animateUpdates();
-const fireNext = (iterator) => iterator.next();
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/timeline/index.es.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/timeline/index.es.js ***!
-  \***************************************************************/
-/*! exports provided: createAnimationsFromTimeline, timeline */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createAnimationsFromTimeline", function() { return createAnimationsFromTimeline; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "timeline", function() { return timeline; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var hey_listen__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! hey-listen */ "./node_modules/hey-listen/dist/hey-listen.es.js");
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-/* harmony import */ var _utils_stagger_es_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/stagger.es.js */ "./node_modules/@motionone/dom/dist/utils/stagger.es.js");
-/* harmony import */ var _animate_animate_style_es_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../animate/animate-style.es.js */ "./node_modules/@motionone/dom/dist/animate/animate-style.es.js");
-/* harmony import */ var _animate_utils_controls_es_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../animate/utils/controls.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/controls.es.js");
-/* harmony import */ var _animate_utils_keyframes_es_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../animate/utils/keyframes.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/keyframes.es.js");
-/* harmony import */ var _animate_utils_options_es_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../animate/utils/options.es.js */ "./node_modules/@motionone/dom/dist/animate/utils/options.es.js");
-/* harmony import */ var _utils_resolve_elements_es_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/resolve-elements.es.js */ "./node_modules/@motionone/dom/dist/utils/resolve-elements.es.js");
-/* harmony import */ var _utils_calc_time_es_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./utils/calc-time.es.js */ "./node_modules/@motionone/dom/dist/timeline/utils/calc-time.es.js");
-/* harmony import */ var _utils_edit_es_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./utils/edit.es.js */ "./node_modules/@motionone/dom/dist/timeline/utils/edit.es.js");
-/* harmony import */ var _utils_sort_es_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./utils/sort.es.js */ "./node_modules/@motionone/dom/dist/timeline/utils/sort.es.js");
-/* harmony import */ var _motionone_animation__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @motionone/animation */ "./node_modules/@motionone/animation/dist/index.es.js");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function timeline(definition, options = {}) {
-    var _a;
-    const animationDefinitions = createAnimationsFromTimeline(definition, options);
-    /**
-     * Create and start animations
-     */
-    const animationFactories = animationDefinitions
-        .map((definition) => Object(_animate_animate_style_es_js__WEBPACK_IMPORTED_MODULE_4__["animateStyle"])(...definition, _motionone_animation__WEBPACK_IMPORTED_MODULE_12__["Animation"]))
-        .filter(Boolean);
-    return Object(_animate_utils_controls_es_js__WEBPACK_IMPORTED_MODULE_5__["withControls"])(animationFactories, options, 
-    // Get the duration from the first animation definition
-    (_a = animationDefinitions[0]) === null || _a === void 0 ? void 0 : _a[3].duration);
-}
-function createAnimationsFromTimeline(definition, _a = {}) {
-    var { defaultOptions = {} } = _a, timelineOptions = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(_a, ["defaultOptions"]);
-    const animationDefinitions = [];
-    const elementSequences = new Map();
-    const elementCache = {};
-    const timeLabels = new Map();
-    let prevTime = 0;
-    let currentTime = 0;
-    let totalDuration = 0;
-    /**
-     * Build the timeline by mapping over the definition array and converting
-     * the definitions into keyframes and offsets with absolute time values.
-     * These will later get converted into relative offsets in a second pass.
-     */
-    for (let i = 0; i < definition.length; i++) {
-        const segment = definition[i];
-        /**
-         * If this is a timeline label, mark it and skip the rest of this iteration.
-         */
-        if (Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_2__["isString"])(segment)) {
-            timeLabels.set(segment, currentTime);
-            continue;
-        }
-        else if (!Array.isArray(segment)) {
-            timeLabels.set(segment.name, Object(_utils_calc_time_es_js__WEBPACK_IMPORTED_MODULE_9__["calcNextTime"])(currentTime, segment.at, prevTime, timeLabels));
-            continue;
-        }
-        const [elementDefinition, keyframes, options = {}] = segment;
-        /**
-         * If a relative or absolute time value has been specified we need to resolve
-         * it in relation to the currentTime.
-         */
-        if (options.at !== undefined) {
-            currentTime = Object(_utils_calc_time_es_js__WEBPACK_IMPORTED_MODULE_9__["calcNextTime"])(currentTime, options.at, prevTime, timeLabels);
-        }
-        /**
-         * Keep track of the maximum duration in this definition. This will be
-         * applied to currentTime once the definition has been parsed.
-         */
-        let maxDuration = 0;
-        /**
-         * Find all the elements specified in the definition and parse value
-         * keyframes from their timeline definitions.
-         */
-        const elements = Object(_utils_resolve_elements_es_js__WEBPACK_IMPORTED_MODULE_8__["resolveElements"])(elementDefinition, elementCache);
-        const numElements = elements.length;
-        for (let elementIndex = 0; elementIndex < numElements; elementIndex++) {
-            const element = elements[elementIndex];
-            const elementSequence = getElementSequence(element, elementSequences);
-            for (const key in keyframes) {
-                const valueSequence = getValueSequence(key, elementSequence);
-                let valueKeyframes = Object(_animate_utils_keyframes_es_js__WEBPACK_IMPORTED_MODULE_6__["keyframesList"])(keyframes[key]);
-                const valueOptions = Object(_animate_utils_options_es_js__WEBPACK_IMPORTED_MODULE_7__["getOptions"])(options, key);
-                let { duration = defaultOptions.duration || _motionone_utils__WEBPACK_IMPORTED_MODULE_2__["defaults"].duration, easing = defaultOptions.easing || _motionone_utils__WEBPACK_IMPORTED_MODULE_2__["defaults"].easing, } = valueOptions;
-                if (Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_2__["isEasingGenerator"])(easing)) {
-                    Object(hey_listen__WEBPACK_IMPORTED_MODULE_1__["invariant"])(key === "opacity" || valueKeyframes.length > 1, "spring must be provided 2 keyframes within timeline()");
-                    const custom = easing.createAnimation(valueKeyframes, key !== "opacity", () => 0, key);
-                    easing = custom.easing;
-                    valueKeyframes = custom.keyframes || valueKeyframes;
-                    duration = custom.duration || duration;
-                }
-                const delay = Object(_utils_stagger_es_js__WEBPACK_IMPORTED_MODULE_3__["resolveOption"])(options.delay, elementIndex, numElements) || 0;
-                const startTime = currentTime + delay;
-                const targetTime = startTime + duration;
-                /**
-                 *
-                 */
-                let { offset = Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_2__["defaultOffset"])(valueKeyframes.length) } = valueOptions;
-                /**
-                 * If there's only one offset of 0, fill in a second with length 1
-                 *
-                 * TODO: Ensure there's a test that covers this removal
-                 */
-                if (offset.length === 1 && offset[0] === 0) {
-                    offset[1] = 1;
-                }
-                /**
-                 * Fill out if offset if fewer offsets than keyframes
-                 */
-                const remainder = offset.length - valueKeyframes.length;
-                remainder > 0 && Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_2__["fillOffset"])(offset, remainder);
-                /**
-                 * If only one value has been set, ie [1], push a null to the start of
-                 * the keyframe array. This will let us mark a keyframe at this point
-                 * that will later be hydrated with the previous value.
-                 */
-                valueKeyframes.length === 1 && valueKeyframes.unshift(null);
-                /**
-                 * Add keyframes, mapping offsets to absolute time.
-                 */
-                Object(_utils_edit_es_js__WEBPACK_IMPORTED_MODULE_10__["addKeyframes"])(valueSequence, valueKeyframes, easing, offset, startTime, targetTime);
-                maxDuration = Math.max(delay + duration, maxDuration);
-                totalDuration = Math.max(targetTime, totalDuration);
-            }
-        }
-        prevTime = currentTime;
-        currentTime += maxDuration;
-    }
-    /**
-     * For every element and value combination create a new animation.
-     */
-    elementSequences.forEach((valueSequences, element) => {
-        for (const key in valueSequences) {
-            const valueSequence = valueSequences[key];
-            /**
-             * Arrange all the keyframes in ascending time order.
-             */
-            valueSequence.sort(_utils_sort_es_js__WEBPACK_IMPORTED_MODULE_11__["compareByTime"]);
-            const keyframes = [];
-            const valueOffset = [];
-            const valueEasing = [];
-            /**
-             * For each keyframe, translate absolute times into
-             * relative offsets based on the total duration of the timeline.
-             */
-            for (let i = 0; i < valueSequence.length; i++) {
-                const { at, value, easing } = valueSequence[i];
-                keyframes.push(value);
-                valueOffset.push(Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_2__["progress"])(0, totalDuration, at));
-                valueEasing.push(easing || _motionone_utils__WEBPACK_IMPORTED_MODULE_2__["defaults"].easing);
-            }
-            /**
-             * If the first keyframe doesn't land on offset: 0
-             * provide one by duplicating the initial keyframe. This ensures
-             * it snaps to the first keyframe when the animation starts.
-             */
-            if (valueOffset[0] !== 0) {
-                valueOffset.unshift(0);
-                keyframes.unshift(keyframes[0]);
-                valueEasing.unshift("linear");
-            }
-            /**
-             * If the last keyframe doesn't land on offset: 1
-             * provide one with a null wildcard value. This will ensure it
-             * stays static until the end of the animation.
-             */
-            if (valueOffset[valueOffset.length - 1] !== 1) {
-                valueOffset.push(1);
-                keyframes.push(null);
-            }
-            animationDefinitions.push([
-                element,
-                key,
-                keyframes,
-                Object.assign(Object.assign(Object.assign({}, defaultOptions), { duration: totalDuration, easing: valueEasing, offset: valueOffset }), timelineOptions),
-            ]);
-        }
-    });
-    return animationDefinitions;
-}
-function getElementSequence(element, sequences) {
-    !sequences.has(element) && sequences.set(element, {});
-    return sequences.get(element);
-}
-function getValueSequence(name, sequences) {
-    if (!sequences[name])
-        sequences[name] = [];
-    return sequences[name];
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/timeline/utils/calc-time.es.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/timeline/utils/calc-time.es.js ***!
-  \*************************************************************************/
-/*! exports provided: calcNextTime */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "calcNextTime", function() { return calcNextTime; });
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-
-
-function calcNextTime(current, next, prev, labels) {
-    var _a;
-    if (Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["isNumber"])(next)) {
-        return next;
-    }
-    else if (next.startsWith("-") || next.startsWith("+")) {
-        return Math.max(0, current + parseFloat(next));
-    }
-    else if (next === "<") {
-        return prev;
-    }
-    else {
-        return (_a = labels.get(next)) !== null && _a !== void 0 ? _a : current;
-    }
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/timeline/utils/edit.es.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/timeline/utils/edit.es.js ***!
-  \********************************************************************/
-/*! exports provided: addKeyframes, eraseKeyframes */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addKeyframes", function() { return addKeyframes; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "eraseKeyframes", function() { return eraseKeyframes; });
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-
-
-function eraseKeyframes(sequence, startTime, endTime) {
-    for (let i = 0; i < sequence.length; i++) {
-        const keyframe = sequence[i];
-        if (keyframe.at > startTime && keyframe.at < endTime) {
-            Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["removeItem"])(sequence, keyframe);
-            // If we remove this item we have to push the pointer back one
-            i--;
-        }
-    }
-}
-function addKeyframes(sequence, keyframes, easing, offset, startTime, endTime) {
-    /**
-     * Erase every existing value between currentTime and targetTime,
-     * this will essentially splice this timeline into any currently
-     * defined ones.
-     */
-    eraseKeyframes(sequence, startTime, endTime);
-    for (let i = 0; i < keyframes.length; i++) {
-        sequence.push({
-            value: keyframes[i],
-            at: Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["mix"])(startTime, endTime, offset[i]),
-            easing: Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["getEasingForSegment"])(easing, i),
-        });
-    }
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/dom/dist/timeline/utils/sort.es.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/@motionone/dom/dist/timeline/utils/sort.es.js ***!
-  \********************************************************************/
-/*! exports provided: compareByTime */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "compareByTime", function() { return compareByTime; });
-function compareByTime(a, b) {
-    if (a.at === b.at) {
-        return a.value === null ? 1 : -1;
-    }
-    else {
-        return a.at - b.at;
-    }
-}
-
-
-
-
-/***/ }),
-
 /***/ "./node_modules/@motionone/dom/dist/utils/resolve-elements.es.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@motionone/dom/dist/utils/resolve-elements.es.js ***!
   \***********************************************************************/
-/*! exports provided: resolveElements */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resolveElements", function() { return resolveElements; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   resolveElements: () => (/* binding */ resolveElements)
+/* harmony export */ });
 function resolveElements(elements, selectorCache) {
     var _a;
     if (typeof elements === "string") {
@@ -3086,27 +1223,29 @@ function resolveElements(elements, selectorCache) {
 /*!**************************************************************!*\
   !*** ./node_modules/@motionone/dom/dist/utils/stagger.es.js ***!
   \**************************************************************/
-/*! exports provided: getFromIndex, resolveOption, stagger */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFromIndex", function() { return getFromIndex; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resolveOption", function() { return resolveOption; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stagger", function() { return stagger; });
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-/* harmony import */ var _motionone_animation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @motionone/animation */ "./node_modules/@motionone/animation/dist/index.es.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getFromIndex: () => (/* binding */ getFromIndex),
+/* harmony export */   resolveOption: () => (/* binding */ resolveOption),
+/* harmony export */   stagger: () => (/* binding */ stagger)
+/* harmony export */ });
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/is-number.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/is-function.es.js");
+/* harmony import */ var _motionone_animation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @motionone/animation */ "./node_modules/@motionone/animation/dist/utils/easing.es.js");
 
 
 
 function stagger(duration = 0.1, { start = 0, from = 0, easing } = {}) {
     return (i, total) => {
-        const fromIndex = Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["isNumber"])(from) ? from : getFromIndex(from, total);
+        const fromIndex = (0,_motionone_utils__WEBPACK_IMPORTED_MODULE_0__.isNumber)(from) ? from : getFromIndex(from, total);
         const distance = Math.abs(fromIndex - i);
         let delay = duration * distance;
         if (easing) {
             const maxDelay = total * duration;
-            const easingFunction = Object(_motionone_animation__WEBPACK_IMPORTED_MODULE_1__["getEasingFunction"])(easing);
+            const easingFunction = (0,_motionone_animation__WEBPACK_IMPORTED_MODULE_1__.getEasingFunction)(easing);
             delay = easingFunction(delay / maxDelay) * maxDelay;
         }
         return start + delay;
@@ -3122,7 +1261,7 @@ function getFromIndex(from, total) {
     }
 }
 function resolveOption(option, i, total) {
-    return Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["isFunction"])(option) ? option(i, total) : option;
+    return (0,_motionone_utils__WEBPACK_IMPORTED_MODULE_2__.isFunction)(option) ? option(i, total) : option;
 }
 
 
@@ -3134,13 +1273,14 @@ function resolveOption(option, i, total) {
 /*!****************************************************************!*\
   !*** ./node_modules/@motionone/easing/dist/cubic-bezier.es.js ***!
   \****************************************************************/
-/*! exports provided: cubicBezier */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cubicBezier", function() { return cubicBezier; });
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   cubicBezier: () => (/* binding */ cubicBezier)
+/* harmony export */ });
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/noop.es.js");
 
 
 /*
@@ -3187,7 +1327,7 @@ function binarySubdivide(x, lowerBound, upperBound, mX1, mX2) {
 function cubicBezier(mX1, mY1, mX2, mY2) {
     // If this is a linear gradient, return linear easing
     if (mX1 === mY1 && mX2 === mY2)
-        return _motionone_utils__WEBPACK_IMPORTED_MODULE_0__["noopReturn"];
+        return _motionone_utils__WEBPACK_IMPORTED_MODULE_0__.noopReturn;
     const getTForX = (aX) => binarySubdivide(aX, 0, 1, mX1, mX2);
     // If animation is at start/end, return t without easing
     return (t) => t === 0 || t === 1 ? t : calcBezier(getTForX(t), mY1, mY2);
@@ -3198,38 +1338,18 @@ function cubicBezier(mX1, mY1, mX2, mY2) {
 
 /***/ }),
 
-/***/ "./node_modules/@motionone/easing/dist/index.es.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/@motionone/easing/dist/index.es.js ***!
-  \*********************************************************/
-/*! exports provided: cubicBezier, steps */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _cubic_bezier_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./cubic-bezier.es.js */ "./node_modules/@motionone/easing/dist/cubic-bezier.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cubicBezier", function() { return _cubic_bezier_es_js__WEBPACK_IMPORTED_MODULE_0__["cubicBezier"]; });
-
-/* harmony import */ var _steps_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./steps.es.js */ "./node_modules/@motionone/easing/dist/steps.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "steps", function() { return _steps_es_js__WEBPACK_IMPORTED_MODULE_1__["steps"]; });
-
-
-
-
-
-/***/ }),
-
 /***/ "./node_modules/@motionone/easing/dist/steps.es.js":
 /*!*********************************************************!*\
   !*** ./node_modules/@motionone/easing/dist/steps.es.js ***!
   \*********************************************************/
-/*! exports provided: steps */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "steps", function() { return steps; });
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   steps: () => (/* binding */ steps)
+/* harmony export */ });
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/clamp.es.js");
 
 
 const steps = (steps, direction = "end") => (progress) => {
@@ -3239,349 +1359,8 @@ const steps = (steps, direction = "end") => (progress) => {
             : Math.max(progress, 0.001);
     const expanded = progress * steps;
     const rounded = direction === "end" ? Math.floor(expanded) : Math.ceil(expanded);
-    return Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["clamp"])(0, 1, rounded / steps);
+    return (0,_motionone_utils__WEBPACK_IMPORTED_MODULE_0__.clamp)(0, 1, rounded / steps);
 };
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/generators/dist/glide/index.es.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/@motionone/generators/dist/glide/index.es.js ***!
-  \*******************************************************************/
-/*! exports provided: glide */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "glide", function() { return glide; });
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-/* harmony import */ var _utils_velocity_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/velocity.es.js */ "./node_modules/@motionone/generators/dist/utils/velocity.es.js");
-/* harmony import */ var _spring_index_es_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../spring/index.es.js */ "./node_modules/@motionone/generators/dist/spring/index.es.js");
-
-
-
-
-const glide = ({ from = 0, velocity = 0.0, power = 0.8, decay = 0.325, bounceDamping, bounceStiffness, changeTarget, min, max, restDistance = 0.5, restSpeed, }) => {
-    decay = _motionone_utils__WEBPACK_IMPORTED_MODULE_0__["time"].ms(decay);
-    const state = {
-        hasReachedTarget: false,
-        done: false,
-        current: from,
-        target: from,
-    };
-    const isOutOfBounds = (v) => (min !== undefined && v < min) || (max !== undefined && v > max);
-    const nearestBoundary = (v) => {
-        if (min === undefined)
-            return max;
-        if (max === undefined)
-            return min;
-        return Math.abs(min - v) < Math.abs(max - v) ? min : max;
-    };
-    let amplitude = power * velocity;
-    const ideal = from + amplitude;
-    const target = changeTarget === undefined ? ideal : changeTarget(ideal);
-    state.target = target;
-    /**
-     * If the target has changed we need to re-calculate the amplitude, otherwise
-     * the animation will start from the wrong position.
-     */
-    if (target !== ideal)
-        amplitude = target - from;
-    const calcDelta = (t) => -amplitude * Math.exp(-t / decay);
-    const calcLatest = (t) => target + calcDelta(t);
-    const applyFriction = (t) => {
-        const delta = calcDelta(t);
-        const latest = calcLatest(t);
-        state.done = Math.abs(delta) <= restDistance;
-        state.current = state.done ? target : latest;
-    };
-    /**
-     * Ideally this would resolve for t in a stateless way, we could
-     * do that by always precalculating the animation but as we know
-     * this will be done anyway we can assume that spring will
-     * be discovered during that.
-     */
-    let timeReachedBoundary;
-    let spring$1;
-    const checkCatchBoundary = (t) => {
-        if (!isOutOfBounds(state.current))
-            return;
-        timeReachedBoundary = t;
-        spring$1 = Object(_spring_index_es_js__WEBPACK_IMPORTED_MODULE_2__["spring"])({
-            from: state.current,
-            to: nearestBoundary(state.current),
-            velocity: Object(_utils_velocity_es_js__WEBPACK_IMPORTED_MODULE_1__["calcGeneratorVelocity"])(calcLatest, t, state.current), // TODO: This should be passing * 1000
-            damping: bounceDamping,
-            stiffness: bounceStiffness,
-            restDistance,
-            restSpeed,
-        });
-    };
-    checkCatchBoundary(0);
-    return (t) => {
-        /**
-         * We need to resolve the friction to figure out if we need a
-         * spring but we don't want to do this twice per frame. So here
-         * we flag if we updated for this frame and later if we did
-         * we can skip doing it again.
-         */
-        let hasUpdatedFrame = false;
-        if (!spring$1 && timeReachedBoundary === undefined) {
-            hasUpdatedFrame = true;
-            applyFriction(t);
-            checkCatchBoundary(t);
-        }
-        /**
-         * If we have a spring and the provided t is beyond the moment the friction
-         * animation crossed the min/max boundary, use the spring.
-         */
-        if (timeReachedBoundary !== undefined && t > timeReachedBoundary) {
-            state.hasReachedTarget = true;
-            return spring$1(t - timeReachedBoundary);
-        }
-        else {
-            state.hasReachedTarget = false;
-            !hasUpdatedFrame && applyFriction(t);
-            return state;
-        }
-    };
-};
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/generators/dist/index.es.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/@motionone/generators/dist/index.es.js ***!
-  \*************************************************************/
-/*! exports provided: glide, spring, pregenerateKeyframes, calcGeneratorVelocity */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _glide_index_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./glide/index.es.js */ "./node_modules/@motionone/generators/dist/glide/index.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "glide", function() { return _glide_index_es_js__WEBPACK_IMPORTED_MODULE_0__["glide"]; });
-
-/* harmony import */ var _spring_index_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./spring/index.es.js */ "./node_modules/@motionone/generators/dist/spring/index.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "spring", function() { return _spring_index_es_js__WEBPACK_IMPORTED_MODULE_1__["spring"]; });
-
-/* harmony import */ var _utils_pregenerate_keyframes_es_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/pregenerate-keyframes.es.js */ "./node_modules/@motionone/generators/dist/utils/pregenerate-keyframes.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "pregenerateKeyframes", function() { return _utils_pregenerate_keyframes_es_js__WEBPACK_IMPORTED_MODULE_2__["pregenerateKeyframes"]; });
-
-/* harmony import */ var _utils_velocity_es_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/velocity.es.js */ "./node_modules/@motionone/generators/dist/utils/velocity.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "calcGeneratorVelocity", function() { return _utils_velocity_es_js__WEBPACK_IMPORTED_MODULE_3__["calcGeneratorVelocity"]; });
-
-
-
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/generators/dist/spring/defaults.es.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@motionone/generators/dist/spring/defaults.es.js ***!
-  \***********************************************************************/
-/*! exports provided: defaults */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaults", function() { return defaults; });
-const defaults = {
-    stiffness: 100.0,
-    damping: 10.0,
-    mass: 1.0,
-};
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/generators/dist/spring/index.es.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/@motionone/generators/dist/spring/index.es.js ***!
-  \********************************************************************/
-/*! exports provided: spring */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "spring", function() { return spring; });
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-/* harmony import */ var _defaults_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./defaults.es.js */ "./node_modules/@motionone/generators/dist/spring/defaults.es.js");
-/* harmony import */ var _utils_es_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils.es.js */ "./node_modules/@motionone/generators/dist/spring/utils.es.js");
-/* harmony import */ var _utils_has_reached_target_es_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/has-reached-target.es.js */ "./node_modules/@motionone/generators/dist/utils/has-reached-target.es.js");
-/* harmony import */ var _utils_velocity_es_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/velocity.es.js */ "./node_modules/@motionone/generators/dist/utils/velocity.es.js");
-
-
-
-
-
-
-const spring = ({ stiffness = _defaults_es_js__WEBPACK_IMPORTED_MODULE_1__["defaults"].stiffness, damping = _defaults_es_js__WEBPACK_IMPORTED_MODULE_1__["defaults"].damping, mass = _defaults_es_js__WEBPACK_IMPORTED_MODULE_1__["defaults"].mass, from = 0, to = 1, velocity = 0.0, restSpeed, restDistance, } = {}) => {
-    velocity = velocity ? _motionone_utils__WEBPACK_IMPORTED_MODULE_0__["time"].s(velocity) : 0.0;
-    const state = {
-        done: false,
-        hasReachedTarget: false,
-        current: from,
-        target: to,
-    };
-    const initialDelta = to - from;
-    const undampedAngularFreq = Math.sqrt(stiffness / mass) / 1000;
-    const dampingRatio = Object(_utils_es_js__WEBPACK_IMPORTED_MODULE_2__["calcDampingRatio"])(stiffness, damping, mass);
-    const isGranularScale = Math.abs(initialDelta) < 5;
-    restSpeed || (restSpeed = isGranularScale ? 0.01 : 2);
-    restDistance || (restDistance = isGranularScale ? 0.005 : 0.5);
-    let resolveSpring;
-    if (dampingRatio < 1) {
-        const angularFreq = undampedAngularFreq * Math.sqrt(1 - dampingRatio * dampingRatio);
-        // Underdamped spring (bouncy)
-        resolveSpring = (t) => to -
-            Math.exp(-dampingRatio * undampedAngularFreq * t) *
-                (((-velocity + dampingRatio * undampedAngularFreq * initialDelta) /
-                    angularFreq) *
-                    Math.sin(angularFreq * t) +
-                    initialDelta * Math.cos(angularFreq * t));
-    }
-    else {
-        // Critically damped spring
-        resolveSpring = (t) => {
-            return (to -
-                Math.exp(-undampedAngularFreq * t) *
-                    (initialDelta + (-velocity + undampedAngularFreq * initialDelta) * t));
-        };
-    }
-    return (t) => {
-        state.current = resolveSpring(t);
-        const currentVelocity = t === 0
-            ? velocity
-            : Object(_utils_velocity_es_js__WEBPACK_IMPORTED_MODULE_4__["calcGeneratorVelocity"])(resolveSpring, t, state.current);
-        const isBelowVelocityThreshold = Math.abs(currentVelocity) <= restSpeed;
-        const isBelowDisplacementThreshold = Math.abs(to - state.current) <= restDistance;
-        state.done = isBelowVelocityThreshold && isBelowDisplacementThreshold;
-        state.hasReachedTarget = Object(_utils_has_reached_target_es_js__WEBPACK_IMPORTED_MODULE_3__["hasReachedTarget"])(from, to, state.current);
-        return state;
-    };
-};
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/generators/dist/spring/utils.es.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/@motionone/generators/dist/spring/utils.es.js ***!
-  \********************************************************************/
-/*! exports provided: calcDampingRatio */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "calcDampingRatio", function() { return calcDampingRatio; });
-/* harmony import */ var _defaults_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./defaults.es.js */ "./node_modules/@motionone/generators/dist/spring/defaults.es.js");
-
-
-const calcDampingRatio = (stiffness = _defaults_es_js__WEBPACK_IMPORTED_MODULE_0__["defaults"].stiffness, damping = _defaults_es_js__WEBPACK_IMPORTED_MODULE_0__["defaults"].damping, mass = _defaults_es_js__WEBPACK_IMPORTED_MODULE_0__["defaults"].mass) => damping / (2 * Math.sqrt(stiffness * mass));
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/generators/dist/utils/has-reached-target.es.js":
-/*!********************************************************************************!*\
-  !*** ./node_modules/@motionone/generators/dist/utils/has-reached-target.es.js ***!
-  \********************************************************************************/
-/*! exports provided: hasReachedTarget */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hasReachedTarget", function() { return hasReachedTarget; });
-function hasReachedTarget(origin, target, current) {
-    return ((origin < target && current >= target) ||
-        (origin > target && current <= target));
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/generators/dist/utils/pregenerate-keyframes.es.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/@motionone/generators/dist/utils/pregenerate-keyframes.es.js ***!
-  \***********************************************************************************/
-/*! exports provided: pregenerateKeyframes */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pregenerateKeyframes", function() { return pregenerateKeyframes; });
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-
-
-const timeStep = 10;
-const maxDuration = 10000;
-function pregenerateKeyframes(generator, toUnit = _motionone_utils__WEBPACK_IMPORTED_MODULE_0__["noopReturn"]) {
-    let overshootDuration = undefined;
-    let timestamp = timeStep;
-    let state = generator(0);
-    const keyframes = [toUnit(state.current)];
-    while (!state.done && timestamp < maxDuration) {
-        state = generator(timestamp);
-        keyframes.push(toUnit(state.done ? state.target : state.current));
-        if (overshootDuration === undefined && state.hasReachedTarget) {
-            overshootDuration = timestamp;
-        }
-        timestamp += timeStep;
-    }
-    const duration = timestamp - timeStep;
-    /**
-     * If generating an animation that didn't actually move,
-     * generate a second keyframe so we have an origin and target.
-     */
-    if (keyframes.length === 1)
-        keyframes.push(state.current);
-    return {
-        keyframes,
-        duration: duration / 1000,
-        overshootDuration: (overshootDuration !== null && overshootDuration !== void 0 ? overshootDuration : duration) / 1000,
-    };
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/generators/dist/utils/velocity.es.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@motionone/generators/dist/utils/velocity.es.js ***!
-  \**********************************************************************/
-/*! exports provided: calcGeneratorVelocity */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "calcGeneratorVelocity", function() { return calcGeneratorVelocity; });
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-
-
-const sampleT = 5; // ms
-function calcGeneratorVelocity(resolveValue, t, current) {
-    const prevT = Math.max(t - sampleT, 0);
-    return Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_0__["velocityPerSecond"])(current - resolveValue(prevT), t - prevT);
-}
 
 
 
@@ -3592,12 +1371,13 @@ function calcGeneratorVelocity(resolveValue, t, current) {
 /*!**************************************************************!*\
   !*** ./node_modules/@motionone/types/dist/MotionValue.es.js ***!
   \**************************************************************/
-/*! exports provided: MotionValue */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MotionValue", function() { return MotionValue; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MotionValue: () => (/* binding */ MotionValue)
+/* harmony export */ });
 /**
  * The MotionValue tracks the state of a single animatable
  * value. Currently, updatedAt and current are unused. The
@@ -3619,34 +1399,18 @@ class MotionValue {
 
 /***/ }),
 
-/***/ "./node_modules/@motionone/types/dist/index.es.js":
-/*!********************************************************!*\
-  !*** ./node_modules/@motionone/types/dist/index.es.js ***!
-  \********************************************************/
-/*! exports provided: MotionValue */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _MotionValue_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MotionValue.es.js */ "./node_modules/@motionone/types/dist/MotionValue.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MotionValue", function() { return _MotionValue_es_js__WEBPACK_IMPORTED_MODULE_0__["MotionValue"]; });
-
-
-
-
-/***/ }),
-
 /***/ "./node_modules/@motionone/utils/dist/array.es.js":
 /*!********************************************************!*\
   !*** ./node_modules/@motionone/utils/dist/array.es.js ***!
   \********************************************************/
-/*! exports provided: addUniqueItem, removeItem */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addUniqueItem", function() { return addUniqueItem; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeItem", function() { return removeItem; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   addUniqueItem: () => (/* binding */ addUniqueItem),
+/* harmony export */   removeItem: () => (/* binding */ removeItem)
+/* harmony export */ });
 function addUniqueItem(array, item) {
     array.indexOf(item) === -1 && array.push(item);
 }
@@ -3664,12 +1428,13 @@ function removeItem(arr, item) {
 /*!********************************************************!*\
   !*** ./node_modules/@motionone/utils/dist/clamp.es.js ***!
   \********************************************************/
-/*! exports provided: clamp */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clamp", function() { return clamp; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   clamp: () => (/* binding */ clamp)
+/* harmony export */ });
 const clamp = (min, max, v) => Math.min(Math.max(v, min), max);
 
 
@@ -3681,12 +1446,13 @@ const clamp = (min, max, v) => Math.min(Math.max(v, min), max);
 /*!***********************************************************!*\
   !*** ./node_modules/@motionone/utils/dist/defaults.es.js ***!
   \***********************************************************/
-/*! exports provided: defaults */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaults", function() { return defaults; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   defaults: () => (/* binding */ defaults)
+/* harmony export */ });
 const defaults = {
     duration: 0.3,
     delay: 0,
@@ -3704,111 +1470,21 @@ const defaults = {
 /*!*********************************************************!*\
   !*** ./node_modules/@motionone/utils/dist/easing.es.js ***!
   \*********************************************************/
-/*! exports provided: getEasingForSegment */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getEasingForSegment", function() { return getEasingForSegment; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getEasingForSegment: () => (/* binding */ getEasingForSegment)
+/* harmony export */ });
 /* harmony import */ var _is_easing_list_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./is-easing-list.es.js */ "./node_modules/@motionone/utils/dist/is-easing-list.es.js");
 /* harmony import */ var _wrap_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./wrap.es.js */ "./node_modules/@motionone/utils/dist/wrap.es.js");
 
 
 
 function getEasingForSegment(easing, i) {
-    return Object(_is_easing_list_es_js__WEBPACK_IMPORTED_MODULE_0__["isEasingList"])(easing) ? easing[Object(_wrap_es_js__WEBPACK_IMPORTED_MODULE_1__["wrap"])(0, easing.length, i)] : easing;
+    return (0,_is_easing_list_es_js__WEBPACK_IMPORTED_MODULE_0__.isEasingList)(easing) ? easing[(0,_wrap_es_js__WEBPACK_IMPORTED_MODULE_1__.wrap)(0, easing.length, i)] : easing;
 }
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@motionone/utils/dist/index.es.js":
-/*!********************************************************!*\
-  !*** ./node_modules/@motionone/utils/dist/index.es.js ***!
-  \********************************************************/
-/*! exports provided: addUniqueItem, removeItem, clamp, defaults, getEasingForSegment, interpolate, isCubicBezier, isEasingGenerator, isEasingList, isFunction, isNumber, isString, mix, noop, noopReturn, defaultOffset, fillOffset, progress, time, velocityPerSecond, wrap */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _array_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./array.es.js */ "./node_modules/@motionone/utils/dist/array.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "addUniqueItem", function() { return _array_es_js__WEBPACK_IMPORTED_MODULE_0__["addUniqueItem"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "removeItem", function() { return _array_es_js__WEBPACK_IMPORTED_MODULE_0__["removeItem"]; });
-
-/* harmony import */ var _clamp_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./clamp.es.js */ "./node_modules/@motionone/utils/dist/clamp.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "clamp", function() { return _clamp_es_js__WEBPACK_IMPORTED_MODULE_1__["clamp"]; });
-
-/* harmony import */ var _defaults_es_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./defaults.es.js */ "./node_modules/@motionone/utils/dist/defaults.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "defaults", function() { return _defaults_es_js__WEBPACK_IMPORTED_MODULE_2__["defaults"]; });
-
-/* harmony import */ var _easing_es_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./easing.es.js */ "./node_modules/@motionone/utils/dist/easing.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getEasingForSegment", function() { return _easing_es_js__WEBPACK_IMPORTED_MODULE_3__["getEasingForSegment"]; });
-
-/* harmony import */ var _interpolate_es_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./interpolate.es.js */ "./node_modules/@motionone/utils/dist/interpolate.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "interpolate", function() { return _interpolate_es_js__WEBPACK_IMPORTED_MODULE_4__["interpolate"]; });
-
-/* harmony import */ var _is_cubic_bezier_es_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./is-cubic-bezier.es.js */ "./node_modules/@motionone/utils/dist/is-cubic-bezier.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isCubicBezier", function() { return _is_cubic_bezier_es_js__WEBPACK_IMPORTED_MODULE_5__["isCubicBezier"]; });
-
-/* harmony import */ var _is_easing_generator_es_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./is-easing-generator.es.js */ "./node_modules/@motionone/utils/dist/is-easing-generator.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isEasingGenerator", function() { return _is_easing_generator_es_js__WEBPACK_IMPORTED_MODULE_6__["isEasingGenerator"]; });
-
-/* harmony import */ var _is_easing_list_es_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./is-easing-list.es.js */ "./node_modules/@motionone/utils/dist/is-easing-list.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isEasingList", function() { return _is_easing_list_es_js__WEBPACK_IMPORTED_MODULE_7__["isEasingList"]; });
-
-/* harmony import */ var _is_function_es_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./is-function.es.js */ "./node_modules/@motionone/utils/dist/is-function.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isFunction", function() { return _is_function_es_js__WEBPACK_IMPORTED_MODULE_8__["isFunction"]; });
-
-/* harmony import */ var _is_number_es_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./is-number.es.js */ "./node_modules/@motionone/utils/dist/is-number.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isNumber", function() { return _is_number_es_js__WEBPACK_IMPORTED_MODULE_9__["isNumber"]; });
-
-/* harmony import */ var _is_string_es_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./is-string.es.js */ "./node_modules/@motionone/utils/dist/is-string.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isString", function() { return _is_string_es_js__WEBPACK_IMPORTED_MODULE_10__["isString"]; });
-
-/* harmony import */ var _mix_es_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./mix.es.js */ "./node_modules/@motionone/utils/dist/mix.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "mix", function() { return _mix_es_js__WEBPACK_IMPORTED_MODULE_11__["mix"]; });
-
-/* harmony import */ var _noop_es_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./noop.es.js */ "./node_modules/@motionone/utils/dist/noop.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "noop", function() { return _noop_es_js__WEBPACK_IMPORTED_MODULE_12__["noop"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "noopReturn", function() { return _noop_es_js__WEBPACK_IMPORTED_MODULE_12__["noopReturn"]; });
-
-/* harmony import */ var _offset_es_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./offset.es.js */ "./node_modules/@motionone/utils/dist/offset.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "defaultOffset", function() { return _offset_es_js__WEBPACK_IMPORTED_MODULE_13__["defaultOffset"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fillOffset", function() { return _offset_es_js__WEBPACK_IMPORTED_MODULE_13__["fillOffset"]; });
-
-/* harmony import */ var _progress_es_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./progress.es.js */ "./node_modules/@motionone/utils/dist/progress.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "progress", function() { return _progress_es_js__WEBPACK_IMPORTED_MODULE_14__["progress"]; });
-
-/* harmony import */ var _time_es_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./time.es.js */ "./node_modules/@motionone/utils/dist/time.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "time", function() { return _time_es_js__WEBPACK_IMPORTED_MODULE_15__["time"]; });
-
-/* harmony import */ var _velocity_es_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./velocity.es.js */ "./node_modules/@motionone/utils/dist/velocity.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "velocityPerSecond", function() { return _velocity_es_js__WEBPACK_IMPORTED_MODULE_16__["velocityPerSecond"]; });
-
-/* harmony import */ var _wrap_es_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./wrap.es.js */ "./node_modules/@motionone/utils/dist/wrap.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "wrap", function() { return _wrap_es_js__WEBPACK_IMPORTED_MODULE_17__["wrap"]; });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3819,18 +1495,19 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************************!*\
   !*** ./node_modules/@motionone/utils/dist/interpolate.es.js ***!
   \**************************************************************/
-/*! exports provided: interpolate */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "interpolate", function() { return interpolate; });
-/* harmony import */ var _mix_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mix.es.js */ "./node_modules/@motionone/utils/dist/mix.es.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   interpolate: () => (/* binding */ interpolate)
+/* harmony export */ });
+/* harmony import */ var _mix_es_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./mix.es.js */ "./node_modules/@motionone/utils/dist/mix.es.js");
 /* harmony import */ var _noop_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./noop.es.js */ "./node_modules/@motionone/utils/dist/noop.es.js");
-/* harmony import */ var _offset_es_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./offset.es.js */ "./node_modules/@motionone/utils/dist/offset.es.js");
+/* harmony import */ var _offset_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./offset.es.js */ "./node_modules/@motionone/utils/dist/offset.es.js");
 /* harmony import */ var _progress_es_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./progress.es.js */ "./node_modules/@motionone/utils/dist/progress.es.js");
 /* harmony import */ var _easing_es_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./easing.es.js */ "./node_modules/@motionone/utils/dist/easing.es.js");
-/* harmony import */ var _clamp_es_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./clamp.es.js */ "./node_modules/@motionone/utils/dist/clamp.es.js");
+/* harmony import */ var _clamp_es_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./clamp.es.js */ "./node_modules/@motionone/utils/dist/clamp.es.js");
 
 
 
@@ -3838,7 +1515,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function interpolate(output, input = Object(_offset_es_js__WEBPACK_IMPORTED_MODULE_2__["defaultOffset"])(output.length), easing = _noop_es_js__WEBPACK_IMPORTED_MODULE_1__["noopReturn"]) {
+function interpolate(output, input = (0,_offset_es_js__WEBPACK_IMPORTED_MODULE_0__.defaultOffset)(output.length), easing = _noop_es_js__WEBPACK_IMPORTED_MODULE_1__.noopReturn) {
     const length = output.length;
     /**
      * If the input length is lower than the output we
@@ -3847,17 +1524,17 @@ function interpolate(output, input = Object(_offset_es_js__WEBPACK_IMPORTED_MODU
      * moving outside the function.
      */
     const remainder = length - input.length;
-    remainder > 0 && Object(_offset_es_js__WEBPACK_IMPORTED_MODULE_2__["fillOffset"])(input, remainder);
+    remainder > 0 && (0,_offset_es_js__WEBPACK_IMPORTED_MODULE_0__.fillOffset)(input, remainder);
     return (t) => {
         let i = 0;
         for (; i < length - 2; i++) {
             if (t < input[i + 1])
                 break;
         }
-        let progressInRange = Object(_clamp_es_js__WEBPACK_IMPORTED_MODULE_5__["clamp"])(0, 1, Object(_progress_es_js__WEBPACK_IMPORTED_MODULE_3__["progress"])(input[i], input[i + 1], t));
-        const segmentEasing = Object(_easing_es_js__WEBPACK_IMPORTED_MODULE_4__["getEasingForSegment"])(easing, i);
+        let progressInRange = (0,_clamp_es_js__WEBPACK_IMPORTED_MODULE_2__.clamp)(0, 1, (0,_progress_es_js__WEBPACK_IMPORTED_MODULE_3__.progress)(input[i], input[i + 1], t));
+        const segmentEasing = (0,_easing_es_js__WEBPACK_IMPORTED_MODULE_4__.getEasingForSegment)(easing, i);
         progressInRange = segmentEasing(progressInRange);
-        return Object(_mix_es_js__WEBPACK_IMPORTED_MODULE_0__["mix"])(output[i], output[i + 1], progressInRange);
+        return (0,_mix_es_js__WEBPACK_IMPORTED_MODULE_5__.mix)(output[i], output[i + 1], progressInRange);
     };
 }
 
@@ -3870,16 +1547,17 @@ function interpolate(output, input = Object(_offset_es_js__WEBPACK_IMPORTED_MODU
 /*!******************************************************************!*\
   !*** ./node_modules/@motionone/utils/dist/is-cubic-bezier.es.js ***!
   \******************************************************************/
-/*! exports provided: isCubicBezier */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isCubicBezier", function() { return isCubicBezier; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   isCubicBezier: () => (/* binding */ isCubicBezier)
+/* harmony export */ });
 /* harmony import */ var _is_number_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./is-number.es.js */ "./node_modules/@motionone/utils/dist/is-number.es.js");
 
 
-const isCubicBezier = (easing) => Array.isArray(easing) && Object(_is_number_es_js__WEBPACK_IMPORTED_MODULE_0__["isNumber"])(easing[0]);
+const isCubicBezier = (easing) => Array.isArray(easing) && (0,_is_number_es_js__WEBPACK_IMPORTED_MODULE_0__.isNumber)(easing[0]);
 
 
 
@@ -3890,12 +1568,13 @@ const isCubicBezier = (easing) => Array.isArray(easing) && Object(_is_number_es_
 /*!**********************************************************************!*\
   !*** ./node_modules/@motionone/utils/dist/is-easing-generator.es.js ***!
   \**********************************************************************/
-/*! exports provided: isEasingGenerator */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isEasingGenerator", function() { return isEasingGenerator; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   isEasingGenerator: () => (/* binding */ isEasingGenerator)
+/* harmony export */ });
 const isEasingGenerator = (easing) => typeof easing === "object" &&
     Boolean(easing.createAnimation);
 
@@ -3908,16 +1587,17 @@ const isEasingGenerator = (easing) => typeof easing === "object" &&
 /*!*****************************************************************!*\
   !*** ./node_modules/@motionone/utils/dist/is-easing-list.es.js ***!
   \*****************************************************************/
-/*! exports provided: isEasingList */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isEasingList", function() { return isEasingList; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   isEasingList: () => (/* binding */ isEasingList)
+/* harmony export */ });
 /* harmony import */ var _is_number_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./is-number.es.js */ "./node_modules/@motionone/utils/dist/is-number.es.js");
 
 
-const isEasingList = (easing) => Array.isArray(easing) && !Object(_is_number_es_js__WEBPACK_IMPORTED_MODULE_0__["isNumber"])(easing[0]);
+const isEasingList = (easing) => Array.isArray(easing) && !(0,_is_number_es_js__WEBPACK_IMPORTED_MODULE_0__.isNumber)(easing[0]);
 
 
 
@@ -3928,12 +1608,13 @@ const isEasingList = (easing) => Array.isArray(easing) && !Object(_is_number_es_
 /*!**************************************************************!*\
   !*** ./node_modules/@motionone/utils/dist/is-function.es.js ***!
   \**************************************************************/
-/*! exports provided: isFunction */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isFunction", function() { return isFunction; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   isFunction: () => (/* binding */ isFunction)
+/* harmony export */ });
 const isFunction = (value) => typeof value === "function";
 
 
@@ -3945,12 +1626,13 @@ const isFunction = (value) => typeof value === "function";
 /*!************************************************************!*\
   !*** ./node_modules/@motionone/utils/dist/is-number.es.js ***!
   \************************************************************/
-/*! exports provided: isNumber */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isNumber", function() { return isNumber; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   isNumber: () => (/* binding */ isNumber)
+/* harmony export */ });
 const isNumber = (value) => typeof value === "number";
 
 
@@ -3962,12 +1644,13 @@ const isNumber = (value) => typeof value === "number";
 /*!************************************************************!*\
   !*** ./node_modules/@motionone/utils/dist/is-string.es.js ***!
   \************************************************************/
-/*! exports provided: isString */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isString", function() { return isString; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   isString: () => (/* binding */ isString)
+/* harmony export */ });
 const isString = (value) => typeof value === "string";
 
 
@@ -3979,12 +1662,13 @@ const isString = (value) => typeof value === "string";
 /*!******************************************************!*\
   !*** ./node_modules/@motionone/utils/dist/mix.es.js ***!
   \******************************************************/
-/*! exports provided: mix */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mix", function() { return mix; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   mix: () => (/* binding */ mix)
+/* harmony export */ });
 const mix = (min, max, progress) => -progress * min + progress * max + min;
 
 
@@ -3996,13 +1680,14 @@ const mix = (min, max, progress) => -progress * min + progress * max + min;
 /*!*******************************************************!*\
   !*** ./node_modules/@motionone/utils/dist/noop.es.js ***!
   \*******************************************************/
-/*! exports provided: noop, noopReturn */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "noop", function() { return noop; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "noopReturn", function() { return noopReturn; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   noop: () => (/* binding */ noop),
+/* harmony export */   noopReturn: () => (/* binding */ noopReturn)
+/* harmony export */ });
 const noop = () => { };
 const noopReturn = (v) => v;
 
@@ -4015,23 +1700,24 @@ const noopReturn = (v) => v;
 /*!*********************************************************!*\
   !*** ./node_modules/@motionone/utils/dist/offset.es.js ***!
   \*********************************************************/
-/*! exports provided: defaultOffset, fillOffset */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaultOffset", function() { return defaultOffset; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fillOffset", function() { return fillOffset; });
-/* harmony import */ var _mix_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mix.es.js */ "./node_modules/@motionone/utils/dist/mix.es.js");
-/* harmony import */ var _progress_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./progress.es.js */ "./node_modules/@motionone/utils/dist/progress.es.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   defaultOffset: () => (/* binding */ defaultOffset),
+/* harmony export */   fillOffset: () => (/* binding */ fillOffset)
+/* harmony export */ });
+/* harmony import */ var _mix_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mix.es.js */ "./node_modules/@motionone/utils/dist/mix.es.js");
+/* harmony import */ var _progress_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./progress.es.js */ "./node_modules/@motionone/utils/dist/progress.es.js");
 
 
 
 function fillOffset(offset, remaining) {
     const min = offset[offset.length - 1];
     for (let i = 1; i <= remaining; i++) {
-        const offsetProgress = Object(_progress_es_js__WEBPACK_IMPORTED_MODULE_1__["progress"])(0, remaining, i);
-        offset.push(Object(_mix_es_js__WEBPACK_IMPORTED_MODULE_0__["mix"])(min, 1, offsetProgress));
+        const offsetProgress = (0,_progress_es_js__WEBPACK_IMPORTED_MODULE_0__.progress)(0, remaining, i);
+        offset.push((0,_mix_es_js__WEBPACK_IMPORTED_MODULE_1__.mix)(min, 1, offsetProgress));
     }
 }
 function defaultOffset(length) {
@@ -4049,12 +1735,13 @@ function defaultOffset(length) {
 /*!***********************************************************!*\
   !*** ./node_modules/@motionone/utils/dist/progress.es.js ***!
   \***********************************************************/
-/*! exports provided: progress */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "progress", function() { return progress; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   progress: () => (/* binding */ progress)
+/* harmony export */ });
 const progress = (min, max, value) => max - min === 0 ? 1 : (value - min) / (max - min);
 
 
@@ -4066,12 +1753,13 @@ const progress = (min, max, value) => max - min === 0 ? 1 : (value - min) / (max
 /*!*******************************************************!*\
   !*** ./node_modules/@motionone/utils/dist/time.es.js ***!
   \*******************************************************/
-/*! exports provided: time */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "time", function() { return time; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   time: () => (/* binding */ time)
+/* harmony export */ });
 const time = {
     ms: (seconds) => seconds * 1000,
     s: (milliseconds) => milliseconds / 1000,
@@ -4082,41 +1770,17 @@ const time = {
 
 /***/ }),
 
-/***/ "./node_modules/@motionone/utils/dist/velocity.es.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/@motionone/utils/dist/velocity.es.js ***!
-  \***********************************************************/
-/*! exports provided: velocityPerSecond */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "velocityPerSecond", function() { return velocityPerSecond; });
-/*
-  Convert velocity into velocity per second
-
-  @param [number]: Unit per frame
-  @param [number]: Frame duration in ms
-*/
-function velocityPerSecond(velocity, frameDuration) {
-    return frameDuration ? velocity * (1000 / frameDuration) : 0;
-}
-
-
-
-
-/***/ }),
-
 /***/ "./node_modules/@motionone/utils/dist/wrap.es.js":
 /*!*******************************************************!*\
   !*** ./node_modules/@motionone/utils/dist/wrap.es.js ***!
   \*******************************************************/
-/*! exports provided: wrap */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wrap", function() { return wrap; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   wrap: () => (/* binding */ wrap)
+/* harmony export */ });
 const wrap = (min, max, v) => {
     const rangeSize = max - min;
     return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
@@ -4131,10 +1795,9 @@ const wrap = (min, max, v) => {
 /*!**************************************************!*\
   !*** ./node_modules/alpinejs/dist/module.cjs.js ***!
   \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-/* WEBPACK VAR INJECTION */(function(global) {var __create = Object.create;
+var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
@@ -4269,7 +1932,7 @@ var require_shared_cjs = __commonJS({
     };
     var _globalThis;
     var getGlobalThis = () => {
-      return _globalThis || (_globalThis = typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {});
+      return _globalThis || (_globalThis = typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : typeof __webpack_require__.g !== "undefined" ? __webpack_require__.g : {});
     };
     var identRE = /^[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*$/;
     function genPropsAccessExp(name) {
@@ -8677,7 +6340,7 @@ var Alpine = {
   get transaction() {
     return transaction;
   },
-  version: "3.17.0",
+  version: "3.17.1",
   flushAndStopDeferringMutations,
   dontAutoEvaluateFunctions,
   disableEffectScheduling,
@@ -9824,7 +7487,7 @@ var src_default = alpine_default;
 // packages/alpinejs/builds/module.js
 var module_default = src_default;
 // Annotate the CommonJS export names for ESM import in node:
-0 && (false);
+0 && (0);
 /*! Bundled license information:
 
 @vue/shared/dist/shared.cjs.js:
@@ -9842,7 +7505,6 @@ var module_default = src_default;
   **)
 */
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
@@ -9850,8 +7512,7 @@ var module_default = src_default;
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
   \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__(/*! ./lib/axios */ "./node_modules/axios/lib/axios.js");
 
@@ -9861,8 +7522,7 @@ module.exports = __webpack_require__(/*! ./lib/axios */ "./node_modules/axios/li
 /*!************************************************!*\
   !*** ./node_modules/axios/lib/adapters/xhr.js ***!
   \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -10053,8 +7713,7 @@ module.exports = function xhrAdapter(config) {
 /*!*****************************************!*\
   !*** ./node_modules/axios/lib/axios.js ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -10109,7 +7768,7 @@ axios.spread = __webpack_require__(/*! ./helpers/spread */ "./node_modules/axios
 module.exports = axios;
 
 // Allow use of default import syntax in TypeScript
-module.exports.default = axios;
+module.exports["default"] = axios;
 
 
 /***/ }),
@@ -10118,8 +7777,7 @@ module.exports.default = axios;
 /*!*************************************************!*\
   !*** ./node_modules/axios/lib/cancel/Cancel.js ***!
   \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -10149,8 +7807,7 @@ module.exports = Cancel;
 /*!******************************************************!*\
   !*** ./node_modules/axios/lib/cancel/CancelToken.js ***!
   \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -10218,8 +7875,7 @@ module.exports = CancelToken;
 /*!***************************************************!*\
   !*** ./node_modules/axios/lib/cancel/isCancel.js ***!
   \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -10235,8 +7891,7 @@ module.exports = function isCancel(value) {
 /*!**********************************************!*\
   !*** ./node_modules/axios/lib/core/Axios.js ***!
   \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -10341,8 +7996,7 @@ module.exports = Axios;
 /*!***********************************************************!*\
   !*** ./node_modules/axios/lib/core/InterceptorManager.js ***!
   \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -10405,8 +8059,7 @@ module.exports = InterceptorManager;
 /*!******************************************************!*\
   !*** ./node_modules/axios/lib/core/buildFullPath.js ***!
   \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -10437,8 +8090,7 @@ module.exports = function buildFullPath(baseURL, requestedURL) {
 /*!****************************************************!*\
   !*** ./node_modules/axios/lib/core/createError.js ***!
   \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -10467,8 +8119,7 @@ module.exports = function createError(message, config, code, request, response) 
 /*!********************************************************!*\
   !*** ./node_modules/axios/lib/core/dispatchRequest.js ***!
   \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -10558,8 +8209,7 @@ module.exports = function dispatchRequest(config) {
 /*!*****************************************************!*\
   !*** ./node_modules/axios/lib/core/enhanceError.js ***!
   \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -10612,8 +8262,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 /*!****************************************************!*\
   !*** ./node_modules/axios/lib/core/mergeConfig.js ***!
   \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -10697,8 +8346,7 @@ module.exports = function mergeConfig(config1, config2) {
 /*!***********************************************!*\
   !*** ./node_modules/axios/lib/core/settle.js ***!
   \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -10734,8 +8382,7 @@ module.exports = function settle(resolve, reject, response) {
 /*!******************************************************!*\
   !*** ./node_modules/axios/lib/core/transformData.js ***!
   \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -10766,11 +8413,11 @@ module.exports = function transformData(data, headers, fns) {
 /*!********************************************!*\
   !*** ./node_modules/axios/lib/defaults.js ***!
   \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
+/* provided dependency */ var process = __webpack_require__(/*! process/browser.js */ "./node_modules/process/browser.js");
+
 
 var utils = __webpack_require__(/*! ./utils */ "./node_modules/axios/lib/utils.js");
 var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ "./node_modules/axios/lib/helpers/normalizeHeaderName.js");
@@ -10868,7 +8515,6 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
@@ -10876,8 +8522,7 @@ module.exports = defaults;
 /*!************************************************!*\
   !*** ./node_modules/axios/lib/helpers/bind.js ***!
   \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -10899,8 +8544,7 @@ module.exports = function bind(fn, thisArg) {
 /*!****************************************************!*\
   !*** ./node_modules/axios/lib/helpers/buildURL.js ***!
   \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -10982,8 +8626,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 /*!*******************************************************!*\
   !*** ./node_modules/axios/lib/helpers/combineURLs.js ***!
   \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -11008,8 +8651,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 /*!***************************************************!*\
   !*** ./node_modules/axios/lib/helpers/cookies.js ***!
   \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -11073,8 +8715,7 @@ module.exports = (
 /*!*********************************************************!*\
   !*** ./node_modules/axios/lib/helpers/isAbsoluteURL.js ***!
   \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -11099,8 +8740,7 @@ module.exports = function isAbsoluteURL(url) {
 /*!***********************************************************!*\
   !*** ./node_modules/axios/lib/helpers/isURLSameOrigin.js ***!
   \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -11179,8 +8819,7 @@ module.exports = (
 /*!***************************************************************!*\
   !*** ./node_modules/axios/lib/helpers/normalizeHeaderName.js ***!
   \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -11203,8 +8842,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 /*!********************************************************!*\
   !*** ./node_modules/axios/lib/helpers/parseHeaders.js ***!
   \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -11268,8 +8906,7 @@ module.exports = function parseHeaders(headers) {
 /*!**************************************************!*\
   !*** ./node_modules/axios/lib/helpers/spread.js ***!
   \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -11307,8 +8944,7 @@ module.exports = function spread(callback) {
 /*!*****************************************!*\
   !*** ./node_modules/axios/lib/utils.js ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -11659,12 +9295,104 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/app.js":
+/*!*****************************!*\
+  !*** ./resources/js/app.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var motion__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! motion */ "./node_modules/motion/dist/animate.es.js");
+/* harmony import */ var motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! motion */ "./node_modules/@motionone/dom/dist/gestures/in-view.es.js");
+/* harmony import */ var motion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! motion */ "./node_modules/@motionone/dom/dist/utils/stagger.es.js");
+/* harmony import */ var alpinejs_dist_module_cjs_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! alpinejs/dist/module.cjs.js */ "./node_modules/alpinejs/dist/module.cjs.js");
+/* harmony import */ var alpinejs_dist_module_cjs_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(alpinejs_dist_module_cjs_js__WEBPACK_IMPORTED_MODULE_3__);
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+// 1. Import & Ekspor Motion One v10
+
+window.Motion = {
+  animate: motion__WEBPACK_IMPORTED_MODULE_0__.animate,
+  inView: motion__WEBPACK_IMPORTED_MODULE_1__.inView,
+  stagger: motion__WEBPACK_IMPORTED_MODULE_2__.stagger
+};
+window.animate = motion__WEBPACK_IMPORTED_MODULE_0__.animate;
+window.inView = motion__WEBPACK_IMPORTED_MODULE_1__.inView;
+window.stagger = motion__WEBPACK_IMPORTED_MODULE_2__.stagger;
+
+// 2. Import Alpine.js dari node_modules (CJS Bundle kompatibel Laravel Mix 5)
+
+window.Alpine = (alpinejs_dist_module_cjs_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+// Jalankan Alpine secara otomatis
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", function () {
+    if (!window.Alpine.started) {
+      alpinejs_dist_module_cjs_js__WEBPACK_IMPORTED_MODULE_3___default().start();
+    }
+  });
+} else {
+  if (!window.Alpine.started) {
+    alpinejs_dist_module_cjs_js__WEBPACK_IMPORTED_MODULE_3___default().start();
+  }
+}
+
+/***/ }),
+
+/***/ "./resources/js/bootstrap.js":
+/*!***********************************!*\
+  !*** ./resources/js/bootstrap.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+
+/**
+ * We'll load jQuery and the Bootstrap jQuery plugin which provides support
+ * for JavaScript based Bootstrap features such as modals and tabs. This
+ * code may be modified to fit the specific needs of your application.
+ */
+
+try {
+  window.Popper = (__webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js")["default"]);
+  window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+  __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
+} catch (e) {}
+
+/**
+ * We'll load the axios HTTP library which allows us to easily issue requests
+ * to our Laravel back-end. This library automatically handles sending the
+ * CSRF token as a header based on the value of the "XSRF" token cookie.
+ */
+
+window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+/**
+ * Echo exposes an expressive API for subscribing to channels and listening
+ * for events that are broadcast by Laravel. Echo and event broadcasting
+ * allows your team to easily build robust real-time web applications.
+ */
+
+// import Echo from 'laravel-echo';
+
+// window.Pusher = require('pusher-js');
+
+// window.Echo = new Echo({
+//     broadcaster: 'pusher',
+//     key: process.env.MIX_PUSHER_APP_KEY,
+//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
+//     forceTLS: true
+// });
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.js ***!
   \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 /*!
   * Bootstrap v4.6.2 (https://getbootstrap.com/)
@@ -11673,7 +9401,7 @@ module.exports = {
   */
 (function (global, factory) {
    true ? factory(exports, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js")) :
-  undefined;
+  0;
 })(this, (function (exports, $, Popper) { 'use strict';
 
   function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
@@ -16029,13 +13757,14 @@ module.exports = {
 /*!*******************************************************!*\
   !*** ./node_modules/hey-listen/dist/hey-listen.es.js ***!
   \*******************************************************/
-/*! exports provided: invariant, warning */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "invariant", function() { return invariant; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "warning", function() { return warning; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   invariant: () => (/* binding */ invariant),
+/* harmony export */   warning: () => (/* binding */ warning)
+/* harmony export */ });
 var warning = function () { };
 var invariant = function () { };
 if (true) {
@@ -16060,8 +13789,7 @@ if (true) {
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
   \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
  * jQuery JavaScript Library v3.7.1
@@ -26742,7 +24470,7 @@ if ( true ) {
 	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function() {
 		return jQuery;
 	}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 }
 
 
@@ -26788,10 +24516,10 @@ return jQuery;
 /*!***************************************!*\
   !*** ./node_modules/lodash/lodash.js ***!
   \***************************************/
-/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
+/* module decorator */ module = __webpack_require__.nmd(module);
+var __WEBPACK_AMD_DEFINE_RESULT__;/**
  * @license
  * Lodash <https://lodash.com/>
  * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
@@ -27221,7 +24949,7 @@ return jQuery;
       freeParseInt = parseInt;
 
   /** Detect free variable `global` from Node.js. */
-  var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+  var freeGlobal = typeof __webpack_require__.g == 'object' && __webpack_require__.g && __webpack_require__.g.Object === Object && __webpack_require__.g;
 
   /** Detect free variable `self`. */
   var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -27233,7 +24961,7 @@ return jQuery;
   var freeExports =  true && exports && !exports.nodeType && exports;
 
   /** Detect free variable `module`. */
-  var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
+  var freeModule = freeExports && "object" == 'object' && module && !module.nodeType && module;
 
   /** Detect the popular CommonJS extension `module.exports`. */
   var moduleExports = freeModule && freeModule.exports === freeExports;
@@ -44037,13 +41765,25 @@ return jQuery;
     !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
       return _;
     }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
   }
   // Check for `exports` after `define` in case a build optimizer adds it.
   else {}
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
+
+/***/ }),
+
+/***/ "./resources/css/app.css":
+/*!*******************************!*\
+  !*** ./resources/css/app.css ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ }),
 
@@ -44051,92 +41791,35 @@ return jQuery;
 /*!************************************************!*\
   !*** ./node_modules/motion/dist/animate.es.js ***!
   \************************************************/
-/*! exports provided: animate, animateProgress */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "animate", function() { return animate; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "animateProgress", function() { return animateProgress; });
-/* harmony import */ var _motionone_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/dom */ "./node_modules/@motionone/dom/dist/index.es.js");
-/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/index.es.js");
-/* harmony import */ var _motionone_animation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @motionone/animation */ "./node_modules/@motionone/animation/dist/index.es.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   animate: () => (/* binding */ animate),
+/* harmony export */   animateProgress: () => (/* binding */ animateProgress)
+/* harmony export */ });
+/* harmony import */ var _motionone_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/dom */ "./node_modules/@motionone/dom/dist/animate/utils/controls.es.js");
+/* harmony import */ var _motionone_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @motionone/dom */ "./node_modules/@motionone/dom/dist/animate/index.es.js");
+/* harmony import */ var _motionone_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @motionone/utils */ "./node_modules/@motionone/utils/dist/is-function.es.js");
+/* harmony import */ var _motionone_animation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @motionone/animation */ "./node_modules/@motionone/animation/dist/Animation.es.js");
 
 
 
 
 function animateProgress(target, options = {}) {
-    return Object(_motionone_dom__WEBPACK_IMPORTED_MODULE_0__["withControls"])([
+    return (0,_motionone_dom__WEBPACK_IMPORTED_MODULE_0__.withControls)([
         () => {
-            const animation = new _motionone_animation__WEBPACK_IMPORTED_MODULE_2__["Animation"](target, [0, 1], options);
+            const animation = new _motionone_animation__WEBPACK_IMPORTED_MODULE_1__.Animation(target, [0, 1], options);
             animation.finished.catch(() => { });
             return animation;
         },
     ], options, options.duration);
 }
 function animate(target, keyframesOrOptions, options) {
-    const factory = Object(_motionone_utils__WEBPACK_IMPORTED_MODULE_1__["isFunction"])(target) ? animateProgress : _motionone_dom__WEBPACK_IMPORTED_MODULE_0__["animate"];
+    const factory = (0,_motionone_utils__WEBPACK_IMPORTED_MODULE_2__.isFunction)(target) ? animateProgress : _motionone_dom__WEBPACK_IMPORTED_MODULE_3__.animate;
     return factory(target, keyframesOrOptions, options);
 }
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/motion/dist/main.es.js":
-/*!*********************************************!*\
-  !*** ./node_modules/motion/dist/main.es.js ***!
-  \*********************************************/
-/*! exports provided: createAnimate, animateStyle, timeline, stagger, spring, glide, style, inView, resize, scroll, ScrollOffset, withControls, getAnimationData, getStyleName, createMotionState, mountedStates, createStyles, createStyleString, MotionValue, animate */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _motionone_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @motionone/dom */ "./node_modules/@motionone/dom/dist/index.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createAnimate", function() { return _motionone_dom__WEBPACK_IMPORTED_MODULE_0__["createAnimate"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "animateStyle", function() { return _motionone_dom__WEBPACK_IMPORTED_MODULE_0__["animateStyle"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "timeline", function() { return _motionone_dom__WEBPACK_IMPORTED_MODULE_0__["timeline"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "stagger", function() { return _motionone_dom__WEBPACK_IMPORTED_MODULE_0__["stagger"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "spring", function() { return _motionone_dom__WEBPACK_IMPORTED_MODULE_0__["spring"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "glide", function() { return _motionone_dom__WEBPACK_IMPORTED_MODULE_0__["glide"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "style", function() { return _motionone_dom__WEBPACK_IMPORTED_MODULE_0__["style"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "inView", function() { return _motionone_dom__WEBPACK_IMPORTED_MODULE_0__["inView"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "resize", function() { return _motionone_dom__WEBPACK_IMPORTED_MODULE_0__["resize"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "scroll", function() { return _motionone_dom__WEBPACK_IMPORTED_MODULE_0__["scroll"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ScrollOffset", function() { return _motionone_dom__WEBPACK_IMPORTED_MODULE_0__["ScrollOffset"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "withControls", function() { return _motionone_dom__WEBPACK_IMPORTED_MODULE_0__["withControls"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getAnimationData", function() { return _motionone_dom__WEBPACK_IMPORTED_MODULE_0__["getAnimationData"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getStyleName", function() { return _motionone_dom__WEBPACK_IMPORTED_MODULE_0__["getStyleName"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createMotionState", function() { return _motionone_dom__WEBPACK_IMPORTED_MODULE_0__["createMotionState"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "mountedStates", function() { return _motionone_dom__WEBPACK_IMPORTED_MODULE_0__["mountedStates"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createStyles", function() { return _motionone_dom__WEBPACK_IMPORTED_MODULE_0__["createStyles"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createStyleString", function() { return _motionone_dom__WEBPACK_IMPORTED_MODULE_0__["createStyleString"]; });
-
-/* harmony import */ var _motionone_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @motionone/types */ "./node_modules/@motionone/types/dist/index.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MotionValue", function() { return _motionone_types__WEBPACK_IMPORTED_MODULE_1__["MotionValue"]; });
-
-/* harmony import */ var _animate_es_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./animate.es.js */ "./node_modules/motion/dist/animate.es.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "animate", function() { return _animate_es_js__WEBPACK_IMPORTED_MODULE_2__["animate"]; });
-
-
 
 
 
@@ -44147,12 +41830,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************************************!*\
   !*** ./node_modules/popper.js/dist/esm/popper.js ***!
   \***************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(global) {/**!
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
  * @version 1.16.1
  * @license
@@ -46762,14 +44447,13 @@ var Popper = function () {
  */
 
 
-Popper.Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
+Popper.Utils = (typeof window !== 'undefined' ? window : __webpack_require__.g).PopperUtils;
 Popper.placements = placements;
 Popper.Defaults = Defaults;
 
-/* harmony default export */ __webpack_exports__["default"] = (Popper);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Popper);
 //# sourceMappingURL=popper.js.map
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
@@ -46777,8 +44461,7 @@ Popper.Defaults = Defaults;
 /*!*****************************************!*\
   !*** ./node_modules/process/browser.js ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 // shim for using process in browser
 var process = module.exports = {};
@@ -46966,634 +44649,196 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 
-/***/ }),
-
-/***/ "./node_modules/tslib/tslib.es6.js":
-/*!*****************************************!*\
-  !*** ./node_modules/tslib/tslib.es6.js ***!
-  \*****************************************/
-/*! exports provided: __extends, __assign, __rest, __decorate, __param, __esDecorate, __runInitializers, __propKey, __setFunctionName, __metadata, __awaiter, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArrays, __spreadArray, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet, __classPrivateFieldIn, __addDisposableResource, __disposeResources, __rewriteRelativeImportExtension, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__extends", function() { return __extends; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__assign", function() { return __assign; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__rest", function() { return __rest; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__decorate", function() { return __decorate; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__param", function() { return __param; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__esDecorate", function() { return __esDecorate; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__runInitializers", function() { return __runInitializers; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__propKey", function() { return __propKey; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__setFunctionName", function() { return __setFunctionName; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__createBinding", function() { return __createBinding; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArrays", function() { return __spreadArrays; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArray", function() { return __spreadArray; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function() { return __asyncGenerator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function() { return __asyncDelegator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncValues", function() { return __asyncValues; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function() { return __classPrivateFieldGet; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function() { return __classPrivateFieldSet; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldIn", function() { return __classPrivateFieldIn; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__addDisposableResource", function() { return __addDisposableResource; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__disposeResources", function() { return __disposeResources; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__rewriteRelativeImportExtension", function() { return __rewriteRelativeImportExtension; });
-/******************************************************************************
-Copyright (c) Microsoft Corporation.
-
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.
-***************************************************************************** */
-/* global Reflect, Promise, SuppressedError, Symbol, Iterator */
-
-var extendStatics = function(d, b) {
-    extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-    return extendStatics(d, b);
-};
-
-function __extends(d, b) {
-    if (typeof b !== "function" && b !== null)
-        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-    extendStatics(d, b);
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-}
-
-var __assign = function() {
-    __assign = Object.assign || function __assign(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-        }
-        return t;
-    }
-    return __assign.apply(this, arguments);
-}
-
-function __rest(s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-}
-
-function __decorate(decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-}
-
-function __param(paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-}
-
-function __esDecorate(ctor, descriptorIn, decorators, contextIn, initializers, extraInitializers) {
-    function accept(f) { if (f !== void 0 && typeof f !== "function") throw new TypeError("Function expected"); return f; }
-    var kind = contextIn.kind, key = kind === "getter" ? "get" : kind === "setter" ? "set" : "value";
-    var target = !descriptorIn && ctor ? contextIn["static"] ? ctor : ctor.prototype : null;
-    var descriptor = descriptorIn || (target ? Object.getOwnPropertyDescriptor(target, contextIn.name) : {});
-    var _, done = false;
-    for (var i = decorators.length - 1; i >= 0; i--) {
-        var context = {};
-        for (var p in contextIn) context[p] = p === "access" ? {} : contextIn[p];
-        for (var p in contextIn.access) context.access[p] = contextIn.access[p];
-        context.addInitializer = function (f) { if (done) throw new TypeError("Cannot add initializers after decoration has completed"); extraInitializers.push(accept(f || null)); };
-        var result = (0, decorators[i])(kind === "accessor" ? { get: descriptor.get, set: descriptor.set } : descriptor[key], context);
-        if (kind === "accessor") {
-            if (result === void 0) continue;
-            if (result === null || typeof result !== "object") throw new TypeError("Object expected");
-            if (_ = accept(result.get)) descriptor.get = _;
-            if (_ = accept(result.set)) descriptor.set = _;
-            if (_ = accept(result.init)) initializers.unshift(_);
-        }
-        else if (_ = accept(result)) {
-            if (kind === "field") initializers.unshift(_);
-            else descriptor[key] = _;
-        }
-    }
-    if (target) Object.defineProperty(target, contextIn.name, descriptor);
-    done = true;
-};
-
-function __runInitializers(thisArg, initializers, value) {
-    var useValue = arguments.length > 2;
-    for (var i = 0; i < initializers.length; i++) {
-        value = useValue ? initializers[i].call(thisArg, value) : initializers[i].call(thisArg);
-    }
-    return useValue ? value : void 0;
-};
-
-function __propKey(x) {
-    return typeof x === "symbol" ? x : "".concat(x);
-};
-
-function __setFunctionName(f, name, prefix) {
-    if (typeof name === "symbol") name = name.description ? "[".concat(name.description, "]") : "";
-    return Object.defineProperty(f, "name", { configurable: true, value: prefix ? "".concat(prefix, " ", name) : name });
-};
-
-function __metadata(metadataKey, metadataValue) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
-}
-
-function __awaiter(thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-}
-
-function __generator(thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
-    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (g && (g = 0, op[0] && (_ = 0)), _) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-}
-
-var __createBinding = Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-        desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-});
-
-function __exportStar(m, o) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding(o, m, p);
-}
-
-function __values(o) {
-    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
-    if (m) return m.call(o);
-    if (o && typeof o.length === "number") return {
-        next: function () {
-            if (o && i >= o.length) o = void 0;
-            return { value: o && o[i++], done: !o };
-        }
-    };
-    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
-}
-
-function __read(o, n) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o), r, ar = [], e;
-    try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-    }
-    catch (error) { e = { error: error }; }
-    finally {
-        try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-        }
-        finally { if (e) throw e.error; }
-    }
-    return ar;
-}
-
-/** @deprecated */
-function __spread() {
-    for (var ar = [], i = 0; i < arguments.length; i++)
-        ar = ar.concat(__read(arguments[i]));
-    return ar;
-}
-
-/** @deprecated */
-function __spreadArrays() {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-}
-
-function __spreadArray(to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-}
-
-function __await(v) {
-    return this instanceof __await ? (this.v = v, this) : new __await(v);
-}
-
-function __asyncGenerator(thisArg, _arguments, generator) {
-    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-    var g = generator.apply(thisArg, _arguments || []), i, q = [];
-    return i = Object.create((typeof AsyncIterator === "function" ? AsyncIterator : Object).prototype), verb("next"), verb("throw"), verb("return", awaitReturn), i[Symbol.asyncIterator] = function () { return this; }, i;
-    function awaitReturn(f) { return function (v) { return Promise.resolve(v).then(f, reject); }; }
-    function verb(n, f) { if (g[n]) { i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; if (f) i[n] = f(i[n]); } }
-    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
-    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
-    function fulfill(value) { resume("next", value); }
-    function reject(value) { resume("throw", value); }
-    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
-}
-
-function __asyncDelegator(o) {
-    var i, p;
-    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
-    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: false } : f ? f(v) : v; } : f; }
-}
-
-function __asyncValues(o) {
-    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-    var m = o[Symbol.asyncIterator], i;
-    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
-    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
-    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
-}
-
-function __makeTemplateObject(cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-
-var __setModuleDefault = Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-};
-
-var ownKeys = function(o) {
-    ownKeys = Object.getOwnPropertyNames || function (o) {
-        var ar = [];
-        for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
-        return ar;
-    };
-    return ownKeys(o);
-};
-
-function __importStar(mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
-    __setModuleDefault(result, mod);
-    return result;
-}
-
-function __importDefault(mod) {
-    return (mod && mod.__esModule) ? mod : { default: mod };
-}
-
-function __classPrivateFieldGet(receiver, state, kind, f) {
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
-    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
-}
-
-function __classPrivateFieldSet(receiver, state, value, kind, f) {
-    if (kind === "m") throw new TypeError("Private method is not writable");
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
-    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
-}
-
-function __classPrivateFieldIn(state, receiver) {
-    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
-    return typeof state === "function" ? receiver === state : state.has(receiver);
-}
-
-function __addDisposableResource(env, value, async) {
-    if (value !== null && value !== void 0) {
-        if (typeof value !== "object" && typeof value !== "function") throw new TypeError("Object expected.");
-        var dispose, inner;
-        if (async) {
-            if (!Symbol.asyncDispose) throw new TypeError("Symbol.asyncDispose is not defined.");
-            dispose = value[Symbol.asyncDispose];
-        }
-        if (dispose === void 0) {
-            if (!Symbol.dispose) throw new TypeError("Symbol.dispose is not defined.");
-            dispose = value[Symbol.dispose];
-            if (async) inner = dispose;
-        }
-        if (typeof dispose !== "function") throw new TypeError("Object not disposable.");
-        if (inner) dispose = function() { try { inner.call(this); } catch (e) { return Promise.reject(e); } };
-        env.stack.push({ value: value, dispose: dispose, async: async });
-    }
-    else if (async) {
-        env.stack.push({ async: true });
-    }
-    return value;
-
-}
-
-var _SuppressedError = typeof SuppressedError === "function" ? SuppressedError : function (error, suppressed, message) {
-    var e = new Error(message);
-    return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
-};
-
-function __disposeResources(env) {
-    function fail(e) {
-        env.error = env.hasError ? new _SuppressedError(e, env.error, "An error was suppressed during disposal.") : e;
-        env.hasError = true;
-    }
-    var r, s = 0;
-    function next() {
-        while (r = env.stack.pop()) {
-            try {
-                if (!r.async && s === 1) return s = 0, env.stack.push(r), Promise.resolve().then(next);
-                if (r.dispose) {
-                    var result = r.dispose.call(r.value);
-                    if (r.async) return s |= 2, Promise.resolve(result).then(next, function(e) { fail(e); return next(); });
-                }
-                else s |= 1;
-            }
-            catch (e) {
-                fail(e);
-            }
-        }
-        if (s === 1) return env.hasError ? Promise.reject(env.error) : Promise.resolve();
-        if (env.hasError) throw env.error;
-    }
-    return next();
-}
-
-function __rewriteRelativeImportExtension(path, preserveJsx) {
-    if (typeof path === "string" && /^\.\.?\//.test(path)) {
-        return path.replace(/\.(tsx)$|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function (m, tsx, d, ext, cm) {
-            return tsx ? preserveJsx ? ".jsx" : ".js" : d && (!ext || !cm) ? m : (d + ext + "." + cm.toLowerCase() + "js");
-        });
-    }
-    return path;
-}
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    __extends: __extends,
-    __assign: __assign,
-    __rest: __rest,
-    __decorate: __decorate,
-    __param: __param,
-    __esDecorate: __esDecorate,
-    __runInitializers: __runInitializers,
-    __propKey: __propKey,
-    __setFunctionName: __setFunctionName,
-    __metadata: __metadata,
-    __awaiter: __awaiter,
-    __generator: __generator,
-    __createBinding: __createBinding,
-    __exportStar: __exportStar,
-    __values: __values,
-    __read: __read,
-    __spread: __spread,
-    __spreadArrays: __spreadArrays,
-    __spreadArray: __spreadArray,
-    __await: __await,
-    __asyncGenerator: __asyncGenerator,
-    __asyncDelegator: __asyncDelegator,
-    __asyncValues: __asyncValues,
-    __makeTemplateObject: __makeTemplateObject,
-    __importStar: __importStar,
-    __importDefault: __importDefault,
-    __classPrivateFieldGet: __classPrivateFieldGet,
-    __classPrivateFieldSet: __classPrivateFieldSet,
-    __classPrivateFieldIn: __classPrivateFieldIn,
-    __addDisposableResource: __addDisposableResource,
-    __disposeResources: __disposeResources,
-    __rewriteRelativeImportExtension: __rewriteRelativeImportExtension,
-});
-
-
-/***/ }),
-
-/***/ "./node_modules/webpack/buildin/global.js":
-/*!***********************************!*\
-  !*** (webpack)/buildin/global.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-
-/***/ "./node_modules/webpack/buildin/module.js":
-/*!***********************************!*\
-  !*** (webpack)/buildin/module.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = function(module) {
-	if (!module.webpackPolyfill) {
-		module.deprecate = function() {};
-		module.paths = [];
-		// module.parent = undefined by default
-		if (!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function() {
-				return module.i;
-			}
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
-
-/***/ }),
-
-/***/ "./resources/css/app.css":
-/*!*******************************!*\
-  !*** ./resources/css/app.css ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/js/app.js":
-/*!*****************************!*\
-  !*** ./resources/js/app.js ***!
-  \*****************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var motion__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! motion */ "./node_modules/motion/dist/main.es.js");
-/* harmony import */ var alpinejs_dist_module_cjs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! alpinejs/dist/module.cjs.js */ "./node_modules/alpinejs/dist/module.cjs.js");
-/* harmony import */ var alpinejs_dist_module_cjs_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(alpinejs_dist_module_cjs_js__WEBPACK_IMPORTED_MODULE_1__);
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
-// 1. Import & Ekspor Motion One v10
-
-window.Motion = {
-  animate: motion__WEBPACK_IMPORTED_MODULE_0__["animate"],
-  inView: motion__WEBPACK_IMPORTED_MODULE_0__["inView"],
-  stagger: motion__WEBPACK_IMPORTED_MODULE_0__["stagger"]
-};
-window.animate = motion__WEBPACK_IMPORTED_MODULE_0__["animate"];
-window.inView = motion__WEBPACK_IMPORTED_MODULE_0__["inView"];
-window.stagger = motion__WEBPACK_IMPORTED_MODULE_0__["stagger"];
-
-// 2. Import Alpine.js dari node_modules (CJS Bundle kompatibel Laravel Mix 5)
-
-window.Alpine = alpinejs_dist_module_cjs_js__WEBPACK_IMPORTED_MODULE_1___default.a;
-
-// Jalankan Alpine secara otomatis
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", function () {
-    if (!window.Alpine.started) {
-      alpinejs_dist_module_cjs_js__WEBPACK_IMPORTED_MODULE_1___default.a.start();
-    }
-  });
-} else {
-  if (!window.Alpine.started) {
-    alpinejs_dist_module_cjs_js__WEBPACK_IMPORTED_MODULE_1___default.a.start();
-  }
-}
-
-/***/ }),
-
-/***/ "./resources/js/bootstrap.js":
-/*!***********************************!*\
-  !*** ./resources/js/bootstrap.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-
-/**
- * We'll load jQuery and the Bootstrap jQuery plugin which provides support
- * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
- */
-
-try {
-  window.Popper = __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js")["default"];
-  window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-  __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
-} catch (e) {}
-
-/**
- * We'll load the axios HTTP library which allows us to easily issue requests
- * to our Laravel back-end. This library automatically handles sending the
- * CSRF token as a header based on the value of the "XSRF" token cookie.
- */
-
-window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
-/**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
- */
-
-// import Echo from 'laravel-echo';
-
-// window.Pusher = require('pusher-js');
-
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: process.env.MIX_PUSHER_APP_KEY,
-//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-//     forceTLS: true
-// });
-
-/***/ }),
-
-/***/ 0:
-/*!***********************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/css/app.css ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! C:\laragon\www\srp-website\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\laragon\www\srp-website\resources\css\app.css */"./resources/css/app.css");
-
-
 /***/ })
 
-/******/ });
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			id: moduleId,
+/******/ 			loaded: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/node module decorator */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nmd = (module) => {
+/******/ 			module.paths = [];
+/******/ 			if (!module.children) module.children = [];
+/******/ 			return module;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"/js/app": 0,
+/******/ 			"css/app": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
