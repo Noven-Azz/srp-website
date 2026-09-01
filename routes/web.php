@@ -24,3 +24,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/portfolio', function () {
     return view('portfolio');
 })->name('portfolio');
+
+// Hapus {slug} dari URL
+Route::get('/portfolio/detail', function () {
+    return view('portfolio.show');
+})->name('portfolio.show');

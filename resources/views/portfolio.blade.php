@@ -111,7 +111,7 @@
             <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 gap-12">
 
                 <!-- Project Card 1: Future Landing Page -->
-                <a href="#" data-category="lain-lain"
+                <a href="{{ route('portfolio.show') }}" data-category="lain-lain"
                     class="project-card portfolio-item group cursor-pointer flex flex-col opacity-0 transform">
                     <div class="w-full overflow-hidden rounded-xl bg-white mb-6 relative shadow-sm border border-[#e0e3e8]"
                         style="aspect-ratio: 16 / 9;">
@@ -133,7 +133,7 @@
                 </a>
 
                 <!-- Project Card 2: Instalasi Saklar Hotel -->
-                <a href="#" data-category="kendali-akses"
+                <a href="{{ route('portfolio.show') }}" data-category="kendali-akses"
                     class="project-card portfolio-item group cursor-pointer flex flex-col opacity-0 transform">
                     <div class="w-full overflow-hidden rounded-xl bg-white mb-6 relative shadow-sm border border-[#e0e3e8]"
                         style="aspect-ratio: 16 / 9;">
@@ -155,7 +155,7 @@
                 </a>
 
                 <!-- Project Card 3: ITN Card -->
-                <a href="#" data-category="pembayaran"
+                <a href="{{ route('portfolio.show') }}" data-category="pembayaran"
                     class="project-card portfolio-item group cursor-pointer flex flex-col opacity-0 transform">
                     <div class="w-full overflow-hidden rounded-xl bg-white mb-6 relative shadow-sm border border-[#e0e3e8]"
                         style="aspect-ratio: 16 / 9;">
@@ -177,7 +177,7 @@
                 </a>
 
                 <!-- Project Card 4: Presensi Kuliah -->
-                <a href="#" data-category="perpustakaan"
+                <a href="{{ route('portfolio.show') }}" data-category="perpustakaan"
                     class="project-card portfolio-item group cursor-pointer flex flex-col opacity-0 transform">
                     <div class="w-full overflow-hidden rounded-xl bg-white mb-6 relative shadow-sm border border-[#e0e3e8]"
                         style="aspect-ratio: 16 / 9;">
@@ -199,7 +199,7 @@
                 </a>
 
                 <!-- Project Card 5: Monitoring Energi Cerdas -->
-                <a href="#" data-category="pendeteksi-aset"
+                <a href="{{ route('portfolio.show') }}" data-category="pendeteksi-aset"
                     class="project-card portfolio-item group cursor-pointer flex flex-col opacity-0 transform">
                     <div class="w-full overflow-hidden rounded-xl bg-white mb-6 relative shadow-sm border border-[#e0e3e8]"
                         style="aspect-ratio: 16 / 9;">
@@ -221,7 +221,7 @@
                 </a>
 
                 <!-- Project Card 6: Automasi Logistik Gudang -->
-                <a href="#" data-category="pendeteksi-aset"
+                <a href="{{ route('portfolio.show') }}" data-category="pendeteksi-aset"
                     class="project-card portfolio-item group cursor-pointer flex flex-col opacity-0 transform">
                     <div class="w-full overflow-hidden rounded-xl bg-white mb-6 relative shadow-sm border border-[#e0e3e8]"
                         style="aspect-ratio: 16 / 9;">
