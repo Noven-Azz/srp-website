@@ -77,48 +77,94 @@
     <!-- BEGIN: Feature Image Slider -->
     <section id="project-slider-section" class="max-w-[1280px] mx-auto mb-0 px-6 md:px-16 opacity-0 transform">
         <div id="project-slider"
-            class="w-full relative group rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-surface-muted"
+            class="w-full relative group rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-black"
             style="aspect-ratio: 16 / 9;">
 
             <!-- Slides Wrapper -->
             <div id="slider-track" class="flex w-full h-full transition-transform duration-500 ease-out">
+
                 <!-- Slide 1 -->
-                <div class="w-full h-full flex-shrink-0">
-                    <img src="{{ asset('images/projek/project-1.jpg') }}" alt="Instalasi Saklar Hotel Overview 1"
-                        class="w-full h-full object-cover">
+                <div class="w-full h-full flex-shrink-0 relative overflow-hidden flex items-center justify-center">
+                    <img src="{{ asset('images/projek/projek-1/P201807121540481p-31.jpg') }}"
+                        class="absolute inset-0 w-full h-full object-cover blur-xl opacity-40 scale-110 pointer-events-none"
+                        alt="">
+                    <img src="{{ asset('images/projek/projek-1/P201807121540481p-31.jpg') }}" alt="Overview 1"
+                        class="relative max-h-full max-w-full object-contain z-10">
                 </div>
+
                 <!-- Slide 2 -->
-                <div class="w-full h-full flex-shrink-0">
-                    <img src="{{ asset('images/projek/project-2.jpg') }}" alt="Instalasi Saklar Hotel Overview 2"
-                        class="w-full h-full object-cover">
+                <div class="w-full h-full flex-shrink-0 relative overflow-hidden flex items-center justify-center">
+                    <img src="{{ asset('images/projek/projek-1/P201807121545281p-62.jpg') }}"
+                        class="absolute inset-0 w-full h-full object-cover blur-xl opacity-40 scale-110 pointer-events-none"
+                        alt="">
+                    <img src="{{ asset('images/projek/projek-1/P201807121545281p-62.jpg') }}" alt="Overview 2"
+                        class="relative max-h-full max-w-full object-contain z-10">
                 </div>
+
                 <!-- Slide 3 -->
-                <div class="w-full h-full flex-shrink-0">
-                    <img src="{{ asset('images/projek/project-3.jpg') }}" alt="Instalasi Saklar Hotel Overview 3"
-                        class="w-full h-full object-cover">
+                <div class="w-full h-full flex-shrink-0 relative overflow-hidden flex items-center justify-center">
+                    <img src="{{ asset('images/projek/projek-1/tumb_P201807121540481p-31.jpg') }}"
+                        class="absolute inset-0 w-full h-full object-cover blur-xl opacity-40 scale-110 pointer-events-none"
+                        alt="">
+                    <img src="{{ asset('images/projek/projek-1/tumb_P201807121540481p-31.jpg') }}" alt="Overview 3"
+                        class="relative max-h-full max-w-full object-contain z-10">
                 </div>
+
+                <!-- Slide 4 -->
+                <div class="w-full h-full flex-shrink-0 relative overflow-hidden flex items-center justify-center">
+                    <img src="{{ asset('images/projek/projek-1/P201807121541491p-44.jpg') }}"
+                        class="absolute inset-0 w-full h-full object-cover blur-xl opacity-40 scale-110 pointer-events-none"
+                        alt="">
+                    <img src="{{ asset('images/projek/projek-1/P201807121541491p-44.jpg') }}" alt="Overview 4"
+                        class="relative max-h-full max-w-full object-contain z-10">
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="w-full h-full flex-shrink-0 relative overflow-hidden flex items-center justify-center">
+                    <img src="{{ asset('images/projek/projek-1/tumb_P20180712154424-9.jpg') }}"
+                        class="absolute inset-0 w-full h-full object-cover blur-xl opacity-40 scale-110 pointer-events-none"
+                        alt="">
+                    <img src="{{ asset('images/projek/projek-1/tumb_P20180712154424-9.jpg') }}" alt="Overview 5"
+                        class="relative max-h-full max-w-full object-contain z-10">
+                </div>
+
+                <!-- Slide 6 -->
+                <div class="w-full h-full flex-shrink-0 relative overflow-hidden flex items-center justify-center">
+                    <img src="{{ asset('images/projek/projek-1/tumb_P201807121545281p-62.jpg') }}"
+                        class="absolute inset-0 w-full h-full object-cover blur-xl opacity-40 scale-110 pointer-events-none"
+                        alt="">
+                    <img src="{{ asset('images/projek/projek-1/tumb_P201807121545281p-62.jpg') }}" alt="Overview 6"
+                        class="relative max-h-full max-w-full object-contain z-10">
+                </div>
+
             </div>
 
-            <!-- Navigation Arrow: Previous (Selalu Tampak) -->
+            <!-- Navigation Arrow: Previous -->
             <button id="slider-prev"
-                class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-gray-500 text-white flex items-center justify-center backdrop-blur-sm opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer z-10">
+                class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 text-white flex items-center justify-center backdrop-blur-sm opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer z-20">
                 <span class="material-symbols-outlined text-xl">chevron_left</span>
             </button>
 
-            <!-- Navigation Arrow: Next (Selalu Tampak) -->
+            <!-- Navigation Arrow: Next -->
             <button id="slider-next"
-                class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-gray-500 text-white flex items-center justify-center backdrop-blur-sm opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer z-10">
+                class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 text-white flex items-center justify-center backdrop-blur-sm opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer z-20">
                 <span class="material-symbols-outlined text-xl">chevron_right</span>
             </button>
 
             <!-- Dots Indicator -->
-            <div id="slider-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
+            <div id="slider-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
                 <button class="slider-dot w-6 h-2.5 rounded-full bg-white transition-all duration-300 cursor-pointer"
                     data-index="0"></button>
                 <button class="slider-dot w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300 cursor-pointer"
                     data-index="1"></button>
                 <button class="slider-dot w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300 cursor-pointer"
                     data-index="2"></button>
+                <button class="slider-dot w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300 cursor-pointer"
+                    data-index="3"></button>
+                <button class="slider-dot w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300 cursor-pointer"
+                    data-index="4"></button>
+                <button class="slider-dot w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300 cursor-pointer"
+                    data-index="5"></button>
             </div>
 
         </div>
@@ -126,7 +172,7 @@
     <!-- END: Feature Image Slider -->
 
     <!-- BEGIN: Detailed Content Section -->
-    <section id="project-details-section" class="bg-surface-muted border-y border-border-subtle py-12 md:py-20">
+    <section id="project-details-section" class="bg-surface-muted  border-border-subtle py-12 md:py-20">
         <div class="max-w-3xl mx-auto px-6 md:px-8">
             <div id="details-content-wrapper"
                 class="space-y-8 md:space-y-12 text-on-surface-variant text-base md:text-lg leading-relaxed opacity-0 transform">
@@ -173,7 +219,8 @@
                     <h3 class="text-xl md:text-2xl font-bold text-on-surface mb-4 md:mb-6">Hasil & Dampak Proyek:</h3>
                     <ul class="list-disc list-inside sm:list-outside sm:pl-5 space-y-2">
                         <li class="pl-1">Efisiensi penggunaan energi listrik hingga 25% pada area kamar.</li>
-                        <li class="pl-1">Peningkatan pengalaman kenyamanan tamu melalui kontrol pencahayaan yang intuitif.
+                        <li class="pl-1">Peningkatan pengalaman kenyamanan tamu melalui kontrol pencahayaan yang
+                            intuitif.
                         </li>
                         <li class="pl-1">Kemudahan perawatan berkala bagi tim teknisi hotel berkat sistem indikator
                             terpusat.</li>
