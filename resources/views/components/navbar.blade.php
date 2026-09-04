@@ -33,9 +33,12 @@
             </a>
 
             <!-- Tentang Kami -->
-            <a href="{{ url('/#about') }}"
-                class="relative py-1 font-sans font-normal text-[#666666] text-sm hover:text-blue-srp transition-colors duration-300 whitespace-nowrap
-                after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-blue-srp after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-out">
+            <a href="{{ route('about') }}"
+                class="relative py-1 font-sans text-sm transition-colors duration-300 whitespace-nowrap
+                after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-blue-srp after:transition-transform after:duration-300 after:ease-out
+                {{ request()->routeIs('about*')
+                    ? 'font-semibold text-blue-srp after:scale-x-100'
+                    : 'font-normal text-[#666666] hover:text-blue-srp after:scale-x-0 hover:after:scale-x-100' }}">
                 Tentang Kami
             </a>
 
@@ -90,8 +93,8 @@
             Produk
         </a>
 
-        <a href="{{ url('/#about') }}" @click="mobileMenuOpen = false"
-            class="block font-sans text-base py-2 text-[#666666] hover:text-blue-srp transition-colors duration-200">
+        <a href="{{ route('about') }}" @click="mobileMenuOpen = false"
+            class="block font-sans text-base py-2 transition-colors duration-200 {{ request()->routeIs('about*') ? 'font-bold text-blue-srp' : 'text-[#666666] hover:text-blue-srp' }}">
             Tentang Kami
         </a>
 

@@ -39,3 +39,8 @@ Route::get('/blog', function () {
 Route::get('/blog/detail', function () {
     return view('blog.show');
 })->name('blog.show');
+
+// Route untuk Halaman Tentang Kami
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
