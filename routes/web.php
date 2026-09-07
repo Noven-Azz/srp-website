@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +45,15 @@ Route::get('/blog/detail', function () {
 Route::get('/about', function () {
     return view('about');
 })->name('about');
+
+// Rute untuk Halaman Kategori Produk
+Route::prefix('produk')->group(function () {
+    Route::get('/rfid', [ProductController::class, 'rfid'])->name('product.rfid');
+    Route::get('/ai', [ProductController::class, 'ai'])->name('product.ai');
+    Route::get('/iot', [ProductController::class, 'iot'])->name('product.iot');
+});
+
+// Route static/dummy untuk pengujian tampilan Detail Produk
+Route::get('/products/detail', function () {
+    return view('products.show');
+})->name('products.show');
