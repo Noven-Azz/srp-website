@@ -25,7 +25,6 @@
         "sass": "^1.15.2",
         "sass-loader": "^12.0.0",
         "tailwindcss": "^3.4.1",
-        "vercel-php": "^0.7.2",
         "vue-template-compiler": "^2.7.16",
         "webpack": "^5.89.0",
         "webpack-cli": "^4.10.0"
