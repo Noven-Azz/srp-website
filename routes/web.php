@@ -57,3 +57,11 @@ Route::prefix('produk')->group(function () {
 Route::get('/products/detail', function () {
     return view('products.show');
 })->name('products.show');
+
+Route::get('/products/ai-vision', function () {
+    return view('products.ai-detail');
+})->name('products.ai');
+
+Route::get('/products/iot', function () {
+    return view('products.iot-detail');
+})->name('products.iot');
