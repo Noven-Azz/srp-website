@@ -1,0 +1,45 @@
+# 1. Build assets (Tailwind / Laravel Mix)
+FROM node:20-alpine AS assets
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run prod
+
+# 2. Build vendor (Composer)
+FROM composer:2 AS vendor
+WORKDIR /app
+COPY composer.json composer.lock ./
+RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader --no-scripts
+
+# 3. Final FrankenPHP Image
+FROM dunglas/frankenphp:1-php8.2-bookworm
+
+ENV SERVER_NAME=":{$PORT:80}"
+WORKDIR /app
+
+# Install necessary PHP extensions for Laravel
+RUN install-php-extensions pcntl bcmath pdo_mysql opcache
+
+# Copy application files
+COPY . /app
+COPY --from=assets /app/public/js /app/public/js
+COPY --from=assets /app/public/css /app/public/css
+COPY --from=assets /app/public/mix-manifest.json /app/public/mix-manifest.json
+COPY --from=vendor /app/vendor /app/vendor
+
+# Copy Caddyfile
+COPY Caddyfile /etc/caddy/Caddyfile
+
+# Ensure writable permissions for Laravel storage and cache
+RUN mkdir -p /app/storage/framework/cache/data \
+    /app/storage/framework/views \
+    /app/storage/framework/sessions \
+    /app/storage/logs \
+    /app/bootstrap/cache \
+    && chown -R www-data:www-data /app/storage /app/bootstrap/cache \
+    && chmod -R 775 /app/storage /app/bootstrap/cache
+
+EXPOSE 80
+
+CMD ["frankenphp", "run", "--config", "/etc/caddy/Caddyfile"]
