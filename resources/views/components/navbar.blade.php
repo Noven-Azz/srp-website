@@ -12,7 +12,7 @@
             </span>
         </a>
 
-        <!-- Desktop Navigation Menu dengan Dropdown Produk (Tanpa Icon) -->
+        <!-- Desktop Navigation Menu dengan Dropdown Produk -->
         <div class="hidden lg:inline-flex items-center gap-6 xl:gap-8">
 
             <!-- Portofolio -->
@@ -42,7 +42,7 @@
                     </span>
                 </button>
 
-                <!-- Sub-Menu Floating Panel (Clean Text-Only Version) -->
+                <!-- Sub-Menu Floating Panel -->
                 <div x-show="productDropdownOpen" x-transition:enter="transition ease-out duration-200"
                     x-transition:enter-start="opacity-0 translate-y-2 scale-95"
                     x-transition:enter-end="opacity-100 translate-y-0 scale-100"
@@ -111,15 +111,18 @@
                 Blog
             </a>
 
-            <!-- Kontak -->
-            <a href="{{ url('/#contact') }}"
-                class="relative py-1 font-sans font-normal text-[#666666] text-sm hover:text-blue-srp transition-colors duration-300 whitespace-nowrap
-                after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-blue-srp after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-out">
+            <!-- Kontak (Diperbarui ke route('contact')) -->
+            <a href="{{ route('contact') }}"
+                class="relative py-1 font-sans text-sm transition-colors duration-300 whitespace-nowrap
+                after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-blue-srp after:transition-transform after:duration-300 after:ease-out
+                {{ request()->routeIs('contact*')
+                    ? 'font-semibold text-blue-srp after:scale-x-100'
+                    : 'font-normal text-[#666666] hover:text-blue-srp after:scale-x-0 hover:after:scale-x-100' }}">
                 Kontak
             </a>
 
             <!-- CTA Button -->
-            <a href="{{ url('/#contact') }}"
+            <a href="{{ route('contact') }}"
                 class="px-5 py-2.5 bg-yellow-srp rounded-sm font-sans font-semibold text-[#333333] text-sm hover:bg-opacity-90 hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap shadow-sm">
                 Get in touch
             </a>
@@ -148,7 +151,7 @@
             Portofolio
         </a>
 
-        <!-- Produk Accordion Mobile (Tanpa Icon) -->
+        <!-- Produk Accordion Mobile -->
         <div>
             <button @click="mobileProductOpen = !mobileProductOpen"
                 class="w-full flex items-center justify-between font-sans text-base py-2 text-[#666666] hover:text-blue-srp transition-colors duration-200 focus:outline-none">
@@ -159,7 +162,7 @@
                 </span>
             </button>
 
-            <!-- Mobile Sub-Menu Items (Text Only) -->
+            <!-- Mobile Sub-Menu Items -->
             <div x-show="mobileProductOpen" x-transition:enter="transition ease-out duration-200"
                 x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
                 class="pl-4 space-y-2 py-2 border-l-2 border-blue-srp/20 ml-2">
@@ -193,15 +196,15 @@
             Blog
         </a>
 
-        <!-- Kontak Mobile -->
-        <a href="{{ url('/#contact') }}" @click="mobileMenuOpen = false"
-            class="block font-sans text-base py-2 text-[#666666] hover:text-blue-srp transition-colors duration-200">
+        <!-- Kontak Mobile (Diperbarui ke route('contact')) -->
+        <a href="{{ route('contact') }}" @click="mobileMenuOpen = false"
+            class="block font-sans text-base py-2 transition-colors duration-200 {{ request()->routeIs('contact*') ? 'font-bold text-blue-srp' : 'text-[#666666] hover:text-blue-srp' }}">
             Kontak
         </a>
 
         <!-- CTA Button Mobile -->
         <div class="pt-2">
-            <a href="{{ url('/#contact') }}" @click="mobileMenuOpen = false"
+            <a href="{{ route('contact') }}" @click="mobileMenuOpen = false"
                 class="block w-full text-center px-5 py-3 bg-yellow-srp rounded-sm font-sans font-semibold text-[#333333] text-sm shadow-sm hover:scale-[1.02] transition-transform duration-200">
                 Get in touch
             </a>

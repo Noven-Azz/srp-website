@@ -65,3 +65,8 @@ Route::get('/products/ai-vision', function () {
 Route::get('/products/iot', function () {
     return view('products.iot-detail');
 })->name('products.iot');
+
+// Route untuk Halaman Kontak
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
